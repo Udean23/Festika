@@ -4,33 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChemOrbit</title>
-    <link rel="stylesheet" href="/Landing Page/css/style.css">
+    <link rel="stylesheet" href="/Landing Page/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
     class="flex flex-col items-center justify-center min-h-screen px-4 text-white relative transition-all duration-700"
   >
     <!-- Header Section -->
-    <header class="text-center mt-28 z-10">
+    <header class="relative text-center mt-28 z-10 animate-fadeIn">
       <h1
-        class="text-5xl md:text-6xl font-bold delius-swash-caps mb-8 text-indigo-300"
+        class="text-5xl md:text-7xl font-bold delius-swash-caps mb-10 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 drop-shadow-[0_0_20px_rgba(167,139,250,0.6)]"
       >
         ChemOrbit
       </h1>
+
       <div
-        class="flex flex-col md:flex-row items-center justify-center gap-4 transition-all duration-500"
+        class="flex flex-col md:flex-row items-center justify-center gap-6 transition-all duration-500"
       >
-        <button
-          class="px-6 py-3 border border-indigo-400 bg-indigo-900/30 text-indigo-200 rounded-lg hover:bg-indigo-800/50 hover:shadow-[0_0_15px_rgba(167,139,250,0.6)] transition-all duration-300"
+        <a
+          href="/Tata Surya/index.html"
+          class="group relative px-8 py-3 border border-purple-400 bg-purple-900/30 text-purple-200 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
         >
-          Tata Surya
-        </button>
-        <button
-          class="px-6 py-3 border border-blue-400 bg-blue-900/30 text-blue-200 rounded-lg hover:bg-blue-800/50 hover:shadow-[0_0_15px_rgba(147,197,253,0.6)] transition-all duration-300"
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-purple-400/20 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
+          ></span>
+          <span class="relative delius-swash-caps tracking-wider">
+            Tata Surya
+          </span>
+        </a>
+
+        <a
+          href="/Tabel Periodik/index.html"
+          class="group relative px-8 py-3 border border-blue-400 bg-blue-900/30 text-blue-200 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105"
         >
-          Tabel Periodik
-        </button>
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"
+          ></span>
+          <span class="relative delius-swash-caps tracking-wider">
+            Tabel Periodik
+          </span>
+        </a>
       </div>
+
+      <style>
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1.2s ease-out forwards;
+        }
+      </style>
     </header>
 
     <section
