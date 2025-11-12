@@ -1,41 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap");
-      .delius-swash-caps {
-        font-family: "Delius Swash Caps", cursive;
-      }
 
-      body {
-        background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
-        background-attachment: fixed;
-        position: relative;
-        overflow-x: hidden;
-        transition: background 1s ease;
-      }
+.delius-swash-caps {
+  font-family: "Delius Swash Caps", cursive;
+}
 
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent
-          url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-        opacity: 0.5;
-        animation: moveStars 60s linear infinite;
-        z-index: 0;
-        transition: background 1s ease, opacity 1s ease;
-      }
+body {
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 1s ease;
+  min-height: 100vh;
+}
 
-      body.periodic-bg::before {
-        background: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-        opacity: 0.3;
-      }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.5;
+  animation: starScroll 60s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  will-change: background-position;
+  transition: background 1s ease, opacity 1s ease;
+}
 
-      @keyframes moveStars {
-        from {
-          transform: translate(0, 0);
-        }
-        to {
-          transform: translate(-500px, 500px);
-        }
-      }
+body.periodic-bg::before {
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  opacity: 0.3;
+}
+
+@keyframes starScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 1000px;
+  }
+}
