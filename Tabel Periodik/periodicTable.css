@@ -107,146 +107,137 @@ body {
 }
 
 .category-filter {
-    margin-bottom: 25px;
-    padding: 30px;
-    border-radius: 8px;
+  margin-bottom: 25px;
+  padding: 30px;
+  border-radius: 8px;
 }
 
 .filter-table {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  justify-content: center;
 }
 
 .filter-option {
-    position: relative;
+  position: relative;
 }
 
 .filter-option input {
-    display: none;
+  display: none;
 }
 
 .filter-element {
-    padding: 8px 9px;
-    border-radius: 6px;
-    text-align: center;
-    background: #0d0d0d;
-    color: #ffffff;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding: 8px 9px;
+  border-radius: 6px;
+  text-align: center;
+  background: #0d0d0d;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter-option input:checked + .filter-element {
-    transform: scale(1.05);
-    box-shadow: 
-        0 0 0 2px var(--c),
-        0 0 12px var(--c), 
-        0 0 20px var(--c), 
-        0 0 25px var(--c) inset;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c),
+    0 0 25px var(--c) inset;
 }
 .filter-element:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
+  transform: translateY(-3px);
+  box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
 }
 
 .filter-option input:checked + .filter-element {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
 }
 
 .filter-symbol {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 2px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 .filter-name {
-    font-size: 0.6rem;
-    opacity: 0.9;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+  font-size: 0.6rem;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .filter-instruction {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.8rem;
-    color: #aaa;
-    font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #aaa;
+  font-style: italic;
 }
 
 .filter-element.active {
-    transform: scale(1.05);
-    box-shadow: 
-        0 0 0 2px var(--c),
-        0 0 12px var(--c), 
-        0 0 20px var(--c), 
-        0 0 25px var(--c) inset;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c),
+    0 0 25px var(--c) inset;
 }
 
 .filter-element.default {
-    transform: scale(1);
-    box-shadow: 
-        0 0 0 2px var(--c),
-        0 0 4px var(--c), 
-        0 0 8px var(--c), 
-        0 0 12px var(--c) inset;
+  transform: scale(1);
+  box-shadow: 0 0 0 2px var(--c), 0 0 4px var(--c), 0 0 8px var(--c),
+    0 0 12px var(--c) inset;
 }
 
 .cat-all {
-    --c: #ffffff;
+  --c: #ffffff;
 }
 
 .element.filtered-out {
-    opacity: 0.3;
-    transform: scale(0.95);
-    transition: all 0.3s ease;
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
-    .filter-table {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 8px;
-    }
-    
-    .filter-element {
-        min-height: 50px;
-        padding: 6px 3px;
-    }
-    
-    .filter-symbol {
-        font-size: 0.8rem;
-    }
-    
-    .filter-name {
-        font-size: 0.55rem;
-    }
+  .filter-table {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  .filter-element {
+    min-height: 50px;
+    padding: 6px 3px;
+  }
+
+  .filter-symbol {
+    font-size: 0.8rem;
+  }
+
+  .filter-name {
+    font-size: 0.55rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .filter-table {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-        gap: 6px;
-    }
-    
-    .filter-element {
-        min-height: 45px;
-        padding: 5px 2px;
-    }
-    
-    .filter-symbol {
-        font-size: 0.7rem;
-    }
-    
-    .filter-name {
-        font-size: 0.5rem;
-    }
+  .filter-table {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 6px;
+  }
+
+  .filter-element {
+    min-height: 45px;
+    padding: 5px 2px;
+  }
+
+  .filter-symbol {
+    font-size: 0.7rem;
+  }
+
+  .filter-name {
+    font-size: 0.5rem;
+  }
 }
