@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  padding: 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(40px, 1fr));
+  gap: 4px;
+  margin: 0 auto;
+  padding: 10px;
+  min-width: min-content;
+}
+
+.element {
+  padding: 4px 2px;
+  border-radius: 4px;
+  text-align: center;
+  background: #0d0d0d;
+  color: #ffffff;
+  border: 2px solid var(--c);
+  box-shadow: 0 0 4px var(--c), 0 0 8px var(--c), 0 0 12px var(--c) inset;
+  transition: 0.25s;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.element:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
+}
+
+.number {
+  font-size: 0.5rem;
+  opacity: 0.9;
+}
+.symbol {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 2px 0;
+}
+.name {
+  font-size: 0.5rem;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-alkali {
+  --c: #8ca9ff;
+}
+.cat-alkali-tanah {
+  --c: #ff5656;
+}
+.cat-transition {
+  --c: #8c00ff;
+}
+.cat-pascatransisi {
+  --c: #08cb00;
+}
+.cat-metaloid {
+  --c: #ffa239;
+}
+.cat-nonlogam {
+  --c: #0065f8;
+}
+.cat-gas-mulia {
+  --c: #ff0b55;
+}
+.cat-aktanida {
+  --c: #f93827;
+}
+
+.cat-lantanida {
+  --c: #332fd0;
+}
+.cat-lainnya {
+  --c: #afafaf;
+}
+
+.category-filter {
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.filter-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-option {
+    position: relative;
+}
+
+.filter-option input {
+    display: none;
+}
+
+.filter-element {
+    padding: 8px 9px;
+    border-radius: 6px;
+    text-align: center;
+    background: #0d0d0d;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-option input:checked + .filter-element {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 0 2px var(--c),
+        0 0 12px var(--c), 
+        0 0 20px var(--c), 
+        0 0 25px var(--c) inset;
+}
+.filter-element:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
+}
+
+.filter-option input:checked + .filter-element {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
+}
+
+.filter-symbol {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.filter-name {
+    font-size: 0.6rem;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.filter-instruction {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.filter-element.active {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 0 2px var(--c),
+        0 0 12px var(--c), 
+        0 0 20px var(--c), 
+        0 0 25px var(--c) inset;
+}
+
+.filter-element.default {
+    transform: scale(1);
+    box-shadow: 
+        0 0 0 2px var(--c),
+        0 0 4px var(--c), 
+        0 0 8px var(--c), 
+        0 0 12px var(--c) inset;
+}
+
+.cat-all {
+    --c: #ffffff;
+}
+
+.element.filtered-out {
+    opacity: 0.3;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .filter-table {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+    }
+    
+    .filter-element {
+        min-height: 50px;
+        padding: 6px 3px;
+    }
+    
+    .filter-symbol {
+        font-size: 0.8rem;
+    }
+    
+    .filter-name {
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-table {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 6px;
+    }
+    
+    .filter-element {
+        min-height: 45px;
+        padding: 5px 2px;
+    }
+    
+    .filter-symbol {
+        font-size: 0.7rem;
+    }
+    
+    .filter-name {
+        font-size: 0.5rem;
+    }
+}
