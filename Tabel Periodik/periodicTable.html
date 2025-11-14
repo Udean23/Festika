@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Periodic Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./periodicTable.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
   </head>
+  <svg style="position: absolute; width: 0; height: 0">
+    <filter id="hand-drawn-filter">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.05"
+        numOctaves="2"
+        result="noise"
+      />
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="noise"
+        scale="2"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </svg>
+
   <body>
     <div class="container">
       <div class="table-wrapper">
@@ -100,6 +120,84 @@
               <div class="filter-symbol">Lainnya</div>
               <div class="filter-name">Tidak Diketahui</div>
             </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-8"
+      >
+        <div
+          class="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-8"
+        >
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl w-full">
+            <div class="card-border bg-gray-900 bg-opacity-40 rounded-lg p-8">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="hand-drawn-box w-20 h-20 transform -rotate-6">
+                  H
+                </div>
+                <h1 class="text-3xl font-bold chalk-text">Hidrogen(H)1</h1>
+              </div>
+
+              <p class="text-base leading-relaxed mb-6">
+                Hidrogen adalah unsur paling umum di alam semesta, dengan
+                persentase sekitar 75% dari massanya.
+              </p>
+
+              <div class="space-y-2 text-sm">
+                <p><span class="font-semibold">Simbol:</span> H</p>
+                <p><span class="font-semibold">Massa atom:</span> 1.00784 u</p>
+                <p>
+                  <span class="font-semibold">Kepadatan zat cair:</span> zat
+                  cair pada titik lebur: 0.07099 g/cm3
+                </p>
+                <p><span class="font-semibold">Mendidih:</span> -252.87 °C</p>
+                <p><span class="font-semibold">Melebur:</span> -259.16 °C</p>
+                <p>
+                  <span class="font-semibold">Ditemukan oleh:</span> Henry
+                  Cavendish
+                </p>
+                <p><span class="font-semibold">Tahun penemuan:</span> 1766</p>
+              </div>
+            </div>
+
+            <div class="card-border bg-gray-900 bg-opacity-40 rounded-lg p-8">
+              <div
+                class="flex items-center gap-3 mb-6 text-4xl chalk-text font-bold"
+              >
+                <div class="hand-drawn-box w-16 h-16 transform rotate-3">H</div>
+                <span>+</span>
+                <div class="hand-drawn-box w-16 h-16 transform -rotate-2">
+                  Cl
+                </div>
+                <span>+</span>
+                <div class="hand-drawn-box w-16 h-16 transform rotate-6"> </div>
+                <span>=</span>
+                <div class="hand-drawn-circle w-20 h-16 transform -rotate-3">
+                  HCl
+                </div>
+              </div>
+
+              <div class="flex justify-between text-sm mb-6 px-2">
+                <span>Hidrogen</span>
+                <span>Klor</span>
+                <span></span>
+                <span class="mr-8">Asam Klorida</span>
+              </div>
+
+              <div class="text-base leading-relaxed">
+                <p>
+                  Asam klorida adalah senyawa yang terbentuk dari gabungan
+                  antara unsur hidrogen dan klorin. Rumus kimianya adalah HCl.
+                  Dalam bentuk murni, HCl sebenarnya berupa gas yang tidak
+                  berwarna tetapi sangat mudah larut dalam air. Saat gas ini
+                  dilarutkan ke dalam air, terbentuklah larutan yang disebut
+                  asam klorida. Larutan ini memiliki sifat sangat asam, berbau
+                  menyengat, dan bisa bersifat korosif, artinya dapat melarutkan
+                  logam tertentu atau merusak jaringan hidup bila terkena
+                  langsung.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

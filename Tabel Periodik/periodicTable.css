@@ -6,13 +6,17 @@
 
 body {
   background: #000;
-  font-family: Arial, sans-serif;
+  font-family: "Amaranth", sans-serif;
   color: #fff;
   padding: 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.chalk-text, .filter-name, .filter-symbol, .periodic-table, .card-border {
+  font-family: 'Amaranth', sans-serif;
 }
 
 .container {
@@ -202,9 +206,52 @@ body {
   transition: all 0.3s ease;
 }
 
-.mass{
+.mass {
   font-size: 0.5rem;
   opacity: 0.8;
+}
+
+.card-border {
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.hand-drawn-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+
+.hand-drawn-box::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 4px solid white;
+  border-radius: 3px;
+  filter: url(#hand-drawn-filter);
+}
+
+.hand-drawn-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+
+.hand-drawn-circle::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 4px solid white;
+  border-radius: 50%;
+  filter: url(#hand-drawn-filter);
 }
 
 @media (max-width: 768px) {
