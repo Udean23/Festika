@@ -188,7 +188,14 @@ body {
   }
 }
 
-  canvas {
-    display: block;
-    background: transparent;
-  }
+canvas {
+  display: block;
+  background: transparent;
+}
+
+#anion {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  display: block;
+}

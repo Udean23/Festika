@@ -1,184 +1,181 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-let w, h;
+const isoCanvas = document.getElementById('isotopeCanvas');
+const isoCtx = isoCanvas.getContext('2d');
+let iw, ih;
 
-function resize() {
-    w = window.innerWidth;
-    h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-}
-resize();
-window.addEventListener('resize', resize);
-
-function drawOrbitRing(x, y, radiusX, radiusY, rotation) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rotation);
-
-    let orbitWidth = 20;
-    for (let i = 0; i < orbitWidth; i++) {
-        let alpha = 0.2 * (1 - i / orbitWidth);
-        ctx.strokeStyle = `rgba(180, 180, 180, ${alpha})`;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, radiusX - i, radiusY - i * 0.45, 0, 0, Math.PI * 2);
-        ctx.stroke();
-    }
-
-    ctx.restore();
+function isoResize() {
+  iw = window.innerWidth;
+  ih = window.innerHeight;
+  isoCanvas.width = iw;
+  isoCanvas.height = ih;
 }
 
-function drawGradientBall(x, y, radius, colorCenter, colorEdge) {
-    let gradient = ctx.createRadialGradient(x - radius / 3, y - radius / 3, radius / 8, x, y, radius);
-    gradient.addColorStop(0, colorCenter);
-    gradient.addColorStop(1, colorEdge);
-    ctx.beginPath();
-    ctx.fillStyle = gradient;
-    ctx.shadowColor = colorCenter;
-    ctx.shadowBlur = 12;
-    ctx.arc(x, y, radius, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
+isoResize();
+window.addEventListener('resize', isoResize);
+
+function drawOrbitRing(x, y, rx, ry, rot) {
+  isoCtx.save();
+  isoCtx.translate(x, y);
+  isoCtx.rotate(rot);
+  let ow = 20;
+  for (let i = 0; i < ow; i++) {
+    let a = 0.2 * (1 - i / ow);
+    isoCtx.strokeStyle = `rgba(180,180,180,${a})`;
+    isoCtx.lineWidth = 3;
+    isoCtx.beginPath();
+    isoCtx.ellipse(0, 0, rx - i, ry - i * 0.45, 0, 0, Math.PI * 2);
+    isoCtx.stroke();
+  }
+  isoCtx.restore();
+}
+
+function drawBall(x, y, r, c1, c2) {
+  let g = isoCtx.createRadialGradient(x - r / 3, y - r / 3, r / 8, x, y, r);
+  g.addColorStop(0, c1);
+  g.addColorStop(1, c2);
+  isoCtx.beginPath();
+  isoCtx.fillStyle = g;
+  isoCtx.shadowColor = c1;
+  isoCtx.shadowBlur = 12;
+  isoCtx.arc(x, y, r, 0, Math.PI * 2);
+  isoCtx.fill();
+  isoCtx.shadowBlur = 0;
 }
 
 const atoms = [
-    {
-        name: 'Protium',
-        label: ['1 proton', '1 elektron'],
-        labelPos: { x: 170, y: -70 },
-        labelLineTo: { x: 20, y: -50 },
-        dotLineRadius: 6,
-        x: w * 0.2,
-        y: h * 0.3,
-        protons: 1,
-        neutrons: 0,
-        electrons: 1,
-        protonColorCenter: '#ff6464',
-        protonColorEdge: '#7a0000',
-        neutronColorCenter: null,
-        neutronColorEdge: null
-    },
-    {
-        name: 'Deuterium',
-        label: ['1 proton', '1 neutron', '1 elektron'],
-        labelPos: { x: 180, y: 90 },
-        labelLineTo: { x: 80, y: 50 },
-        dotLineRadius: 6,
-        x: w * 0.45,
-        y: h * 0.45,
-        protons: 1,
-        neutrons: 1,
-        electrons: 1,
-        protonColorCenter: '#ff6464',
-        protonColorEdge: '#7a0000',
-        neutronColorCenter: '#6699ff',
-        neutronColorEdge: '#00307a'
-    },
-    {
-        name: 'Tritium',
-        label: ['1 proton', '2 neutron', '1 elektron'],
-        labelPos: { x: 230, y: -70 },
-        labelLineTo: { x: 100, y: -40 },
-        dotLineRadius: 6,
-        x: w * 0.7,
-        y: h * 0.25,
-        protons: 1,
-        neutrons: 2,
-        electrons: 1,
-        protonColorCenter: '#ff6464',
-        protonColorEdge: '#7a0000',
-        neutronColorCenter: '#6699ff',
-        neutronColorEdge: '#00307a'
-    },
+  {
+    name: 'Protium',
+    label: ['1 proton', '1 elektron'],
+    labelPos: { x: 170, y: -70 },
+    labelLineTo: { x: 20, y: -50 },
+    dotLineRadius: 6,
+    x: iw * 0.2,
+    y: ih * 0.3,
+    protons: 1,
+    neutrons: 0,
+    electrons: 1,
+    protonColorCenter: '#ff6464',
+    protonColorEdge: '#7a0000',
+    neutronColorCenter: null,
+    neutronColorEdge: null
+  },
+  {
+    name: 'Deuterium',
+    label: ['1 proton', '1 neutron', '1 elektron'],
+    labelPos: { x: 180, y: 90 },
+    labelLineTo: { x: 80, y: 50 },
+    dotLineRadius: 6,
+    x: iw * 0.45,
+    y: ih * 0.45,
+    protons: 1,
+    neutrons: 1,
+    electrons: 1,
+    protonColorCenter: '#ff6464',
+    protonColorEdge: '#7a0000',
+    neutronColorCenter: '#6699ff',
+    neutronColorEdge: '#00307a'
+  },
+  {
+    name: 'Tritium',
+    label: ['1 proton', '2 neutron', '1 elektron'],
+    labelPos: { x: 230, y: -70 },
+    labelLineTo: { x: 100, y: -40 },
+    dotLineRadius: 6,
+    x: iw * 0.7,
+    y: ih * 0.25,
+    protons: 1,
+    neutrons: 2,
+    electrons: 1,
+    protonColorCenter: '#ff6464',
+    protonColorEdge: '#7a0000',
+    neutronColorCenter: '#6699ff',
+    neutronColorEdge: '#00307a'
+  }
 ];
 
-function drawLabelConnection(atom) {
-    ctx.strokeStyle = 'white';
-    ctx.fillStyle = 'white';
-    ctx.lineWidth = 2;
-    const startX = atom.labelPos.x + atom.x;
-    const startY = atom.labelPos.y + atom.y;
-    const midX = atom.labelLineTo.x + atom.x;
-    const midY = startY;
-    const endX = atom.labelLineTo.x + atom.x;
-    const endY = atom.labelLineTo.y + atom.y;
+function drawLabelLine(a) {
+  isoCtx.strokeStyle = 'white';
+  isoCtx.fillStyle = 'white';
+  isoCtx.lineWidth = 2;
+  const sx = a.labelPos.x + a.x;
+  const sy = a.labelPos.y + a.y;
+  const mx = a.labelLineTo.x + a.x;
+  const my = sy;
+  const ex = a.labelLineTo.x + a.x;
+  const ey = a.labelLineTo.y + a.y;
 
-    ctx.beginPath();
-    ctx.moveTo(startX, startY);
-    ctx.lineTo(midX, midY);
-    ctx.lineTo(endX, endY);
-    ctx.stroke();
+  isoCtx.beginPath();
+  isoCtx.moveTo(sx, sy);
+  isoCtx.lineTo(mx, my);
+  isoCtx.lineTo(ex, ey);
+  isoCtx.stroke();
 
-    ctx.beginPath();
-    ctx.arc(endX, endY, atom.dotLineRadius, 0, 2 * Math.PI);
-    ctx.fill();
+  isoCtx.beginPath();
+  isoCtx.arc(ex, ey, a.dotLineRadius, 0, 2 * Math.PI);
+  isoCtx.fill();
 }
 
-function drawLabels(atom) {
-    ctx.fillStyle = 'white';
-    ctx.font = '22px Amaranth, sans-serif';
-    ctx.textAlign = 'left';
-    const baseX = atom.labelPos.x + atom.x;
-    const baseY = atom.labelPos.y + atom.y;
-    atom.label.forEach((line, i) => {
-        ctx.fillText(line, baseX, baseY + i * 28);
-    });
+function drawLabel(a) {
+  isoCtx.fillStyle = 'white';
+  isoCtx.font = '22px Amaranth, sans-serif';
+  isoCtx.textAlign = 'left';
+  const bx = a.labelPos.x + a.x;
+  const by = a.labelPos.y + a.y;
+  a.label.forEach((t, i) => isoCtx.fillText(t, bx, by + i * 28));
 
-    ctx.fillStyle = '#799bdc';
-    ctx.font = 'bold 30px Amaranth, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(atom.name, atom.x, atom.y + 100);
+  isoCtx.fillStyle = '#799bdc';
+  isoCtx.font = 'bold 30px Amaranth, sans-serif';
+  isoCtx.textAlign = 'center';
+  isoCtx.fillText(a.name, a.x, a.y + 100);
 }
 
-function drawAtom(atom, angleElectron, orbitRotation) {
-    const rProton = 14;
-    const rNeutron = 12;
-    const rElectron = 8;
-    const orbitRadiusX = 75;
-    const orbitRadiusY = 35;
+function drawIsotopeAtom(a, angE, rot) {
+  const rp = 14;
+  const rn = 12;
+  const re = 8;
+  const rx = 75;
+  const ry = 35;
 
-    drawOrbitRing(atom.x, atom.y, orbitRadiusX, orbitRadiusY, orbitRotation);
+  drawOrbitRing(a.x, a.y, rx, ry, rot);
 
-    if (atom.protons === 1 && atom.neutrons === 0) {
-        drawGradientBall(atom.x, atom.y, rProton, atom.protonColorCenter, atom.protonColorEdge);
-    } else if (atom.protons === 1 && atom.neutrons === 1) {
-        drawGradientBall(atom.x - 10, atom.y, rProton, atom.protonColorCenter, atom.protonColorEdge);
-        drawGradientBall(atom.x + 10, atom.y, rNeutron, atom.neutronColorCenter, atom.neutronColorEdge);
-    } else if (atom.protons === 1 && atom.neutrons === 2) {
-        drawGradientBall(atom.x, atom.y, rProton, atom.protonColorCenter, atom.protonColorEdge);
-        drawGradientBall(atom.x - 20, atom.y, rNeutron, atom.neutronColorCenter, atom.neutronColorEdge);
-        drawGradientBall(atom.x + 20, atom.y, rNeutron, atom.neutronColorCenter, atom.neutronColorEdge);
-    }
+  if (a.protons === 1 && a.neutrons === 0) drawBall(a.x, a.y, rp, a.protonColorCenter, a.protonColorEdge);
+  else if (a.protons === 1 && a.neutrons === 1) {
+    drawBall(a.x - 10, a.y, rp, a.protonColorCenter, a.protonColorEdge);
+    drawBall(a.x + 10, a.y, rn, a.neutronColorCenter, a.neutronColorEdge);
+  }
+  else if (a.protons === 1 && a.neutrons === 2) {
+    drawBall(a.x, a.y, rp, a.protonColorCenter, a.protonColorEdge);
+    drawBall(a.x - 20, a.y, rn, a.neutronColorCenter, a.neutronColorEdge);
+    drawBall(a.x + 20, a.y, rn, a.neutronColorCenter, a.neutronColorEdge);
+  }
 
-    const cosR = Math.cos(orbitRotation);
-    const sinR = Math.sin(orbitRotation);
-    const exUnrot = orbitRadiusX * Math.cos(angleElectron);
-    const eyUnrot = orbitRadiusY * Math.sin(angleElectron);
-    const ex = atom.x + exUnrot * cosR - eyUnrot * sinR;
-    const ey = atom.y + exUnrot * sinR + eyUnrot * cosR;
+  const cr = Math.cos(rot);
+  const sr = Math.sin(rot);
+  const ex = a.x + rx * Math.cos(angE) * cr - ry * Math.sin(angE) * sr;
+  const ey = a.y + rx * Math.cos(angE) * sr + ry * Math.sin(angE) * cr;
 
-    drawGradientBall(ex, ey, rElectron, '#32cd32', '#004d00');
+  drawBall(ex, ey, re, '#32cd32', '#004d00');
 
-    ctx.fillStyle = 'white';
-    ctx.font = '18px Amaranth, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(`(${atom.protons + atom.neutrons} H)`, atom.x + 100, atom.y + 35);
+  isoCtx.fillStyle = 'white';
+  isoCtx.font = '18px Amaranth, sans-serif';
+  isoCtx.textAlign = 'center';
+  isoCtx.fillText(`(${a.protons + a.neutrons} H)`, a.x + 100, a.y + 35);
 }
 
-let angle = 0;
-function animate() {
-    ctx.clearRect(0, 0, w, h);
+let isoAngle = 0;
 
-    atoms.forEach((atom, i) => {
-        let orbitRotation = 0.3;
-        let angleElectron = angle + i * Math.PI / 1.8;
-        drawAtom(atom, angleElectron, orbitRotation);
-        drawLabels(atom);
-        drawLabelConnection(atom);
-    });
+function animateIso() {
+  isoCtx.clearRect(0, 0, iw, ih);
 
-    angle += 0.02;
-    requestAnimationFrame(animate);
+  atoms.forEach((a, i) => {
+    const r = 0.3;
+    const angE = isoAngle + i * Math.PI / 1.8;
+    drawIsotopeAtom(a, angE, r);
+    drawLabel(a);
+    drawLabelLine(a);
+  });
+
+  isoAngle += 0.02;
+  requestAnimationFrame(animateIso);
 }
-animate();
+
+animateIso();

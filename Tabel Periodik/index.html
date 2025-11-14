@@ -12,6 +12,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="m-0 p-0 bg-black text-white font-amaranth overflow-x-hidden">
@@ -44,18 +48,7 @@
     </div>
 
     <div class="flex justify-center items-center h-[500px]">
-      <div id="atom" class="relative w-[350px] h-[350px] inline-block">
-        <div id="nucleus"></div>
-        <div class="orbit">
-          <div class="electron"></div>
-        </div>
-        <div class="orbit">
-          <div class="electron"></div>
-        </div>
-        <div class="orbit">
-          <div class="electron"></div>
-        </div>
-      </div>
+      <canvas id="atomCanvas" width="800" height="600"></canvas>
     </div>
 
     <section class="space-y-12 py-20">
@@ -116,10 +109,25 @@
     </section>
 
     <section class="relative flex justify-center items-center h-[600px]">
-      <canvas id="canvas"></canvas>
+      <canvas id="isotopeCanvas"></canvas>
+    </section>
+
+    <section class="space-y-8 py-10 justify-center items-center flex flex-col">
+      <h1 class="text-3xl" style="font-family: Irish Grover, cursive">
+        atom yang bermuatan listrik
+      </h1>
+
+      <div class="flex items-center gap-4">
+        <canvas id="anion" width="500" height="200"></canvas>
+        <div class="text-8xl" style="font-family: Irish Grover, cursive">
+          ION
+        </div>
+        <canvas id="kation" width="500" height="200"></canvas>
+      </div>
     </section>
 
     <script src="./js/isotops.js"></script>
     <script src="./js/atom.js"></script>
+    <script src="./js/ion.js"></script>
   </body>
 </html>
