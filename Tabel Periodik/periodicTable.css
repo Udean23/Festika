@@ -202,6 +202,11 @@ body {
   transition: all 0.3s ease;
 }
 
+.mass{
+  font-size: 0.5rem;
+  opacity: 0.8;
+}
+
 @media (max-width: 768px) {
   .filter-table {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
