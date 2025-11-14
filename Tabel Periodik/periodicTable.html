@@ -6,7 +6,10 @@
     <title>Periodic Table</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./periodicTable.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <svg style="position: absolute; width: 0; height: 0">
     <filter id="hand-drawn-filter">
@@ -161,27 +164,52 @@
             </div>
 
             <div class="card-border bg-gray-900 bg-opacity-40 rounded-lg p-8">
-              <div
-                class="flex items-center gap-3 mb-6 text-4xl chalk-text font-bold"
-              >
-                <div class="hand-drawn-box w-16 h-16 transform rotate-3">H</div>
-                <span>+</span>
-                <div class="hand-drawn-box w-16 h-16 transform -rotate-2">
-                  Cl
+              <div class="flex flex-wrap items-start justify-center gap-3 mb-6">
+                <div class="flex flex-col items-center gap-2">
+                  <div
+                    class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform rotate-3"
+                  >
+                    H
+                  </div>
+                  <span class="text-xs sm:text-sm">Hidrogen</span>
                 </div>
-                <span>+</span>
-                <div class="hand-drawn-box w-16 h-16 transform rotate-6"> </div>
-                <span>=</span>
-                <div class="hand-drawn-circle w-20 h-16 transform -rotate-3">
-                  HCl
-                </div>
-              </div>
 
-              <div class="flex justify-between text-sm mb-6 px-2">
-                <span>Hidrogen</span>
-                <span>Klor</span>
-                <span></span>
-                <span class="mr-8">Asam Klorida</span>
+                <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                  >+</span
+                >
+
+                <div class="flex flex-col items-center gap-2">
+                  <div
+                    class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform -rotate-2"
+                  >
+                    Cl
+                  </div>
+                  <span class="text-xs sm:text-sm">Klor</span>
+                </div>
+
+                <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                  >+</span
+                >
+
+                <div class="flex flex-col items-center gap-2">
+                  <div
+                    class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform rotate-6"
+                  ></div>
+                  <span class="text-xs sm:text-sm invisible">-</span>
+                </div>
+
+                <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                  >=</span
+                >
+
+                <div class="flex flex-col items-center gap-2">
+                  <div
+                    class="hand-drawn-circle w-20 h-16 text-2xl chalk-text font-bold transform -rotate-3"
+                  >
+                    HCl
+                  </div>
+                  <span class="text-xs sm:text-sm">Asam Klorida</span>
+                </div>
               </div>
 
               <div class="text-base leading-relaxed">
