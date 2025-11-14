@@ -180,7 +180,7 @@ function animateAtom() {
 
   drawCurveArrow(acx + 180, acy - 140, acx + 15, acy - 12, "Proton");
   drawCurveArrow(acx + 180, acy + 80, acx + 15, acy + 12, "Neutron", "left", -1);
-  drawCurveArrow(80, atomCanvas.height - 60, acx - 80, acy + 100, "Elektron", "right");
+  drawCurveArrow(120, atomCanvas.height - 90, acx - 80, acy + 100, "Elektron", "right");
 
   requestAnimationFrame(animateAtom);
 }
