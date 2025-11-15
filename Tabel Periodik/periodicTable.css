@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .chalk-text, .filter-name, .filter-symbol, .periodic-table, .card-border {
@@ -54,6 +55,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: grab;
+  user-select: none;
 }
 
 .element:hover {
@@ -61,15 +64,22 @@ body {
   box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
 }
 
+.element.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
 .number {
   font-size: 0.5rem;
   opacity: 0.9;
 }
+
 .symbol {
   font-size: 1rem;
   font-weight: bold;
   margin: 2px 0;
 }
+
 .name {
   font-size: 0.5rem;
   opacity: 0.8;
@@ -78,27 +88,39 @@ body {
   text-overflow: ellipsis;
 }
 
+.mass {
+  font-size: 0.5rem;
+  opacity: 0.8;
+}
+
 .cat-alkali {
   --c: #8ca9ff;
 }
+
 .cat-alkali-tanah {
   --c: #ff5656;
 }
+
 .cat-transition {
   --c: #8c00ff;
 }
+
 .cat-pascatransisi {
   --c: #08cb00;
 }
+
 .cat-metaloid {
   --c: #ffa239;
 }
+
 .cat-nonlogam {
   --c: #0065f8;
 }
+
 .cat-gas-mulia {
   --c: #ff0b55;
 }
+
 .cat-aktanida {
   --c: #f93827;
 }
@@ -106,6 +128,7 @@ body {
 .cat-lantanida {
   --c: #332fd0;
 }
+
 .cat-lainnya {
   --c: #afafaf;
 }
@@ -148,17 +171,12 @@ body {
 
 .filter-option input:checked + .filter-element {
   transform: scale(1.05);
-  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c),
-    0 0 25px var(--c) inset;
+  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
 }
+
 .filter-element:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 8px var(--c), 0 0 16px var(--c), 0 0 20px var(--c) inset;
-}
-
-.filter-option input:checked + .filter-element {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
 }
 
 .filter-symbol {
@@ -176,24 +194,14 @@ body {
   max-width: 100%;
 }
 
-.filter-instruction {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: #aaa;
-  font-style: italic;
-}
-
 .filter-element.active {
   transform: scale(1.05);
-  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c),
-    0 0 25px var(--c) inset;
+  box-shadow: 0 0 0 2px var(--c), 0 0 12px var(--c), 0 0 20px var(--c), 0 0 25px var(--c) inset;
 }
 
 .filter-element.default {
   transform: scale(1);
-  box-shadow: 0 0 0 2px var(--c), 0 0 4px var(--c), 0 0 8px var(--c),
-    0 0 12px var(--c) inset;
+  box-shadow: 0 0 0 2px var(--c), 0 0 4px var(--c), 0 0 8px var(--c), 0 0 12px var(--c) inset;
 }
 
 .cat-all {
@@ -206,9 +214,25 @@ body {
   transition: all 0.3s ease;
 }
 
-.mass {
-  font-size: 0.5rem;
-  opacity: 0.8;
+.element.compatible {
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 15px var(--c), 0 0 30px var(--c), 0 0 45px var(--c) inset !important;
+  transform: scale(1.05) !important;
+  z-index: 10;
+}
+
+.element.dimmed {
+  opacity: 0.15;
+  filter: grayscale(0.8);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--c), 0 0 30px var(--c), 0 0 45px var(--c) inset;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--c), 0 0 50px var(--c), 0 0 60px var(--c) inset;
+  }
 }
 
 .card-border {
@@ -252,6 +276,55 @@ body {
   border: 4px solid white;
   border-radius: 50%;
   filter: url(#hand-drawn-filter);
+}
+
+.drop-target {
+  position: relative;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.drop-target.drag-over {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.element-symbol {
+  position: relative;
+  z-index: 1;
+}
+
+.element-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff0b55;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.element-count.show {
+  display: flex;
+}
+
+.drop-zone .element-name {
+  min-height: 16px;
+}
+
+.drop-zone .element-name:empty::before {
+  content: "\00a0";
 }
 
 @media (max-width: 768px) {
