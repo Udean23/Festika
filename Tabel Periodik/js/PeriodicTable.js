@@ -198,6 +198,7 @@ let scrollInterval = null;
 let lastDroppedElement = null;
 let isDragging = false;
 let compatibleElements = new Set();
+let isWheelScrolling = false;
 
 function createPeriodicTable() {
     const tableContainer = document.getElementById('periodic-table');
@@ -319,7 +320,8 @@ function handleDragStart(e) {
     this.classList.add('dragging');
     e.dataTransfer.effectAllowed = 'copy';
     e.dataTransfer.setData('text/html', this.innerHTML);
-    
+
+    enableWheelScroll();
     highlightCompatibleElements();
 }
 
@@ -327,7 +329,8 @@ function handleDragEnd(e) {
     this.classList.remove('dragging');
     isDragging = false;
     stopAutoScroll();
-    
+    disableWheelScroll();
+
     if (compatibleElements.size > 0) {
         maintainHighlightAfterDrop();
     } else {
@@ -337,7 +340,7 @@ function handleDragEnd(e) {
 
 function highlightCompatibleElements() {
     const currentElements = [];
-    
+
     for (let zone in droppedElements) {
         if (droppedElements[zone].atomicNumber) {
             for (let i = 0; i < droppedElements[zone].count; i++) {
@@ -345,22 +348,22 @@ function highlightCompatibleElements() {
             }
         }
     }
-    
+
     if (currentElements.length === 0) {
         return;
     }
-    
+
     compatibleElements.clear();
-    
+
     interstellarMolecules.forEach(molecule => {
         const sortedMolecule = [...molecule.composedOf].sort((a, b) => a - b);
         const sortedCurrent = [...currentElements].sort((a, b) => a - b);
-        
+
         if (sortedMolecule.length === sortedCurrent.length + 1) {
             let found = true;
             let currentIndex = 0;
             let missingElement = null;
-            
+
             for (let i = 0; i < sortedMolecule.length; i++) {
                 if (currentIndex < sortedCurrent.length && sortedMolecule[i] === sortedCurrent[currentIndex]) {
                     currentIndex++;
@@ -371,13 +374,13 @@ function highlightCompatibleElements() {
                     break;
                 }
             }
-            
+
             if (found && missingElement !== null) {
                 compatibleElements.add(missingElement);
             }
         }
     });
-    
+
     const allElements = document.querySelectorAll('.element');
     allElements.forEach(element => {
         const atomicNum = parseInt(element.getAttribute('data-atomic'));
@@ -415,7 +418,7 @@ function resetElementHighlight() {
 
 function updateCompatibilityHighlight() {
     const currentElements = [];
-    
+
     for (let zone in droppedElements) {
         if (droppedElements[zone].atomicNumber) {
             for (let i = 0; i < droppedElements[zone].count; i++) {
@@ -423,23 +426,23 @@ function updateCompatibilityHighlight() {
             }
         }
     }
-    
+
     if (currentElements.length === 0) {
         resetElementHighlight();
         return;
     }
-    
+
     compatibleElements.clear();
-    
+
     interstellarMolecules.forEach(molecule => {
         const sortedMolecule = [...molecule.composedOf].sort((a, b) => a - b);
         const sortedCurrent = [...currentElements].sort((a, b) => a - b);
-        
+
         if (sortedMolecule.length === sortedCurrent.length + 1) {
             let found = true;
             let currentIndex = 0;
             let missingElement = null;
-            
+
             for (let i = 0; i < sortedMolecule.length; i++) {
                 if (currentIndex < sortedCurrent.length && sortedMolecule[i] === sortedCurrent[currentIndex]) {
                     currentIndex++;
@@ -450,24 +453,32 @@ function updateCompatibilityHighlight() {
                     break;
                 }
             }
-            
+
             if (found && missingElement !== null) {
                 compatibleElements.add(missingElement);
             }
         }
     });
-    
+
     const allElements = document.querySelectorAll('.element');
-    allElements.forEach(element => {
-        const atomicNum = parseInt(element.getAttribute('data-atomic'));
-        if (compatibleElements.has(atomicNum)) {
-            element.classList.remove('compatible');
-            element.classList.remove('dimmed');
-        } else {
+
+    if (compatibleElements.size === 0) {
+        allElements.forEach(element => {
             element.classList.add('dimmed');
             element.classList.remove('compatible');
-        }
-    });
+        });
+    } else {
+        allElements.forEach(element => {
+            const atomicNum = parseInt(element.getAttribute('data-atomic'));
+            if (compatibleElements.has(atomicNum)) {
+                element.classList.remove('compatible');
+                element.classList.remove('dimmed');
+            } else {
+                element.classList.add('dimmed');
+                element.classList.remove('compatible');
+            }
+        });
+    }
 }
 
 function handleDragOver(e) {
@@ -475,12 +486,12 @@ function handleDragOver(e) {
         e.preventDefault();
     }
     e.dataTransfer.dropEffect = 'copy';
-    
-    const scrollThreshold = 100;
-    const scrollSpeed = 10;
+
+    const scrollThreshold = 150;
+    const scrollSpeed = 8;
     const viewportHeight = window.innerHeight;
     const mouseY = e.clientY;
-    
+
     if (mouseY < scrollThreshold) {
         startAutoScroll(-scrollSpeed);
     } else if (mouseY > viewportHeight - scrollThreshold) {
@@ -488,7 +499,7 @@ function handleDragOver(e) {
     } else {
         stopAutoScroll();
     }
-    
+
     return false;
 }
 
@@ -504,6 +515,26 @@ function stopAutoScroll() {
     if (scrollInterval) {
         clearInterval(scrollInterval);
         scrollInterval = null;
+    }
+}
+
+function enableWheelScroll() {
+    isWheelScrolling = true;
+    document.addEventListener('wheel', handleWheelScroll, { passive: false });
+}
+
+function disableWheelScroll() {
+    isWheelScrolling = false;
+    document.removeEventListener('wheel', handleWheelScroll);
+}
+
+function handleWheelScroll(e) {
+    if (isDragging) {
+        e.preventDefault();
+        window.scrollBy({
+            top: e.deltaY,
+            behavior: 'auto'
+        });
     }
 }
 
@@ -527,14 +558,14 @@ function handleDrop(e) {
 
     if (draggedElement) {
         let existingZone = null;
-        
+
         for (let zone in droppedElements) {
             if (droppedElements[zone].symbol === draggedElement.symbol && zone != targetZone) {
                 existingZone = zone;
                 break;
             }
         }
-        
+
         if (existingZone) {
             droppedElements[existingZone].count++;
             updateDropZone(existingZone);
@@ -558,7 +589,7 @@ function handleDrop(e) {
             }
             updateDropZone(targetZone);
         }
-        
+
         lastDroppedElement = draggedElement.atomicNumber;
         updateResult();
         updateElementInfo(draggedElement.atomicNumber);

@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/periodicTable.css" />
   </head>
 
   <body class="m-0 p-0 bg-black text-white font-amaranth overflow-x-hidden">
@@ -126,8 +127,12 @@
       </div>
     </section>
 
-    <section class="relative space-y-8 py-10 justify-center items-center flex flex-col">
-      <div class="absolute top-[180px] left-[1000px] -translate-x-3/4 z-10 pointer-events-none text-start">
+    <section
+      class="relative space-y-8 py-10 justify-center items-center flex flex-col"
+    >
+      <div
+        class="absolute top-[180px] left-[1000px] -translate-x-3/4 z-10 pointer-events-none text-start"
+      >
         <h2 class="text-cyan-400 text-5xl mb-2">Molekul</h2>
         <p class="text-3xl">gabungan dari dua atau lebih atom</p>
       </div>
@@ -135,11 +140,195 @@
       <canvas id="mainCanvas"></canvas>
     </section>
 
+    <div class="container mt-10 mb-20 px-4 sm:px-8 lg:px-16">
+      <div class="space-y-8 py-10 justify-center items-center flex">
+        <div class="text-8xl" style="font-family: Irish Grover, cursive">
+          Tabel <span class="text-cyan-400">Periodik</span>
+        </div>
+      </div>
+      <div class="category-filter">
+        <div class="filter-table">
+          <div class="filter-option" data-category="cat-alkali">
+            <input type="radio" name="category" id="filter-alkali" />
+            <label for="filter-alkali" class="filter-element cat-alkali">
+              <div class="filter-symbol">Alkali</div>
+              <div class="filter-name">Logam Alkali</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-alkali-tanah">
+            <input type="radio" name="category" id="filter-alkali-tanah" />
+            <label
+              for="filter-alkali-tanah"
+              class="filter-element cat-alkali-tanah"
+            >
+              <div class="filter-symbol">A.Tanah</div>
+              <div class="filter-name">Alkali Tanah</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-transition">
+            <input type="radio" name="category" id="filter-transition" />
+            <label
+              for="filter-transition"
+              class="filter-element cat-transition"
+            >
+              <div class="filter-symbol">Transisi</div>
+              <div class="filter-name">Logam Transisi</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-pascatransisi">
+            <input type="radio" name="category" id="filter-pascatransisi" />
+            <label
+              for="filter-pascatransisi"
+              class="filter-element cat-pascatransisi"
+            >
+              <div class="filter-symbol">Pasca-T</div>
+              <div class="filter-name">Pascatransisi</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-metaloid">
+            <input type="radio" name="category" id="filter-metaloid" />
+            <label for="filter-metaloid" class="filter-element cat-metaloid">
+              <div class="filter-symbol">Metaloid</div>
+              <div class="filter-name">Metaloid</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-nonlogam">
+            <input type="radio" name="category" id="filter-nonlogam" />
+            <label for="filter-nonlogam" class="filter-element cat-nonlogam">
+              <div class="filter-symbol">Nonlogam</div>
+              <div class="filter-name">Non-Logam</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-gas-mulia">
+            <input type="radio" name="category" id="filter-gas-mulia" />
+            <label for="filter-gas-mulia" class="filter-element cat-gas-mulia">
+              <div class="filter-symbol">Gas Mulia</div>
+              <div class="filter-name">Gas Mulia</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-lantanida">
+            <input type="radio" name="category" id="filter-lantanida" />
+            <label for="filter-lantanida" class="filter-element cat-lantanida">
+              <div class="filter-symbol">Lantanida</div>
+              <div class="filter-name">Lantanida</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-aktanida">
+            <input type="radio" name="category" id="filter-aktanida" />
+            <label for="filter-aktanida" class="filter-element cat-aktanida">
+              <div class="filter-symbol">Aktinida</div>
+              <div class="filter-name">Aktinida</div>
+            </label>
+          </div>
+          <div class="filter-option" data-category="cat-lainnya">
+            <input type="radio" name="category" id="filter-lainnya" />
+            <label for="filter-lainnya" class="filter-element cat-lainnya">
+              <div class="filter-symbol">Lainnya</div>
+              <div class="filter-name">Tidak Diketahui</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <div class="periodic-table" id="periodic-table"></div>
+      </div>
+      <div
+      class="relative z-10 min-h-screen flex items-center justify-center p-4 sm:p-8"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl w-full">
+          <div
+            class="card-border bg-gray-900 bg-opacity-40 rounded-lg p-8"
+            id="element-info-card"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="hand-drawn-box w-20 h-20 transform -rotate-6"
+                id="info-symbol"
+              ></div>
+              <h1 class="text-3xl font-bold chalk-text" id="info-title"></h1>
+            </div>
+            <p class="text-base leading-relaxed mb-6" id="info-description">
+              Drag dan drop unsur dari tabel periodik untuk melihat informasi
+              detail
+            </p>
+            <div class="space-y-2 text-sm" id="info-details"></div>
+          </div>
+          <div class="card-border bg-gray-900 bg-opacity-40 rounded-lg p-8">
+            <div class="flex flex-wrap items-start justify-center gap-3 mb-6">
+              <div
+                class="drop-zone flex flex-col items-center gap-2"
+                data-zone="1"
+              >
+                <div
+                  class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform rotate-3 drop-target"
+                  data-target="1"
+                >
+                  <span class="element-symbol"></span>
+                  <span class="element-count"></span>
+                </div>
+                <span class="text-xs sm:text-sm element-name"></span>
+              </div>
+              <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                >+</span
+              >
+              <div
+                class="drop-zone flex flex-col items-center gap-2"
+                data-zone="2"
+              >
+                <div
+                  class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform -rotate-2 drop-target"
+                  data-target="2"
+                >
+                  <span class="element-symbol"></span>
+                  <span class="element-count"></span>
+                </div>
+                <span class="text-xs sm:text-sm element-name"></span>
+              </div>
+              <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                >+</span
+              >
+              <div
+                class="drop-zone flex flex-col items-center gap-2"
+                data-zone="3"
+              >
+                <div
+                  class="hand-drawn-box w-16 h-16 text-3xl chalk-text font-bold transform rotate-6 drop-target"
+                  data-target="3"
+                >
+                  <span class="element-symbol"></span>
+                  <span class="element-count"></span>
+                </div>
+                <span class="text-xs sm:text-sm element-name"></span>
+              </div>
+              <span class="text-3xl sm:text-4xl chalk-text font-bold mt-4"
+                >=</span
+              >
+              <div class="flex flex-col items-center gap-2">
+                <div
+                  class="hand-drawn-circle w-20 h-16 text-2xl chalk-text font-bold transform -rotate-3"
+                  id="result-formula"
+                ></div>
+                <span class="text-xs sm:text-sm" id="result-name"></span>
+              </div>
+            </div>
+            <div class="text-base leading-relaxed">
+              <h1 id="molecule-title">Hasil Reaksi</h1>
+              <p id="molecule-description">
+                Kombinasikan unsur-unsur pada kotak di atas untuk membentuk
+                molekul
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/molekul.js"></script>
     <script src="./js/isotops.js"></script>
     <script src="./js/atom.js"></script>
     <script src="./js/ion.js"></script>
     <script src="./js/starfield.js"></script>
+    <script src="./js/PeriodicTable.js"></script>
     <script src="./js/PeriodicTableDummy.js"></script>
   </body>
 </html>
