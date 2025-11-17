@@ -82,16 +82,16 @@ function initMolekul() {
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
 
-    ctx.font = 'bold 48px Arial';
+    ctx.font = 'bold 48px amaranth, sans-serif';
     ctx.fillText('H', x + 260, y);
 
-    ctx.font = 'bold 28px Arial';
+    ctx.font = 'bold 28px amaranth, sans-serif';
     ctx.fillText('2', x + 290, y + 20);
 
-    ctx.font = 'bold 48px Arial';
+    ctx.font = 'bold 48px amaranth, sans-serif';
     ctx.fillText('O', x + 320, y);
 
-    ctx.font = '36px Arial';
+    ctx.font = '36px amaranth, sans-serif';
     ctx.fillText('O', x + 425, y + 70);
 
     ctx.font = '28px Arial';
@@ -117,10 +117,10 @@ function initMolekul() {
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
 
-    ctx.font = 'bold 48px Arial';
+    ctx.font = 'bold 48px Amaranth, sans-serif';
     ctx.fillText('O', x + 70, y);
 
-    ctx.font = 'bold 28px Arial';
+    ctx.font = 'bold 28px Amaranth, sans-serif';
     ctx.fillText('2', x + 100, y + 20);
   }
 
@@ -139,7 +139,7 @@ function initMolekul() {
     const redY  = redBaseY + floatRed;
     const redX2 = redBaseX + 170;
 
-    drawBall(blueBaseX, blueY, 100, '#3EC7FF', '#004A70');
+    drawBall(blueBaseX, blueY, 100, '#FF4B4B', '#8B0000');
     drawBall(blueBaseX - 120, blueY + 105, 55, '#2D90FF', '#003A60');
     drawBall(blueBaseX + 120, blueY + 105, 55, '#2D90FF', '#003A60');
 

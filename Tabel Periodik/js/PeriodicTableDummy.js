@@ -130,403 +130,1379 @@ const periodicTable = [
 
 const interstellarMolecules = [
     {
-        formula: "H2",
-        name: "Hidrogen Molekuler",
-        composedOf: [1, 1],
-        descriptions:
-            "Hidrogen molekuler (H₂) adalah gas hidrogen dalam bentuk dua atom hidrogen yang saling terikat. Ini adalah bentuk hidrogen yang paling umum di alam, misalnya di ruang antarbintang, di atmosfer beberapa planet, dan juga dapat diproduksi di Bumi lewat proses industri atau elektrolisis air. Contoh penggunaannya: H₂ dipakai sebagai bahan bakar ramah lingkungan (fuel cell) untuk mobil hidrogen, sebagai gas pelindung (shielding gas) dalam pengelasan, dan sebagai bahan baku utama di industri pupuk untuk membuat amonia (NH₃). Manfaatnya antara lain sebagai sumber energi bersih karena saat bereaksi dengan oksigen hanya menghasilkan air, membantu mengurangi emisi karbon, mendukung proses industri kimia skala besar, dan dalam riset medis sedang diteliti potensinya sebagai antioksidan yang dapat melindungi sel dari kerusakan oksidatif."
+        formula: "NaCl",
+        name: "Natrium Klorida (Garam Dapur)",
+        composedOf: [11, 17],
+        descriptions: "Natrium klorida adalah senyawa ionik yang terbentuk ketika logam natrium (Na) yang sangat reaktif bereaksi dengan gas klorin (Cl₂) yang beracun. Hasilnya adalah kristal padat berwarna putih yang kita kenal sebagai garam dapur. Senyawa ini penting untuk kehidupan, berfungsi dalam transmisi impuls saraf dan regulasi cairan tubuh. Dalam industri, NaCl digunakan sebagai pengawet makanan, bahan baku pembuatan soda api (NaOH) dan gas klorin melalui elektrolisis, serta untuk mencairkan es di jalan raya."
     },
     {
-        formula: "OH",
-        name: "Radikal Hidroksil",
-        composedOf: [8, 1],
-        descriptions:
-            "Radikal hidroksil (OH) adalah spesies reaktif yang terdiri dari satu atom oksigen dan satu atom hidrogen dengan satu elektron bebas, sehingga sangat mudah bereaksi dengan molekul lain. Di ruang antarbintang, OH berperan sebagai penanda adanya proses kimia aktif dan pembentukan molekul yang lebih kompleks, sedangkan di atmosfer bumi, radikal ini membantu menguraikan polutan. Contoh keberadaannya dapat ditemukan di awan molekuler dan di lapisan atmosfer atas. Manfaat ilmiahnya adalah sebagai tracer dalam astronomi untuk mempelajari kondisi fisik gas antarbintang serta dalam kimia atmosfer untuk memahami mekanisme pembersihan alami udara dari gas-gas berbahaya."
+        formula: "CO₂",
+        name: "Karbon Dioksida",
+        composedOf: [6, 8, 8],
+        descriptions: "Karbon dioksida adalah gas tak berwarna dan tidak berbau yang terbentuk dari pembakaran senyawa karbon (seperti bahan bakar fosil) dengan oksigen, serta dari proses respirasi makhluk hidup. Meskipun unsur pembentuknya adalah karbon (padatan) dan oksigen (gas yang menunjang kehidupan), CO₂ bersifat sebagai gas rumah kaca yang penting untuk menjaga suhu Bumi, namun peningkatan konsentrasinya berkontribusi pada pemanasan global. CO₂ juga digunakan dalam minuman berkarbonasi, alat pemadam kebakaran, dan sebagai pendingin dalam bentuk es kering (padatan CO₂)."
     },
     {
-        formula: "H2O",
+        formula: "N₂",
+        name: "Gas Nitrogen",
+        composedOf: [7, 7],
+        descriptions: "Gas nitrogen membentuk 78% atmosfer Bumi. Meskipun terdiri dari dua atom nitrogen yang dihubungkan oleh ikatan rangkap tiga yang sangat kuat, gas ini bersifat inert dan tidak mudah bereaksi. Nitrogen sangat penting untuk semua organisme hidup sebagai komponen protein, asam nukleat, dan klorofil. Dalam industri, nitrogen cair digunakan sebagai pendingin hingga -196°C, dan gas nitrogen digunakan dalam pengemasan makanan untuk mencegah oksidasi, serta dalam produksi elektronik untuk menciptakan atmosfer inert."
+    },
+    {
+        formula: "O₂",
+        name: "Gas Oksigen",
+        composedOf: [8, 8],
+        descriptions: "Gas oksigen merupakan 21% atmosfer Bumi dan sangat penting untuk respirasi hampir semua makhluk hidup. Oksigen mendukung pembakaran dan oksidasi. Dalam industri, oksigen murni digunakan dalam proses metalurgi, pengelasan, produksi baja, dan sebagai oksidator dalam bahan bakar roket. Di bidang medis, oksigen diberikan kepada pasien dengan gangguan pernapasan. Oksigen juga digunakan dalam pengolahan air limbah dan sebagai terapi hiperbarik."
+    },
+    {
+        formula: "Cl₂",
+        name: "Gas Klorin",
+        composedOf: [17, 17],
+        descriptions: "Gas klorin berwarna hijau kekuningan, beracun, dan memiliki bau yang menyengat. Meskipun berbahaya, senyawa ini sangat penting untuk pemurnian air minum dan kolam renang sebagai disinfektan yang efektif membunuh bakteri dan virus. Klorin juga digunakan dalam produksi PVC plastik, pelarut, pestisida, dan produk pemutih. Pada Perang Dunia I, gas klorin pernah digunakan sebagai senjata kimia karena sifatnya yang mengiritasi saluran pernapasan."
+    },
+    {
+        formula: "H₂O₂",
+        name: "Hidrogen Peroksida",
+        composedOf: [1, 1, 8, 8],
+        descriptions: "Hidrogen peroksida adalah cairan bening dengan sifat oksidator kuat. Pada konsentrasi 3%, digunakan sebagai antiseptik untuk membersihkan luka karena mampu membunuh mikroorganisme anaerob. Dalam konsentrasi lebih tinggi (6-35%), digunakan sebagai pemutih rambut, pemutih pakaian, dan disinfektan permukaan. Di industri, hidrogen peroksida digunakan dalam produksi kertas sebagai pemutih dan dalam teknologi lingkungan untuk mengolah limbah beracun."
+    },
+    {
+        formula: "CH₃OH",
+        name: "Metanol",
+        composedOf: [6, 1, 1, 1, 8, 1],
+        descriptions: "Metanol adalah alkohol paling sederhana, juga dikenal sebagai alkohol kayu. Cairan ini mudah terbakar, tidak berwarna, dan beracun jika tertelan—dapat menyebabkan kebutaan bahkan kematian. Metanol digunakan sebagai pelarut industri, antibeku, dan bahan baku untuk memproduksi formaldehida, biodiesel, dan berbagai bahan kimia lainnya. Dalam beberapa sel bahan bakar, metanol berfungsi sebagai sumber hidrogen alternatif."
+    },
+    {
+        formula: "C₂H₄",
+        name: "Etilena",
+        composedOf: [6, 6, 1, 1, 1, 1],
+        descriptions: "Etilena adalah hormon tanaman alami yang berperan dalam pematangan buah. Secara komersial, etilena merupakan salah satu bahan kimia organik paling penting yang diproduksi secara global. Senyawa ini digunakan untuk membuat polietilen (plastik paling umum), etilen glikol (antibeku), stirena, PVC, dan berbagai polimer lainnya. Etilena juga digunakan untuk mempercepat pematangan buah seperti pisang dan tomat dalam industri pertanian."
+    },
+    {
+        formula: "SO₂",
+        name: "Sulfur Dioksida",
+        composedOf: [16, 8, 8],
+        descriptions: "Sulfur dioksida adalah gas tidak berwarna dengan bau menyengat yang dihasilkan dari pembakaran bahan bakar fosil yang mengandung sulfur. Gas ini merupakan polutan udara utama yang menyebabkan hujan asam dan masalah pernapasan. Namun, sulfur dioksida juga memiliki kegunaan penting sebagai pengawet makanan (E220) dalam buah kering dan wine, sebagai pemutih dalam produksi kertas, dan sebagai disinfektan dalam industri pengolahan air."
+    },
+    {
+        formula: "NO₂",
+        name: "Nitrogen Dioksida",
+        composedOf: [7, 8, 8],
+        descriptions: "Nitrogen dioksida adalah gas beracun berwarna coklat kemerahan dengan bau tajam yang khas. Senyawa ini merupakan polutan udara utama yang berkontribusi terhadap pembentukan smog fotokimia dan hujan asam. NO₂ dihasilkan dari pembakaran suhu tinggi, terutama pada mesin kendaraan dan pembangkit listrik. Paparan jangka panjang dapat menyebabkan masalah pernapasan serius. Dalam industri, NO₂ digunakan sebagai perantara dalam produksi asam nitrat."
+    },
+    {
+        formula: "P₂O₅",
+        name: "Fosfor Pentoksida",
+        composedOf: [15, 15, 8, 8, 8, 8, 8],
+        descriptions: "Fosfor pentoksida adalah padatan putih yang sangat higroskopis (menyerap air dengan kuat) dan digunakan sebagai agen pengering yang sangat efektif dalam laboratorium dan industri. Senyawa ini bereaksi hebat dengan air menghasilkan asam fosfat. Fosfor pentoksida digunakan dalam produksi kaca optik, sebagai katalis dalam reaksi organik, dan sebagai bahan awal untuk berbagai senyawa fosfor. Harus ditangani dengan hati-hati karena dapat menyebabkan luka bakar kimia yang parah."
+    },
+    {
+        formula: "KMnO₄",
+        name: "Kalium Permanganat",
+        composedOf: [19, 25, 8, 8, 8, 8],
+        descriptions: "Kalium permanganat adalah senyawa kristalin ungu tua yang larut dalam air menghasilkan larutan ungu yang kuat. Senyawa ini adalah oksidator kuat dengan berbagai kegunaan: sebagai disinfektan untuk mengobati infeksi jamur pada kulit, untuk memurnikan air, dalam analisis kimia sebagai titran, dan sebagai pengoksidasi dalam sintesis organik. Warna ungunya yang khas juga dimanfaatkan dalam demonstrasi kimia dan sebagai indikator visual dalam berbagai reaksi."
+    },
+    {
+        formula: "K₂Cr₂O₇",
+        name: "Kalium Dikromat",
+        composedOf: [19, 19, 24, 24, 8, 8, 8, 8, 8, 8, 8],
+        descriptions: "Kalium dikromat adalah senyawa kristalin berwarna oranye-merah yang merupakan oksidator kuat. Senyawa ini digunakan dalam industri penyamakan kulit, sebagai mordan dalam pencelupan tekstil, dalam produksi pigmen, dan sebagai reagen pembersih laboratorium. Namun, senyawa kromium heksavalen bersifat karsinogenik dan toksik, sehingga penggunaannya semakin dibatasi. Dalam analisis kimia, kalium dikromat digunakan untuk menentukan konsentrasi zat pereduksi."
+    },
+    {
+        formula: "AgNO₃",
+        name: "Perak Nitrat",
+        composedOf: [47, 7, 8, 8, 8],
+        descriptions: "Perak nitrat adalah senyawa kristalin tidak berwarna yang larut dalam air dan sensitif terhadap cahaya. Senyawa ini memiliki banyak aplikasi penting: dalam fotografi tradisional, sebagai antiseptik untuk mencegah infeksi pada bayi baru lahir (credle), dalam produksi cermin, sebagai reagen dalam analisis klorida, dan dalam industri elektronik. Perak nitrat juga digunakan dalam tato untuk menandai kulit dan dalam pengobatan untuk menghilangkan kutil."
+    },
+    {
+        formula: "CuO",
+        name: "Tembaga(II) Oksida",
+        composedOf: [29, 8],
+        descriptions: "Tembaga(II) oksida adalah padatan hitam yang terjadi secara alami sebagai mineral tenorit. Senyawa ini digunakan sebagai pigmen dalam keramik untuk menghasilkan warna biru, hijau, dan merah, sebagai katalis dalam reaksi kimia industri, dan dalam sel surya sebagai semikonduktor tipe-p. Dalam suplemen nutrisi untuk hewan, tembaga oksida digunakan sebagai sumber tembaga. Senyawa ini juga berperan dalam proses termit untuk menghasilkan logam tembaga."
+    },
+    {
+        formula: "ZnO",
+        name: "Seng Oksida",
+        composedOf: [30, 8],
+        descriptions: "Seng oksida adalah bubuk putih yang tidak larut dalam air dan memiliki sifat semikonduktor. Senyawa ini banyak digunakan dalam produk perawatan kulit sebagai tabir surya fisik karena mampu memblokir sinar UV, dalam salep untuk mengobati iritasi kulit dan ruam popok, sebagai pigmen putih dalam cat, dan sebagai aditif dalam karet dan plastik. Dalam industri elektronik, ZnO digunakan dalam varistor, sensor gas, dan dioda pemancar cahaya."
+    },
+    {
+        formula: "PbO₂",
+        name: "Timbal(IV) Oksida",
+        composedOf: [82, 8, 8],
+        descriptions: "Timbal dioksida adalah padatan kristalin berwarna coklat tua atau hitam yang merupakan oksidator kuat. Senyawa ini merupakan komponen penting dalam elektrode positif baterai timbal-asam (aki mobil). Juga digunakan dalam korek api, bahan peledak, dan sebagai katalis dalam industri kimia. Namun, senyawa timbal bersifat toksik dan akumulasinya dalam tubuh dapat menyebabkan keracunan timbal dengan efek neurologis yang serius, sehingga penanganannya memerlukan tindakan pencegahan khusus."
+    },
+    {
+        formula: "HgO",
+        name: "Raksa(II) Oksida",
+        composedOf: [80, 8],
+        descriptions: "Raksa oksida ada dalam dua bentuk: merah dan kuning, tergantung pada ukuran partikelnya. Ketika dipanaskan, senyawa ini terurai menjadi raksa dan oksigen—sebuah reaksi yang dahulu digunakan oleh Joseph Priestley untuk mengisolasi oksigen. Raksa oksida digunakan dalam cat antikerak untuk kapal, baterai raksa, dan sebagai reagen dalam sintesis kimia. Karena toksisitas raksa yang tinggi, penggunaan senyawa ini sekarang sangat dibatasi untuk melindungi lingkungan dan kesehatan manusia."
+    },
+    {
+        formula: "NiO",
+        name: "Nikel(II) Oksida",
+        composedOf: [28, 8],
+        descriptions: "Nikel oksida adalah padatan kristalin berwarna hijau yang terjadi secara alami sebagai mineral bunsenit. Senyawa ini digunakan dalam pembuatan paduan nikel, sebagai katalis dalam hidrogenasi minyak nabati, dalam produksi keramik dan gelas (sebagai pigmen), dan dalam baterai nikel-kadmium. Nikel oksida juga digunakan dalam sel bahan bakar oksida padat dan sebagai material elektroda dalam superkapasitor. Paparan debu nikel oksida dapat menyebabkan iritasi pernapasan dan bersifat karsinogenik."
+    },
+    {
+        formula: "MnO₂",
+        name: "Mangan Dioksida",
+        composedOf: [25, 8, 8],
+        descriptions: "Mangan dioksida adalah padatan hitam atau coklat yang terjadi secara alami sebagai mineral pirolusit. Senyawa ini memiliki banyak aplikasi penting: sebagai katoda dalam baterai alkaline, sebagai katalis dalam produksi oksigen dari hidrogen peroksida, dalam produksi kaca untuk menghilangkan warna hijau yang disebabkan oleh pengotor besi, dan sebagai pigmen dalam bata dan keramik. Mangan dioksida juga digunakan dalam proses Fenton untuk pengolahan air limbah dan dalam produksi feromangan untuk industri baja."
+    },
+    {
+        formula: "TiO₂",
+        name: "Titanium Dioksida",
+        composedOf: [22, 8, 8],
+        descriptions: "Titanium dioksida adalah pigmen putih paling penting di dunia, memberikan kecerahan dan daya tutup yang sangat baik. Senyawa ini digunakan dalam cat, plastik, kertas, kosmetik (terutama tabir surya), pasta gigi, dan makanan (sebagai E171). Titanium dioksida juga memiliki sifat fotokatalitik—dapat menguraikan polutan organik ketika terkena sinar UV, sehingga digunakan dalam material bangunan 'self-cleaning'. Dalam bentuk nanopartikel, aplikasinya semakin luas di berbagai bidang teknologi."
+    },
+    {
+        formula: "V₂O₅",
+        name: "Vanadium Pentoksida",
+        composedOf: [23, 23, 8, 8, 8, 8, 8],
+        descriptions: "Vanadium pentoksida adalah padatan kristalin berwarna oranye yang merupakan katalis industri paling penting untuk produksi asam sulfat melalui proses kontak. Senyawa ini juga digunakan sebagai katalis dalam produksi anhidrida maleat dan dalam mengurangi polusi dari pembangkit listrik. Dalam industri keramik, vanadium pentoksida digunakan sebagai pigmen, dan dalam baterai flow vanadium redoks, senyawa ini berperan sebagai elektrolit. Paparan debu vanadium pentoksida dapat menyebabkan iritasi saluran pernapasan."
+    },
+    {
+        formula: "Cr₂O₃",
+        name: "Kromium(III) Oksida",
+        composedOf: [24, 24, 8, 8, 8],
+        descriptions: "Kromium oksida adalah senyawa berwarna hijau tua yang digunakan sebagai pigmen (hijau kromium) dalam cat, tinta, keramik, dan kaca. Senyawa ini juga berfungsi sebagai abrasif untuk memoles logam (rokuri) dan sebagai katalis dalam produksi propilena dan metanol. Berbeda dengan senyawa kromium heksavalen yang beracun, kromium(III) oksida relatif tidak berbahaya dan bahkan merupakan mikronutrien esensial yang membantu metabolisme gula dalam tubuh manusia."
+    },
+    {
+        formula: "Fe₃O₄",
+        name: "Magnetit (Besi Oksida Hitam)",
+        composedOf: [26, 26, 26, 8, 8, 8, 8],
+        descriptions: "Magnetit adalah mineral besi oksida yang bersifat feromagnetik—satu-satunya mineral yang secara alami bersifat magnet permanen. Senyawa ini merupakan bijih besi yang paling penting secara komersial. Magnetit digunakan dalam media perekaman magnetik, toner fotokopi, sebagai katalis dalam proses Haber-Bosch untuk produksi amonia, dan dalam biomedis untuk hyperthermia kanker dan sebagai agen kontras MRI. Nanopartikel magnetit memiliki aplikasi yang semakin penting dalam teknologi nano dan pengobatan."
+    },
+    {
+        formula: "AlCl₃",
+        name: "Aluminium Klorida",
+        composedOf: [13, 17, 17, 17],
+        descriptions: "Aluminium klorida adalah senyawa yang sangat penting dalam kimia organik sebagai katalis asam Lewis yang kuat, terutama dalam reaksi Friedel-Crafts untuk alkilasi dan asilasi senyawa aromatik. Senyawa ini juga digunakan dalam produksi etilbenzena (prekursor stirena), dalam pemurnian minyak bumi, dan sebagai koagulan dalam pengolahan air. Aluminium klorida higroskopis dan bereaksi hebat dengan air, menghasilkan asam klorida, sehingga harus disimpan dalam wadah kedap udara."
+    },
+    {
+        formula: "SiC",
+        name: "Silikon Karbida (Karborundum)",
+        composedOf: [14, 6],
+        descriptions: "Silikon karbida adalah senyawa keramik yang sangat keras (skala Mohs 9,5), hanya dilampaui oleh berlian dan boron nitrida kubik. Senyawa ini digunakan sebagai abrasif dalam amplas, roda gerinda, dan pemotong; sebagai semikonduktor dalam elektronik daya suhu tinggi; dalam armor kendaraan militer; dan dalam komponen tahan panas seperti rem cakram dan bantalan. Silikon karbida juga digunakan dalam perhiasan sebagai pengganti berlian dan dalam teleskop sebagai cermin karena koefisien ekspansi termalnya yang rendah."
+    },
+    {
+        formula: "BN",
+        name: "Boron Nitrida",
+        composedOf: [5, 7],
+        descriptions: "Boron nitrida ada dalam beberapa bentuk polimorf, yang paling terkenal adalah struktur heksagonal (mirip grafit) dan kubik (mirip berlian). Boron nitrida kubik adalah material terkeras kedua setelah berlian dan digunakan sebagai abrasif untuk mengeraskan logam. Boron nitrida heksagonal memiliki sifat pelumas yang sangat baik bahkan pada suhu tinggi, tahan panas hingga 1000°C, dan digunakan dalam kosmetik, komponen elektronik, dan aplikasi suhu tinggi. Material ini secara informal disebut 'berlian putih'."
+    },
+    {
+        formula: "CaCl₂",
+        name: "Kalsium Klorida",
+        composedOf: [20, 17, 17],
+        descriptions: "Kalsium klorida adalah senyawa higroskopis yang sangat menarik uap air dari udara. Sifat ini dimanfaatkan sebagai agen pengering dan untuk mengontrol debu di jalan tanah. Pada musim dingin, kalsium klorida ditaburkan di jalan untuk mencairkan es karena menurunkan titik beku air. Dalam industri makanan, senyawa ini digunakan sebagai pengawet dan penstabil. Kalsium klorida juga digunakan dalam kolam renang untuk menambah kekerasan kalsium air dan dalam pengolahan air limbah."
+    },
+    {
+        formula: "MgSO₄",
+        name: "Magnesium Sulfat (Garam Epsom)",
+        composedOf: [12, 16, 8, 8, 8, 8],
+        descriptions: "Magnesium sulfat yang dikenal sebagai garam Epsom, telah digunakan selama berabad-abad sebagai obat tradisional. Larutannya digunakan untuk merendam kaki yang lelah, mengurangi pembengkakan, dan mengobati sembelit ketika dikonsumsi secara oral. Dalam pertanian, magnesium sulfat digunakan sebagai pupuk untuk menyediakan magnesium dan sulfur yang esensial bagi tanaman. Senyawa ini juga digunakan dalam pembuatan tofu, bir, dan sebagai koagulan dalam industri tekstil."
+    },
+    {
+        formula: "NaF",
+        name: "Natrium Fluorida",
+        composedOf: [11, 9],
+        descriptions: "Natrium fluorida adalah sumber ion fluorida yang digunakan dalam pasta gigi dan air minum terfluoridasi untuk mencegah kerusakan gigi dengan memperkuat enamel gigi dan mengurangi kemampuan bakteri untuk menghasilkan asam. Senyawa ini juga digunakan sebagai insektisida, dalam produksi kaca dan enamel, dan dalam metalurgi sebagai fluks. Namun, fluorida dalam dosis tinggi bersifat toksik, sehingga penggunaan dalam produk konsumen diatur ketat untuk memastikan keamanannya."
+    },
+    {
+        formula: "KI",
+        name: "Kalium Iodida",
+        composedOf: [19, 53],
+        descriptions: "Kalium iodida adalah senyawa yang menyediakan iodida, nutrisi esensial untuk fungsi tiroid yang normal. Kekurangan iodida dapat menyebabkan gondok dan gangguan perkembangan. Dalam situasi darurat nuklir, kalium iodida diberikan untuk melindungi tiroid dari penyerapan iodida radioaktif dengan menjenuhkan kelenjar dengan iodida stabil. Senyawa ini juga digunakan dalam fotografi, sebagai reagen dalam kimia analitik, dan dalam pengobatan untuk mengobati penyakit tiroid tertentu."
+    },
+    {
+        formula: "NH₄NO₃",
+        name: "Amonium Nitrat",
+        composedOf: [7, 1, 1, 1, 1, 7, 8, 8, 8],
+        descriptions: "Amonium nitrat adalah padatan kristalin putih yang terutama digunakan sebagai pupuk nitrogen tinggi karena mengandung kedua bentuk nitrogen yang tersedia bagi tanaman: amonium dan nitrat. Namun, senyawa ini juga merupakan bahan peledak industri yang kuat ketika dicampur dengan bahan bakar. Beberapa kecelakaan industri terbesar dalam sejarah disebabkan oleh ledakan amonium nitrat. Senyawa ini juga digunakan dalam campuran pendingin instan dan sebagai komponen propelan roket amatir."
+    },
+    {
+        formula: "C₆H₁₂O₆",
+        name: "Glukosa",
+        composedOf: [6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8, 8, 8, 8, 8, 8],
+        descriptions: "Glukosa adalah gula sederhana (monosakarida) yang merupakan sumber energi utama bagi sebagian besar sel-sel makhluk hidup. Senyawa ini dibentuk oleh tanaman melalui proses fotosintesis yang menggabungkan karbon dioksida (CO₂) dan air (H₂O) dengan bantuan energi cahaya matahari. Glukosa merupakan bahan bakar bagi respirasi seluler, menghasilkan ATP. Dalam industri pangan, glukosa digunakan sebagai pemanis dan pengawet. Tingkat glukosa dalam darah (gula darah) merupakan indikator kesehatan yang kritikal, dimana ketidakseimbangannya dapat menyebabkan penyakit seperti diabetes."
+    },
+    {
+        formula: "CaCO₃",
+        name: "Kalsium Karbonat (Batu Kapur)",
+        composedOf: [20, 6, 8, 8, 8],
+        descriptions: "Kalsium karbonat adalah senyawa padat yang umum ditemukan dalam batuan seperti batu kapur, marmer, dan kapur. Ia terbentuk dari ion kalsium (Ca²⁺) dan ion karbonat (CO₃²⁻). Senyawa ini adalah komponen utama cangkang organisme laut seperti kerang dan siput. Dalam kehidupan sehari-hari, CaCO₃ digunakan sebagai bahan antasida untuk menetralkan asam lambung, bahan pengisi dalam pasta gigi, plastik, dan kertas, serta sebagai bahan baku utama dalam produksi semen. Ketika dipanaskan, ia terurai menjadi kalsium oksida (CaO) dan karbon dioksida (CO₂)."
+    },
+    {
+        formula: "NH₃",
+        name: "Amonia",
+        composedOf: [7, 1, 1, 1],
+        descriptions: "Amonia adalah gas yang memiliki bau tajam dan khas, terdiri dari satu atom nitrogen dan tiga atom hidrogen. Ia terbentuk melalui proses Haber-Bosch dengan mereaksikan gas nitrogen dari udara dan gas hidrogen. Amonia sangat penting bagi kehidupan sebagai sumber nitrogen untuk tanaman, dan sebagian besar diproduksi menjadi pupuk. Selain itu, amonia digunakan sebagai pendingin (refrigeran), bahan pembersih rumah tangga, dan bahan baku untuk pembuatan plastik, bahan peledak, dan tekstil."
+    },
+    {
+        formula: "H₂SO₄",
+        name: "Asam Sulfat",
+        composedOf: [1, 1, 16, 8, 8, 8, 8],
+        descriptions: "Asam sulfat adalah cairan berminyak, tidak berwarna, dan sangat korosif yang sering dijuluki 'rajanya kimia' karena kegunaannya yang sangat luas. Senyawa ini terbentuk dari reaksi belerang (sulfur), oksigen, dan air. Asam sulfat adalah komponen utama dalam baterai mobil (aki), serta digunakan dalam pembuatan pupuk (seperti superfosfat dan amonium sulfat), pemurnian minyak bumi, pengolahan air limbah, dan sebagai zat pengering dalam berbagai proses industri. Ia memiliki afinitas yang sangat tinggi terhadap air dan dapat menyebabkan luka bakar yang parah."
+    },
+    {
+        formula: "CH₄",
+        name: "Metana",
+        composedOf: [6, 1, 1, 1, 1],
+        descriptions: "Metana adalah komponen utama gas alam dan merupakan hidrokarbon paling sederhana. Ia terdiri dari satu atom karbon yang terikat pada empat atom hidrogen. Metana terbentuk dari dekomposisi material organik di lingkungan tanpa oksigen, seperti di rawa-rawa (oleh karena itu ia juga disebut gas rawa), tempat pembuangan sampah, dan sistem pencernaan hewan ternak (seperti sapi). Metana adalah bahan bakar fosil yang penting untuk pembangkit listrik dan pemanas rumah. Ia juga merupakan gas rumah kaya yang sangat poten, dengan efek pemanasan global per molekulnya jauh lebih besar daripada CO₂."
+    },
+    {
+        formula: "Fe₂O₃",
+        name: "Besi(III) Oksida (Karat)",
+        composedOf: [26, 26, 8, 8, 8],
+        descriptions: "Besi(III) oksida adalah senyawa yang dikenal sebagai karat, yang terbentuk ketika logam besi (Fe) terpapar oksigen (O₂) dan uap air dalam proses yang disebut korosi. Senyawa ini berwarna coklat-merah dan bersifat rapuh, berbeda dengan logam besi aslinya yang kuat dan berkilau. Proses perkaratan ini merugikan karena melemahkan struktur bangunan dan kendaraan yang terbuat dari besi. Namun, di sisi lain, Fe₂O₃ juga dimanfaatkan sebagai pigmen warna merah dan coklat pada cat, , serta sebagai bahan utama untuk pembuatan besi dan baja dalam tanur tiup."
+    },
+    {
+        formula: "Al₂O₃",
+        name: "Aluminium Oksida (Alumina)",
+        composedOf: [13, 13, 8, 8, 8],
+        descriptions: "Aluminium oksida adalah senyawa yang terbentuk ketika logam aluminium bereaksi dengan oksigen di udara, menciptakan lapisan pelindung tipis yang mencegah korosi lebih lanjut (proses pasivasi). Dalam bentuk mineralnya yang disebut korundum, Al₂O₃ sangat keras (skala Mohs 9) dan digunakan sebagai bahan abrasif pada amplas dan sebagai komponen utama dalam ruby dan safir (yang berwarna karena pengotor). Alumina juga merupakan bahan baku utama dalam produksi logam aluminium melalui proses elektrolisis, dan digunakan dalam keramik serta sebagai katalis dalam industri."
+    },
+    {
+        formula: "C₁₂H₂₂O₁₁",
+        name: "Sukrosa (Gula Pasir)",
+        composedOf: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+        descriptions: "Sukrosa adalah disakarida yang kita kenal sehari-hari sebagai gula pasir. Ia terdiri dari satu molekul glukosa dan satu molekul fruktosa yang terikat bersama. Sukrosa diproduksi secara alami oleh tanaman, terutama tebu dan bit gula. Senyawa ini adalah pemanis yang sangat umum dalam makanan dan minuman. Dalam tubuh, enzim sukrase memecah sukrosa menjadi glukosa dan fruktosa agar dapat diserap dan digunakan untuk energi. Konsumsi sukrosa berlebihan dikaitkan dengan berbagai masalah kesehatan, termasuk obesitas dan diabetes tipe 2."
+    },
+    {
+        formula: "H₂O",
         name: "Air",
         composedOf: [1, 1, 8],
         descriptions:
-            "Air (H₂O) adalah molekul yang tersusun dari dua atom hidrogen dan satu atom oksigen, dan merupakan senyawa esensial bagi kehidupan seperti yang kita kenal. Di ruang antarbintang, air bisa berupa uap atau es yang menempel pada butiran debu kosmik dan komet. Contoh keberadaannya adalah es air di komet, bulan-bulan es, dan awan antarbintang yang dingin. Manfaat air di konteks astrofisika adalah sebagai indikator potensi lingkungan layak huni, bahan pembentuk komet dan planet, serta sebagai salah satu molekul kunci dalam studi evolusi kimia di tata surya dan galaksi."
+            "Air (rumus kimia: H₂O) adalah cairan bening yang membentuk aliran sungai, danau, lautan, dan hujan di dunia, serta merupakan komponen utama cairan organisme. Sebagai senyawa kimia, molekul air mengandung satu atom oksigen dan dua atom hidrogen yang terikat oleh ikatan kovalen. Air berwujud cair pada suhu dan tekanan lingkungan standar, tetapi sering kali berada di Bumi bersama wujud padatnya, es; dan wujud gasnya, uap air. Air memiliki sifat unik seperti tegangan permukaan yang tinggi, kapasitas panas spesifik yang besar, dan kemampuan melarutkan banyak zat, menjadikannya pelarut universal. Contoh manfaat air sangat luas, mulai dari kebutuhan dasar makhluk hidup untuk bertahan hidup, penggunaan dalam pertanian, industri, hingga sebagai sumber energi melalui pembangkit listrik tenaga air. Selain itu, air juga berperan penting dalam proses kimia dan fisika di alam serta dalam berbagai aplikasi teknologi."
     },
     {
-        formula: "CO",
-        name: "Karbon Monoksida",
-        composedOf: [6, 8],
-        descriptions:
-            "Karbon monoksida (CO) adalah molekul yang terdiri dari satu atom karbon dan satu atom oksigen dengan ikatan kuat di antara keduanya. Di astronomi, CO adalah salah satu molekul paling penting karena pancaran gelombang mikronya dipakai untuk memetakan awan molekuler di galaksi. Contoh keberadaannya dapat ditemukan dalam jumlah besar di awan molekuler dingin tempat bintang-bintang baru lahir. Manfaat utamanya bagi ilmuwan adalah sebagai penanda densitas dan distribusi gas hidrogen yang sulit diamati secara langsung, sehingga membantu memahami proses pembentukan bintang dan struktur galaksi."
+        formula: "HCl",
+        name: "Asam Klorida",
+        composedOf: [1, 17],
+        descriptions: "Asam klorida adalah larutan berair dari gas hidrogen klorida (HCl). Di dalam lambung manusia, asam ini diproduksi secara alami untuk membantu pencernaan dan membunuh bakteri. Dalam industri, HCl adalah bahan kimia yang sangat penting digunakan untuk memproduksi senyawa organik dan anorganik, membersihkan permukaan logam (pengawetan baja), mengatur pH dalam berbagai proses, dan bahkan sebagai bahan pembersih rumah tangga untuk kerak keramik dan lantai."
     },
     {
-        formula: "CO2",
-        name: "Karbon Dioksida",
-        composedOf: [6, 8, 8],
-        descriptions:
-            "Karbon dioksida (CO₂) adalah molekul yang tersusun dari satu atom karbon dan dua atom oksigen dan dikenal sebagai gas rumah kaca penting di atmosfer planet. Di ruang antarbintang, CO₂ sering ditemukan dalam bentuk es yang membeku di permukaan butiran debu dan komet. Contoh keberadaannya terlihat pada es komet dan di atmosfer beberapa planet dan bulan. Manfaat mempelajari CO₂ dalam konteks antariksa adalah untuk memahami komposisi atmosfer planet, sejarah termal permukaan, serta peran gas rumah kaca dalam menjaga atau mengubah iklim planet dan bulan."
+        formula: "NaOH",
+        name: "Natrium Hidroksida (Soda Api)",
+        composedOf: [11, 8, 1],
+        descriptions: "Natrium hidroksida, dikenal sebagai soda api, adalah basa kuat yang bersifat kaustik. Senyawa ini terbentuk dari reaksi logam natrium dengan air, yang menghasilkan panas dan gas hidrogen. NaOH digunakan secara luas dalam industri sabun dan deterjen (saponifikasi), pembuatan kertas, pengolahan air minum, dan sebagai pembersih saluran pipa. Sifatnya yang dapat melarutkan minyak dan lemak membuatnya sangat efektif namun juga berbahaya jika terkena kulit karena dapat menyebabkan luka bakar kimia."
     },
     {
-        formula: "CH",
-        name: "Radikal Metilidina",
-        composedOf: [6, 1],
-        descriptions:
-            "Radikal metilidina (CH) adalah molekul sederhana yang terdiri dari satu atom karbon dan satu atom hidrogen dengan sifat sangat reaktif. Di ruang antarbintang, CH sering muncul di wilayah transisi antara gas atomik dan molekuler dan menjadi salah satu molekul pertama yang terbentuk saat karbon mulai berikatan dengan hidrogen. Contohnya terdeteksi dalam awan difus dan awan molekuler yang tidak terlalu padat. Manfaatnya dalam penelitian adalah sebagai penanda tahap awal kimia karbon di medium antarbintang dan sebagai indikator kondisi radiasi dan kerapatan gas."
+        formula: "CaO",
+        name: "Kalsium Oksida (Kapur Tohor)",
+        composedOf: [20, 8],
+        descriptions: "Kalsium oksida, atau kapur tohor, dihasilkan dari pemanasan kalsium karbonat (batu kapur) pada suhu tinggi. Senyawa padat putih ini bersifat basa dan sangat reaktif terhadap air, menghasilkan reaksi eksotermik yang menghasilkan kalsium hidroksida (Ca(OH)₂). Kapur tohor digunakan dalam industri konstruksi untuk membuat mortar, dalam industri baja untuk menghilangkan pengotor, dalam pengolahan air limbah, dan sebagai bahan pemurni dalam pembuatan gula."
     },
     {
-        formula: "CH2",
-        name: "Metilena",
-        composedOf: [6, 1, 1],
-        descriptions:
-            "Metilena (CH₂) adalah molekul yang terdiri dari satu atom karbon dan dua atom hidrogen dengan struktur yang sangat reaktif sehingga berperan sebagai perantara dalam banyak reaksi kimia organik. Di ruang antarbintang, CH₂ dianggap sebagai salah satu langkah awal dalam pembentukan molekul hidrokarbon yang lebih kompleks. Contohnya teridentifikasi di awan molekuler tempat bintang baru terbentuk. Manfaat ilmiahnya adalah membantu menjelaskan jalur reaksi dari atom karbon bebas menuju rantai karbon panjang dan molekul organik yang lebih besar."
+        formula: "C₂H₅OH",
+        name: "Etanol (Alkohol)",
+        composedOf: [6, 6, 1, 1, 1, 1, 1, 8, 1],
+        descriptions: "Etanol adalah alkohol yang paling dikenal, terbentuk dari fermentasi gula oleh ragi atau melalui hidrasi etilena. Senyawa cair tak berwarna ini mudah menguap dan mudah terbakar. Penggunaannya sangat beragam: sebagai bahan dalam minuman beralkohol, disinfektan dan antiseptik (terutama selama pandemi COVID-19), pelarut dalam parfum dan obat-obatan, dan sebagai bahan bakar nabati (bioetanol) yang dicampur dengan bensin."
     },
     {
-        formula: "CH3",
-        name: "Radikal Metil",
-        composedOf: [6, 1, 1, 1],
-        descriptions:
-            "Radikal metil (CH₃) adalah gugus yang terdiri dari satu atom karbon dan tiga atom hidrogen, dan menjadi salah satu blok pembangun utama bagi banyak molekul organik. Di ruang antarbintang, CH₃ berperan sebagai perantara penting dalam pembentukan metana dan hidrokarbon lainnya. Contohnya dapat muncul di awan molekuler padat dan di dekat bintang muda yang memanaskan gas di sekitarnya. Manfaat mempelajari CH₃ adalah untuk memahami bagaimana molekul organik sederhana berkembang menjadi senyawa yang lebih kompleks di medium antarbintang."
+        formula: "C₃H₈",
+        name: "Propana",
+        composedOf: [6, 6, 6, 1, 1, 1, 1, 1, 1, 1, 1],
+        descriptions: "Propana adalah gas hidrokarbon yang termasuk dalam kelompok LPG (Liquefied Petroleum Gas). Ia mudah dicairkan di bawah tekanan untuk disimpan dan ditransportasikan. Propana banyak digunakan sebagai bahan bakar untuk memasak, pemanas ruangan, dan kendaraan. Ia juga berperan sebagai bahan baku dalam industri petrokimia untuk memproduksi propilena, yang merupakan prekursor untuk berbagai plastik dan senyawa kimia lainnya. Propana terbakar lebih bersih dibandingkan bensin."
     },
     {
-        formula: "CH4",
-        name: "Metana",
-        composedOf: [6, 1, 1, 1, 1],
-        descriptions:
-            "Metana (CH₄) adalah molekul yang terdiri dari satu atom karbon yang terikat dengan empat atom hidrogen dan merupakan hidrokarbon paling sederhana. Di tata surya, metana ditemukan di atmosfer planet raksasa dan pada permukaan objek dingin seperti Titan. Di ruang antarbintang, metana dapat membeku sebagai es di butiran debu. Contoh manfaatnya adalah sebagai gas bahan bakar, penanda proses geologis atau biologis potensial di planet lain, dan sebagai bagian dari kimia awal yang mengarah ke molekul organik lebih besar."
+        formula: "NaHCO₃",
+        name: "Natrium Bikarbonat (Soda Kue)",
+        composedOf: [11, 1, 6, 8, 8, 8],
+        descriptions: "Natrium bikarbonat adalah padatan kristalin putih yang bersifat amfoter (dapat bersifat asam atau basa). Ketika dipanaskan atau bereaksi dengan asam, ia melepaskan gas karbon dioksida. Sifat inilah yang dimanfaatkan dalam pembuatan kue sebagai bahan pengembang. Selain itu, NaHCO₃ digunakan dalam pemadam api ringan, pasta gigi untuk pemutih gigi, penetral asam lambung (antasida), dan sebagai pembersih alami untuk permukaan dapur dan kamar mandi."
     },
     {
-        formula: "NH3",
-        name: "Amonia",
-        composedOf: [7, 1, 1, 1],
-        descriptions:
-            "Amonia (NH₃) adalah molekul yang terdiri dari satu atom nitrogen dan tiga atom hidrogen dan berbentuk gas dengan bau tajam di Bumi. Di ruang antarbintang, amonia ditemukan di awan molekuler padat dan sering dipakai untuk mengukur suhu gas karena garis spektrumnya sensitif terhadap kondisi fisik. Contohnya juga ada di atmosfer beberapa planet raksasa seperti Jupiter dan Saturnus. Manfaatnya dalam penelitian adalah sebagai termometer kosmik dan sebagai molekul kunci dalam kimia nitrogen yang bisa mengarah ke pembentukan asam amino dan senyawa biologis lainnya."
+        formula: "CH₃COOH",
+        name: "Asam Asetat (Cuka)",
+        composedOf: [6, 1, 1, 1, 8, 8, 1],
+        descriptions: "Asam asetat adalah asam organik yang memberikan rasa asam dan aroma khas pada cuka (dengan konsentrasi sekitar 4-8%). Dalam bentuk murni (asam asetat glasial), ia adalah cairan higroskopis yang dapat menyebabkan luka bakar. Asam asetat digunakan dalam produksi polimer selulosa asetat (untuk film fotografi dan rayon), polivinil asetat (lem kayu), serta berbagai pelarut, pewarna, dan obat-obatan. Ia juga merupakan pereaksi kimia yang penting di laboratorium."
     },
     {
-        formula: "HCN",
-        name: "Hidrogen Sianida",
-        composedOf: [1, 6, 7],
-        descriptions:
-            "Hidrogen sianida (HCN) adalah molekul yang terdiri dari hidrogen, karbon, dan nitrogen dengan ikatan rangkap antara karbon dan nitrogen yang sangat kuat. Di Bumi, HCN dikenal sebagai zat beracun, tetapi di ruang antarbintang ia justru penting sebagai bahan awal pembentukan molekul organik kompleks. Contohnya banyak ditemukan di awan molekuler padat dan di atmosfer beberapa planet serta komet. Manfaat ilmiahnya adalah sebagai indikator kimia organik kaya nitrogen dan sebagai salah satu kandidat molekul prekursor bagi pembentukan asam amino dalam skala kosmik."
+        formula: "SiO₂",
+        name: "Silikon Dioksida (Silika)",
+        composedOf: [14, 8, 8],
+        descriptions: "Silikon dioksida adalah komponen utama pasir, kuarsa, dan banyak batuan lainnya. Ini adalah salah satu mineral paling melimpah di kerak Bumi. Silika memiliki titik leleh yang sangat tinggi dan digunakan dalam pembuatan kaca, keramik, dan semen. Bentuk mikrokristalinnya (seperti opal) digunakan sebagai pengisi dalam pasta gigi, dan bentuk gelnya (silika gel) digunakan sebagai pengering (desikan) dalam kemasan produk elektronik dan makanan untuk menyerap kelembaban."
     },
     {
-        formula: "HNC",
-        name: "Hidrogen Isosianida",
-        composedOf: [1, 7, 6],
-        descriptions:
-            "Hidrogen isosianida (HNC) adalah isomer dari HCN, artinya memiliki komposisi atom sama tetapi susunan berbeda sehingga sifat kimianya juga sedikit berbeda. Di ruang antarbintang, rasio HNC terhadap HCN dipakai untuk menilai temperatur dan kondisi evolusi awan molekuler. Contohnya terdeteksi di wilayah pembentukan bintang dan awan gelap yang sangat dingin. Manfaat penelitian HNC adalah untuk memahami keseimbangan kimia, suhu, dan dinamika gas dalam berbagai fase pembentukan bintang."
+        formula: "Mg(OH)₂",
+        name: "Magnesium Hidroksida (Susu Magnesia)",
+        composedOf: [12, 8, 1, 8, 1],
+        descriptions: "Magnesium hidroksida adalah basa lemah yang kurang larut dalam air. Suspensinya dalam air dikenal sebagai 'susu magnesia', yang digunakan sebagai antasida untuk menetralkan keasaman lambung dan sebagai pencahar ringan. Senyawa ini juga digunakan sebagai bahan penghambat api (flame retardant) dalam plastik karena ketika dipanaskan, ia terurai menjadi magnesium oksida dan uap air, yang membantu mendinginkan dan mengencerkan gas yang mudah terbakar."
     },
     {
-        formula: "CN",
-        name: "Radikal Sianogen",
-        composedOf: [6, 7],
-        descriptions:
-            "Radikal sianogen (CN) adalah molekul kecil yang terdiri dari satu atom karbon dan satu atom nitrogen dengan satu elektron tak berpasangan, sehingga sangat reaktif. Di astronomi, CN sering digunakan untuk mengukur komposisi kimia komet dan awan antarbintang karena garis spektrumnya cukup kuat. Contoh keberadaannya tampak jelas pada spektrum komet saat mendekati Matahari. Manfaatnya sebagai penanda kandungan karbon-nitrogen dan sebagai indikator proses fotodisosiasi di sekitar bintang."
+        formula: "KNO₃",
+        name: "Kalium Nitrat (Saltpeter)",
+        composedOf: [19, 7, 8, 8, 8],
+        descriptions: "Kalium nitrat adalah senyawa kristalin yang telah digunakan selama berabad-abad. Ia adalah komponen utama dalam bubuk mesiu (bersama dengan belerang dan arang) karena melepaskan oksigen saat dipanaskan, sehingga mendukung pembakaran cepat bahkan tanpa udara. Dalam pertanian, KNO₃ adalah pupuk yang sangat baik karena menyediakan dua nutrisi esensial: kalium dan nitrogen. Ia juga digunakan dalam pengawetan daging (seperti pada sosis dan daging asin) dan sebagai bahan dalam pasta gigi untuk gigi sensitif."
     },
     {
-        formula: "NO",
-        name: "Nitrogen Monoksida",
-        composedOf: [7, 8],
-        descriptions:
-            "Nitrogen monoksida (NO) adalah molekul yang terdiri dari satu atom nitrogen dan satu atom oksigen yang di Bumi dikenal terkait dengan proses biologis dan polusi udara. Di ruang antarbintang, NO terdeteksi di awan molekuler dan di sekitar bintang muda sebagai hasil reaksi antara nitrogen dan oksigen di kondisi dingin. Contoh manfaat ilmiahnya adalah sebagai penanda kimia nitrogen-oksigen serta membantu memetakan bagaimana unsur biogenik seperti N dan O terikat dalam molekul di luar bumi."
+        formula: "CuSO₄",
+        name: "Tembaga(II) Sulfat (Nila Vitriol)",
+        composedOf: [29, 16, 8, 8, 8, 8],
+        descriptions: "Tembaga(II) sulfat adalah senyawa kristalin berwarna biru cerah yang larut dalam air. Dalam bentuk anhidrat (tanpa air), ia berwarna putih. Senyawa ini digunakan sebagai fungisida dan algasida dalam campuran Bordeaux untuk melindungi tanaman. Di laboratorium, ia adalah reagen umum untuk reaksi kimia. Dalam industri, ia digunakan dalam elektroplating, sebagai mordan dalam pencelupan kain, dan dalam proses pemurnian tembaga. Hidratnya (CuSO₄·5H₂O) menunjukkan bagaimana air dapat terikat dalam struktur kristal."
     },
     {
-        formula: "N2",
-        name: "Nitrogen Molekuler",
-        composedOf: [7, 7],
-        descriptions:
-            "Nitrogen molekuler (N₂) adalah molekul dua atom nitrogen yang terikat kuat satu sama lain dan merupakan komponen utama atmosfer Bumi. Di ruang antarbintang, N₂ sulit dideteksi secara langsung karena transisinya lemah, tapi keberadaannya diperkirakan penting sebagai reservoir nitrogen. Contohnya dipelajari secara tidak langsung melalui molekul turunan seperti N₂H⁺. Manfaat memahami N₂ adalah untuk mengetahui seberapa banyak nitrogen yang tersedia dalam bentuk inert dan bagaimana ia kemudian dikonversi menjadi molekul reaktif yang mendukung kimia organik."
+        formula: "O₃",
+        name: "Ozon",
+        composedOf: [8, 8, 8],
+        descriptions: "Ozon adalah molekul yang terdiri dari tiga atom oksigen. Di stratosfer, lapisan ozon melindungi kehidupan di Bumi dengan menyerap sebagian besar radiasi ultraviolet (UV) dari matahari. Namun, di permukaan tanah, ozon adalah polutan udara yang dapat mengiritasi sistem pernapasan dan merusak tanaman. Ozon adalah oksidator yang kuat dan digunakan untuk mensterilkan air minum, memutihkan kertas dan tekstil, serta menghilangkan bau dan kontaminan di udara."
     },
     {
-        formula: "O2",
-        name: "Oksigen Molekuler",
-        composedOf: [8, 8],
-        descriptions:
-            "Oksigen molekuler (O₂) adalah gas yang terdiri dari dua atom oksigen dan menjadi komponen vital atmosfer Bumi bagi respirasi makhluk hidup. Di ruang antarbintang, O₂ ternyata jauh lebih sulit ditemukan daripada yang diprediksi teori, sehingga setiap deteksinya sangat berharga. Contohnya beberapa kali dilaporkan di awan molekuler padat tertentu. Manfaat penelitian O₂ adalah untuk memahami keseimbangan kimia oksigen, bagaimana oksigen lebih sering tersimpan dalam bentuk air atau karbon monoksida, dan implikasinya bagi potensi lingkungan layak huni."
+        formula: "Ca(OH)₂",
+        name: "Kalsium Hidroksida (Kapur Sirih)",
+        composedOf: [20, 8, 1, 8, 1],
+        descriptions: "Kalsium hidroksida, dikenal sebagai kapur sirih atau hidrat kapur, dihasilkan dari reaksi kalsium oksida (kapur tohor) dengan air. Suspensinya dalam air disebut 'air kapur'. Senyawa ini digunakan dalam industri konstruksi untuk membuat plester dan mortar. Dalam industri makanan, ia digunakan dalam proses 'pengapuran' untuk membuat nira menjadi gula dan dalam pembuatan tortilla jagung. Ia juga digunakan dalam pengolahan air untuk menetralkan keasaman dan dalam kedokteran gigi untuk terapi saluran akar."
     },
     {
-        formula: "H2CO",
-        name: "Formaldehida",
-        composedOf: [1, 1, 6, 8],
-        descriptions:
-            "Formaldehida (H₂CO) adalah molekul organik sederhana yang terdiri dari dua atom hidrogen, satu atom karbon, dan satu atom oksigen dengan gugus aldehida. Di ruang antarbintang, formaldehida sering ditemukan di awan molekuler padat dan pada lapisan es butiran debu. Contohnya juga telah terdeteksi pada komet dan di sekitar bintang muda. Manfaatnya dalam astrokimia adalah sebagai perantara pembentukan gula sederhana dan senyawa organik yang lebih kompleks, serta sebagai indikator adanya proses fotokimia dan pemanasan lokal."
+        formula: "Na₂CO₃",
+        name: "Natrium Karbonat (Soda Abu)",
+        composedOf: [11, 11, 6, 8, 8, 8],
+        descriptions: "Natrium karbonat adalah garam natrium dari asam karbonat. Secara historis, ia diperoleh dari abu tanaman yang tumbuh di tanah kaya natrium, sehingga dinamai 'soda abu'. Senyawa ini adalah komponen kunci dalam pembuatan kaca, di mana ia menurunkan titik leleh silika. Ia juga digunakan dalam produksi sabun dan deterjen sebagai pelunak air, dalam industri pulp dan kertas, dan untuk menetralkan keasaman dalam berbagai proses kimia."
     },
     {
-        formula: "HCOOH",
-        name: "Asam Format",
-        composedOf: [1, 1, 6, 8, 8, 1],
-        descriptions:
-            "Asam format (HCOOH) adalah asam karboksilat paling sederhana yang terdiri dari atom hidrogen, karbon, dan dua oksigen, salah satunya membentuk gugus –COOH. Di ruang antarbintang, asam ini ditemukan pada awan molekuler kaya organik dan di sekitar protobintang. Contohnya juga muncul pada komet sebagai bagian dari komposisi es organik. Manfaat mempelajari HCOOH adalah untuk memahami bagaimana asam organik dapat terbentuk jauh sebelum planet dan kehidupan muncul, sehingga memberi petunjuk tentang asal-usul kimia prebiotik."
-    },
-    {
-        formula: "CH3OH",
-        name: "Metanol",
-        composedOf: [6, 1, 1, 1, 1, 8],
-        descriptions:
-            "Metanol (CH₃OH) adalah alkohol paling sederhana yang terdiri dari satu atom karbon, empat atom hidrogen, dan satu atom oksigen. Di ruang antarbintang, metanol biasanya terbentuk pada permukaan butiran es lewat reaksi bertahap dari CO dan H. Contohnya sangat melimpah di daerah pembentukan bintang dan sering memancarkan garis maser yang kuat. Manfaatnya adalah sebagai penanda awan molekuler aktif, sebagai bahan dasar pembentukan molekul organik yang lebih kompleks, dan sebagai indikator proses kimia permukaan butiran debu."
-    },
-    {
-        formula: "C2H2",
-        name: "Asetilena",
-        composedOf: [6, 6, 1, 1],
-        descriptions:
-            "Asetilena (C₂H₂) adalah hidrokarbon tak jenuh dengan dua atom karbon yang terikat rangkap tiga dan dua atom hidrogen. Di astrofisika, asetilena ditemukan di atmosfer bintang kaya karbon dan di beberapa atmosfer planet serta bulan. Contohnya juga muncul dalam kimia fotolitik di atmosfer atas Titan. Manfaatnya adalah sebagai molekul kunci dalam pembentukan rantai karbon panjang dan jelaga kosmik, serta sebagai indikator lingkungan yang kaya karbon dan radiasi ultraviolet."
-    },
-    {
-        formula: "C2H4",
-        name: "Etilena",
-        composedOf: [6, 6, 1, 1, 1, 1],
-        descriptions:
-            "Etilena (C₂H₄) adalah hidrokarbon tak jenuh dengan dua atom karbon yang dihubungkan ikatan rangkap dua dan empat atom hidrogen. Di ruang antarbintang dan atmosfer planet, etilena dapat terbentuk dari pemecahan dan rekombinasi hidrokarbon yang lebih sederhana seperti metana. Contohnya ditemukan di atmosfer beberapa planet raksasa dan bulan. Manfaat ilmiahnya adalah sebagai penanda reaksi fotokimia hidrokarbon dan sebagai salah satu langkah menuju pembentukan molekul organik yang lebih berat."
-    },
-    {
-        formula: "C2H6",
-        name: "Etana",
-        composedOf: [6, 6, 1, 1, 1, 1, 1, 1],
-        descriptions:
-            "Etana (C₂H₆) adalah hidrokarbon jenuh dengan dua atom karbon dan enam atom hidrogen yang merupakan lanjutan paling sederhana setelah metana. Di tata surya, etana ditemukan di atmosfer planet raksasa dan menjadi bagian dari danau hidrokarbon di permukaan Titan. Di ruang antarbintang, etana bisa terbentuk di es butiran debu. Manfaat mempelajari etana adalah untuk memahami evolusi kimia hidrokarbon di atmosfer dan di permukaan benda-benda dingin, serta kaitannya dengan potensi lingkungan kimia unik seperti di Titan."
-    },
-    {
-        formula: "HC3N",
-        name: "Sianoasetilena",
-        composedOf: [1, 6, 6, 6, 7],
-        descriptions:
-            "Sianoasetilena (HC₃N) adalah molekul linear yang menggabungkan rantai tiga karbon dengan gugus sianida, sehingga kaya akan karbon dan nitrogen. Di ruang antarbintang, HC₃N sering ditemukan di awan molekuler padat dan di cakram protoplanet. Contohnya juga terdeteksi di atmosfer Titan. Manfaatnya adalah sebagai molekul kunci dalam kimia organik kaya nitrogen dan sebagai salah satu kandidat prekursor senyawa prabiotik yang lebih kompleks."
-    },
-    {
-        formula: "HCO+",
-        name: "Ion Formil",
-        composedOf: [1, 6, 8],
-        descriptions:
-            "Ion formil (HCO⁺) adalah kation yang terdiri dari hidrogen, karbon, dan oksigen, dan menjadi salah satu ion paling penting di awan molekuler. Di astrofisika, HCO⁺ sering digunakan untuk melacak gas padat dan terionisasi lemah karena garis spektrumnya kuat dan mudah diamati. Contohnya banyak ditemukan di wilayah pembentukan bintang dan di sekitar inti galaksi aktif. Manfaatnya bagi penelitian adalah sebagai tracer kerapatan gas tinggi dan sebagai indikator proses ionisasi kosmik."
-    },
-    {
-        formula: "NH2CHO",
-        name: "Formamida",
-        composedOf: [7, 1, 1, 6, 8],
-        descriptions:
-            "Formamida (NH₂CHO) adalah molekul organik yang mengandung gugus amida, menggabungkan nitrogen, hidrogen, karbon, dan oksigen dalam satu struktur. Di ruang antarbintang, formamida telah terdeteksi di awan molekuler kaya organik dan di sekitar protobintang. Contohnya sering disebut sebagai salah satu molekul yang relevan dengan kimia prabiotik. Manfaat mempelajarinya adalah karena formamida dianggap dapat menjadi bahan awal pembentukan basa nitrogen DNA/RNA dan senyawa biologis lainnya."
-    },
-    {
-        formula: "CH3CN",
-        name: "Asetonitril",
-        composedOf: [6, 1, 1, 1, 6, 7],
-        descriptions:
-            "Asetonitril (CH₃CN) adalah molekul organik yang menggabungkan gugus metil dengan gugus nitril, sehingga kaya karbon dan nitrogen. Di ruang antarbintang, acetonitrile ditemukan di daerah pembentukan bintang masif dan di awan molekuler yang sangat padat. Contohnya juga muncul dalam komposisi beberapa komet. Manfaatnya sebagai penanda lingkungan kaya organik dan sebagai langkah menuju pembentukan molekul organik kompleks yang berpotensi relevan untuk kimia kehidupan."
-    },
-    {
-        formula: "C6H6",
+        formula: "C₆H₆",
         name: "Benzena",
         composedOf: [6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1],
-        descriptions:
-            "Benzena (C₆H₆) adalah molekul aromatik cincin dengan enam atom karbon dan enam atom hidrogen, yang menjadi struktur dasar bagi banyak senyawa aromatik lain. Dalam astrofisika, benzena dianggap sebagai salah satu blok pembangun awal dari hidrokarbon aromatik polisiklik (PAH). Contohnya telah diusulkan hadir di atmosfer Titan dan di beberapa lingkungan kaya karbon. Manfaat mempelajari benzena adalah untuk memahami bagaimana cincin aromatik terbentuk di ruang dan bagaimana PAH berkembang yang kemudian memengaruhi emisi inframerah di galaksi."
+        descriptions: "Benzena adalah senyawa hidrokarbon aromatik yang paling sederhana, dengan struktur cincin segi enam yang unik dan stabil (dikenal sebagai resonansi). Ia adalah cairan tak berwarna dan mudah terbakar dengan aroma manis. Benzena adalah bahan baku fundamental dalam industri kimia untuk memproduksi plastik (seperti polistirena), nilon, resin, karet sintetis, pewarna, deterjen, obat-obatan, dan pestisida. Paparan benzena dalam konsentrasi tinggi diketahui bersifat karsinogenik (dapat menyebabkan kanker)."
     },
     {
-        formula: "SiO",
-        name: "Silikon Monoksida",
-        composedOf: [14, 8],
-        descriptions:
-            "Silikon monoksida (SiO) adalah molekul yang terdiri dari satu atom silikon dan satu atom oksigen dan sering terkait dengan debu silikat di ruang antarbintang. Di daerah pembentukan bintang dan di jet protostellar, garis emisi SiO kuat karena molekul ini dapat terbentuk ketika debu silikat hancur oleh gelombang kejut. Contohnya digunakan untuk memetakan aliran keluar gas dari bintang muda. Manfaat ilmiahnya adalah sebagai penanda proses kejut, penghancuran dan pembentukan ulang debu, serta dinamika gas di sekitar protobintang."
+        formula: "LiF",
+        name: "Litium Fluorida",
+        composedOf: [3, 9],
+        descriptions: "Litium fluorida adalah senyawa kristalin putih dengan titik leleh tinggi yang digunakan dalam produksi lensa optik untuk spektrometer UV karena transparannya di wilayah ultraviolet. Senyawa ini juga merupakan komponen dalam baterai litium dan sebagai flux dalam metalurgi aluminium. Dalam bidang nuklir, litium fluorida digunakan sebagai bahan penyerap neutron."
     },
     {
-        formula: "SiS",
-        name: "Silikon Sulfida",
-        composedOf: [14, 16],
-        descriptions:
-            "Silikon sulfida (SiS) adalah molekul yang terbentuk dari atom silikon dan sulfur dan biasanya muncul di lingkungan yang kaya unsur berat di sekitar bintang tua atau bintang kaya karbon. Di cangkang gas yang mengelilingi bintang raksasa merah tertentu, SiS dapat menjadi penanda kombinasi antara kimia silikon dan sulfur. Contohnya juga telah terdeteksi dalam beberapa awan molekuler. Manfaat mempelajari SiS adalah untuk memahami bagaimana unsur berat seperti silikon dan sulfur didistribusikan ke medium antarbintang melalui angin bintang."
+        formula: "BeO",
+        name: "Berilium Oksida",
+        composedOf: [4, 8],
+        descriptions: "Berilium oksida adalah keramik teknis dengan konduktivitas termal yang sangat tinggi dan isolator listrik yang baik. Digunakan dalam elektronik daya tinggi sebagai substrat untuk sirkuit terpadu, dalam aplikasi nuklir sebagai moderator neutron, dan dalam laser sebagai bahan host. Sangat beracun jika terhirup dan memerlukan penanganan khusus."
     },
     {
-        formula: "HC5N",
-        name: "Sianobutadiina",
-        composedOf: [1, 6, 6, 6, 6, 6, 7],
-        descriptions:
-            "Sianobutadiina (HC₅N) adalah molekul rantai panjang yang menggabungkan lima atom karbon dengan gugus sianida di ujung rantai. Di ruang antarbintang, molekul ini muncul di awan molekuler yang sangat dingin dan padat di mana rantai karbon panjang dapat terbentuk. Contohnya terdeteksi di awan kaya karbon seperti TMC-1. Manfaat ilmiahnya adalah untuk melacak perkembangan rantai karbon yang semakin panjang dan untuk menguji model kimia yang menjelaskan pembentukan molekul organik kompleks."
+        formula: "B₂O₃",
+        name: "Boron Trioksida",
+        composedOf: [5, 5, 8, 8, 8],
+        descriptions: "Boron trioksida adalah gelas anorganik yang digunakan dalam produksi fiberglass, peralatan laboratorium tahan panas, dan enamel. Sebagai aditif dalam produksi borosilikat glass (seperti Pyrex) yang tahan terhadap perubahan suhu mendadak. Juga digunakan sebagai herbisida dan dalam sintesis senyawa boron lainnya."
     },
     {
-        formula: "HC7N",
-        name: "Sianoheksatriina",
-        composedOf: [1, 6, 6, 6, 6, 6, 6, 6, 7],
-        descriptions:
-            "Sianoheksatriina (HC₇N) adalah rantai karbon yang lebih panjang lagi dengan tujuh atom karbon dan satu gugus sianida, menjadikannya molekul sangat panjang untuk ukuran medium antarbintang. Molekul ini biasanya ditemukan di awan molekuler sangat dingin dan tenang yang memungkinkan rantai karbon tumbuh tanpa segera hancur. Contohnya juga dikenal dari awan TMC-1. Manfaatnya adalah sebagai bukti bahwa kimia di ruang bisa menghasilkan struktur organik panjang bahkan sebelum adanya planet, memperkaya potensi bahan awal kimia kehidupan."
+        formula: "NaBr",
+        name: "Natrium Bromida",
+        composedOf: [11, 35],
+        descriptions: "Natrium bromida adalah kristal putih yang larut dalam air, digunakan dalam fotografi sebagai sumber ion bromida untuk pembuatan emulsi film. Dalam pengobatan, pernah digunakan sebagai sedatif dan antikonvulsan. Juga digunakan dalam pengeboran minyak sebagai komponen fluida pengeboran dan dalam pengolahan air."
     },
     {
-        formula: "C3H2",
-        name: "Siklopropenilidena",
-        composedOf: [6, 6, 6, 1, 1],
-        descriptions:
-            "Siklopropenilidena (C₃H₂) adalah molekul dengan tiga atom karbon dalam struktur cincin kecil dan dua atom hidrogen, sehingga mewakili salah satu cincin karbon terkecil yang diketahui di ruang. Di awan molekuler, C₃H₂ cukup umum dan dapat digunakan sebagai penanda kepadatan dan kondisi kimia tertentu. Contohnya ditemukan di berbagai lingkungan, dari awan gelap hingga wilayah HII. Manfaat mempelajarinya adalah untuk memahami pembentukan struktur cincin karbon dan hubungannya dengan molekul aromatik yang lebih besar."
+        formula: "MgCl₂",
+        name: "Magnesium Klorida",
+        composedOf: [12, 17, 17],
+        descriptions: "Magnesium klorida adalah senyawa higroskopis yang digunakan untuk mengontrol debu di jalan tanah, sebagai koagulan dalam produksi tahu, dan dalam proses elektrolisis untuk produksi magnesium logam. Juga digunakan dalam suplemen gizi dan sebagai alternatif garam dapur rendah sodium."
     },
     {
-        formula: "C3H",
-        name: "Radikal Propargil",
-        composedOf: [6, 6, 6, 1],
-        descriptions:
-            "Radikal propargil (C₃H) adalah molekul rantai pendek dengan tiga atom karbon dan satu hidrogen yang memiliki elektron tak berpasangan sehingga sangat reaktif. Di ruang antarbintang, C₃H muncul sebagai bagian dari keluarga molekul rantai karbon yang berkembang menjadi struktur lebih besar. Contohnya terdeteksi di awan kaya karbon dan di sekitar bintang karbon. Manfaat ilmiahnya adalah sebagai indikator kimia rantai karbon terbuka dan sebagai perantara menuju pembentukan hidrokarbon lebih kompleks."
+        formula: "AlF₃",
+        name: "Aluminium Fluorida",
+        composedOf: [13, 9, 9, 9],
+        descriptions: "Aluminium fluorida adalah padatan putih yang digunakan dalam produksi aluminium melalui proses Hall-Héroult sebagai penurun titik leleh. Juga digunakan sebagai katalis dalam produksi freon dan senyawa fluorinasi lainnya, serta dalam industri kaca dan keramik."
     },
     {
-        formula: "C3O",
-        name: "Trikarbon Monoksida",
-        composedOf: [6, 6, 6, 8],
-        descriptions:
-            "Trikarbon monoksida (C₃O) adalah molekul linear yang menggabungkan tiga atom karbon berderet dengan satu atom oksigen di ujung rantai. Di medium antarbintang, C₃O termasuk dalam kelompok molekul rantai karbon yang kaya oksigen. Contohnya ditemukan di awan molekuler tertentu dengan kondisi kimia khusus. Manfaat mempelajarinya adalah untuk mengevaluasi bagaimana oksigen terikat dalam rantai karbon dan bagaimana keseimbangan antara molekul kaya oksigen dan kaya nitrogen terbentuk di ruang."
+        formula: "Si₃N₄",
+        name: "Silikon Nitrida",
+        composedOf: [14, 14, 14, 7, 7, 7, 7],
+        descriptions: "Silikon nitrida adalah keramik teknik dengan kekuatan mekanik tinggi dan tahan terhadap kejut termal. Digunakan dalam bantalan bola, komponen turbin, perkakas pemotong, dan substrat elektronik. Juga digunakan dalam industri otomotif untuk bagian mesin yang bekerja pada suhu tinggi."
     },
     {
-        formula: "H2S",
-        name: "Hidrogen Sulfida",
-        composedOf: [1, 1, 16],
-        descriptions:
-            "Hidrogen sulfida (H₂S) adalah gas dengan dua atom hidrogen dan satu atom sulfur yang di Bumi dikenal berbau telur busuk. Di ruang antarbintang, H₂S dapat berada dalam bentuk gas maupun es yang menempel pada butiran debu. Contohnya juga ditemukan di atmosfer beberapa benda tata surya dan komet. Manfaat ilmiahnya adalah sebagai salah satu reservoir sulfur dan sebagai petunjuk bagaimana sulfur berpindah dari bentuk sederhana ke molekul sulfur yang lebih kompleks di medium antarbintang."
+        formula: "PCl₃",
+        name: "Fosfor Triklorida",
+        composedOf: [15, 17, 17, 17],
+        descriptions: "Fosfor triklorida adalah cairan tak berwarna yang bereaksi hebat dengan air. Digunakan sebagai pereaksi dalam sintesis organik untuk mengubah alkohol menjadi alkil klorida, dan dalam produksi insektisida, plasticizer, dan senyawa fosfor lainnya. Uapnya bersifat korosif dan beracun."
     },
     {
-        formula: "SO",
-        name: "Sulfur Monoksida",
-        composedOf: [16, 8],
-        descriptions:
-            "Sulfur monoksida (SO) adalah molekul yang terdiri dari satu atom sulfur dan satu atom oksigen dan sering terkait dengan gas yang mengalami pemanasan atau gelombang kejut. Di daerah pembentukan bintang, SO muncul kuat ketika es sulfur menguap dan bereaksi dengan oksigen. Contohnya diamati di sekitar protobintang dan wilayah dengan aktivitas kejut. Manfaatnya adalah sebagai penanda aktivitas dinamis seperti aliran keluar gas dan sebagai bagian dari rantai reaksi kimia sulfur di ruang."
+        formula: "SCl₂",
+        name: "Sulfur Diklorida",
+        composedOf: [16, 17, 17],
+        descriptions: "Sulfur diklorida adalah cairan merah yang digunakan dalam vulkanisasi karet, sebagai agen klorinasi dalam sintesis organik, dan dalam produksi insektisida. Juga digunakan dalam industri kertas sebagai bahan pemutih dan dalam produksi zat warna."
     },
     {
-        formula: "SO2",
-        name: "Sulfur Dioksida",
-        composedOf: [16, 8, 8],
-        descriptions:
-            "Sulfur dioksida (SO₂) adalah molekul dengan satu atom sulfur dan dua atom oksigen yang di Bumi dikenal sebagai gas vulkanik dan polutan udara. Di antariksa, SO₂ dapat terbentuk di lingkungan yang kaya sulfur dan oksigen, misalnya di dekat objek dengan aktivitas vulkanik seperti Io, atau di awan molekuler yang dipanaskan. Contohnya dipakai untuk mengkaji proses geologis dan fotokimia. Manfaatnya adalah sebagai indikator aktivitas kimia sulfur dan kondisi energi tinggi di lingkungan tersebut."
+        formula: "KOH",
+        name: "Kalium Hidroksida",
+        composedOf: [19, 8, 1],
+        descriptions: "Kalium hidroksida adalah basa kuat yang dikenal sebagai potas kaustik. Digunakan dalam produksi sabun cair, biodiesel, baterai alkaline, dan sebagai absorben untuk gas asam. Juga digunakan dalam industri makanan untuk pengolahan coklat dan pengupas buah."
     },
     {
-        formula: "OCS",
-        name: "Karbonil Sulfida",
-        composedOf: [8, 6, 16],
-        descriptions:
-            "Karbonil sulfida (OCS) adalah molekul linear dengan atom oksigen, karbon, dan sulfur dan merupakan salah satu molekul sulfur paling umum di medium antarbintang. OCS sering ditemukan sebagai es di butiran debu maupun dalam fase gas. Contohnya terdeteksi di awan molekuler padat, komet, dan lingkungan pembentukan bintang. Manfaat mempelajari OCS adalah untuk memahami siklus sulfur antara fase padat dan gas serta kaitannya dengan pembentukan senyawa organik mengandung sulfur."
+        formula: "CaF₂",
+        name: "Kalsium Fluorida (Fluorit)",
+        composedOf: [20, 9, 9],
+        descriptions: "Kalsium fluorida adalah mineral alami yang digunakan sebagai sumber fluor dalam produksi asam fluorida. Sebagai flux dalam metalurgi besi dan aluminium, dan dalam produksi kaca optik untuk lensa mikroskop dan teleskop. Juga digunakan dalam spektroskopi IR sebagai windows sel."
     },
     {
-        formula: "H2CS",
-        name: "Tioformaldehida",
-        composedOf: [1, 1, 6, 16],
-        descriptions:
-            "Tioformaldehida (H₂CS) adalah analog sulfur dari formaldehida, di mana oksigen diganti oleh sulfur, sehingga mengandung dua hidrogen, satu karbon, dan satu sulfur. Di ruang antarbintang, H₂CS ditemukan di awan molekuler padat dan di sekitar bintang muda. Contohnya membantu membandingkan jalur reaksi kimia antara versi oksigen dan sulfur. Manfaat ilmiahnya adalah sebagai jembatan untuk memahami bagaimana kimia organik dapat bervariasi jika unsur heteroatomnya berbeda."
+        formula: "Sc₂O₃",
+        name: "Skandium Oksida",
+        composedOf: [21, 21, 8, 8, 8],
+        descriptions: "Skandium oksida adalah padatan putih yang digunakan dalam produksi lampu uap merkuri untuk pencahayaan stadion dan studio TV. Sebagai penstabil dalam keramik zirconia, dan dalam alloy aluminium-skandium untuk industri aerospace. Juga digunakan dalam laser dan sebagai katalis."
     },
     {
-        formula: "NH2",
-        name: "Radikal Amino",
-        composedOf: [7, 1, 1],
-        descriptions:
-            "Radikal amino (NH₂) adalah spesies reaktif yang terdiri dari satu atom nitrogen dan dua atom hidrogen dengan satu elektron tak berpasangan. Di medium antarbintang, NH₂ muncul sebagai perantara dalam pembentukan senyawa nitrogen-hidrogen seperti amonia dan amina lainnya. Contohnya ditemukan di awan molekuler dan di dekat sumber radiasi kuat. Manfaat mempelajarinya adalah untuk memahami langkah awal pembentukan gugus amino yang sangat penting dalam biokimia di Bumi."
+        formula: "TiCl₄",
+        name: "Titanium Tetraklorida",
+        composedOf: [22, 17, 17, 17, 17],
+        descriptions: "Titanium tetraklorida adalah cairan tak berwarna yang bereaksi hebat dengan udara lembab menghasilkan awan putih, sehingga digunakan untuk membuat smoke screen. Merupakan bahan antara dalam produksi titanium dioksida pigmen dan logam titanium. Juga digunakan sebagai katalis dalam polimerisasi."
     },
     {
-        formula: "HNO",
-        name: "Nitrosil Hidride",
-        composedOf: [1, 7, 8],
-        descriptions:
-            "Nitrosil hidride (HNO) adalah molekul yang menggabungkan hidrogen, nitrogen, dan oksigen dalam satu struktur kecil dan relatif reaktif. Di ruang antarbintang, HNO terdeteksi di awan molekuler dan dianggap sebagai bagian dari jaringan reaksi kimia nitrogen-oksigen. Contohnya memberikan petunjuk bagaimana NO, H₂O, dan senyawa terkait saling berhubungan. Manfaat ilmiahnya adalah sebagai penghubung dalam memahami siklus nitrogen dan oksigen dalam lingkungan astrofisika."
+        formula: "VCl₃",
+        name: "Vanadium Triklorida",
+        composedOf: [23, 17, 17, 17],
+        descriptions: "Vanadium triklorida adalah padatan ungu yang digunakan sebagai katalis dalam polimerisasi olefin dan sebagai prekursor untuk senyawa vanadium lainnya. Juga digunakan dalam baterai vanadium redoks dan dalam produksi keramik khusus."
     },
     {
-        formula: "NO+",
-        name: "Ion Nitrogen Oksida",
-        composedOf: [7, 8],
-        descriptions:
-            "Ion nitrogen oksida (NO⁺) adalah bentuk bermuatan positif dari molekul NO dan biasanya muncul di lingkungan yang terionisasi oleh radiasi kuat atau partikel energik. Di ruang antarbintang, NO⁺ dapat ditemukan di dekat sumber radiasi ultraviolet dan di wilayah HII. Contohnya menjadi indikator proses ionisasi yang intens. Manfaat mempelajarinya adalah untuk mengerti bagaimana radiasi bintang memengaruhi komposisi kimia gas di sekitarnya."
+        formula: "CrCl₃",
+        name: "Kromium(III) Klorida",
+        composedOf: [24, 17, 17, 17],
+        descriptions: "Kromium(III) klorida adalah padatan ungu-hijau yang digunakan dalam penyamakan kulit sebagai mordan, dalam pelapisan logam, dan sebagai katalis untuk reaksi organik. Juga digunakan dalam produksi keramik dan sebagai suplemen nutrisi untuk hewan."
     },
     {
-        formula: "HCO",
-        name: "Radikal Formil",
-        composedOf: [1, 6, 8],
-        descriptions:
-            "Radikal formil (HCO) adalah molekul kecil yang mengandung hidrogen, karbon, dan oksigen dengan satu elektron tak berpasangan sehingga sangat reaktif. Di ruang antarbintang, HCO muncul sebagai perantara dalam pembentukan formaldehida dan molekul organik lain yang berbasis karbonil. Contohnya terdeteksi di awan molekuler dan di sekitar protobintang. Manfaatnya adalah sebagai indikator jalur pembentukan molekul karbonil dan kondisi energi dalam awan."
+        formula: "MnCl₂",
+        name: "Mangan(II) Klorida",
+        composedOf: [25, 17, 17],
+        descriptions: "Mangan klorida adalah padatan merah muda yang digunakan sebagai katalis dalam produksi plastik dan resin, dalam pengolahan air untuk menghilangkan besi, dan sebagai prekursor untuk senyawa mangan lainnya. Juga digunakan dalam suplemen nutrisi dan dalam produksi baterai."
     },
     {
-        formula: "C2O",
-        name: "Dikarbon Monoksida",
-        composedOf: [6, 6, 8],
-        descriptions:
-            "Dikarbon monoksida (C₂O) adalah molekul yang terdiri dari dua atom karbon dan satu atom oksigen yang membentuk rantai pendek kaya karbon. Di medium antarbintang, C₂O termasuk dalam keluarga molekul rantai karbon yang mengandung oksigen. Contohnya teramati di awan molekuler tertentu dengan kimia khusus. Manfaat ilmiahnya adalah untuk menguji model pembentukan rantai karbon teroksigenasi dan peran oksigen dalam jaringan reaksi tersebut."
+        formula: "FeCl₃",
+        name: "Besi(III) Klorida",
+        composedOf: [26, 17, 17, 17],
+        descriptions: "Besi(III) klorida adalah padatan kristalin hijau-gelap yang digunakan sebagai koagulan dalam pengolahan air dan air limbah, dalam etsa PCB elektronik, dan sebagai katalis dalam sintesis organik. Juga digunakan dalam produksi pigmen dan dalam pengolahan logam."
     },
     {
-        formula: "C2S",
-        name: "Dikarbon Monosulfida",
-        composedOf: [6, 6, 16],
-        descriptions:
-            "Dikarbon monosulfida (C₂S) adalah molekul rantai pendek yang terdiri dari dua atom karbon dan satu atom sulfur dan sering muncul di awan molekuler dingin. Di ruang antarbintang, C₂S menjadi salah satu penanda kimia sulfur dalam fase gas. Contohnya terdeteksi di awan kaya karbon seperti TMC-1. Manfaat mempelajarinya adalah untuk memahami bagaimana sulfur bergabung dengan rantai karbon dan bagaimana distribusi sulfur berubah seiring evolusi awan."
+        formula: "CoO",
+        name: "Kobalt(II) Oksida",
+        composedOf: [27, 8],
+        descriptions: "Kobalt oksida adalah padatan hijau yang digunakan sebagai pigmen dalam keramik dan kaca (memberikan warna biru), dalam produksi katalis, dan dalam baterai lithium-ion. Juga digunakan dalam produksi enamel dan sebagai aditif dalam pakan ternak."
     },
     {
-        formula: "H2O+",
-        name: "Ion Hidroksil Hidron",
-        composedOf: [1, 1, 8],
-        descriptions:
-            "Ion hidroksil hidron (H₂O⁺) adalah bentuk terionisasi dari air, di mana molekul H₂O kehilangan satu elektron sehingga bermuatan positif. Di medium antarbintang dan atmosfer planet, H₂O⁺ terbentuk ketika air terpapar radiasi energik atau partikel bermuatan. Contohnya diamati di awan yang terionisasi dan di dekat komet yang disinari Matahari. Manfaat ilmiahnya adalah untuk memetakan proses ionisasi air dan peran radiasi dalam mengubah kimia molekul volatil."
+        formula: "NiCl₂",
+        name: "Nikel(II) Klorida",
+        composedOf: [28, 17, 17],
+        descriptions: "Nikel klorida adalah padatan kuning-hijau yang digunakan dalam pelapisan nikel elektrolit, sebagai katalis dalam hidrogenasi minyak, dan dalam produksi kompleks nikel untuk berbagai aplikasi industri. Juga digunakan dalam baterai nikel-kadmium."
     },
     {
-        formula: "H3O+",
-        name: "Ion Hidronium",
-        composedOf: [1, 1, 1, 8],
-        descriptions:
-            "Ion hidronium (H₃O⁺) adalah ion yang terbentuk ketika proton (H⁺) bergabung dengan molekul air, dan dalam larutan berperan sebagai bentuk efektif ion hidrogen. Di ruang antarbintang, H₃O⁺ muncul di awan molekuler sebagai produk ionisasi air dan memainkan peran penting dalam jaringan reaksi yang menghasilkan molekul oksigen lain. Contohnya digunakan untuk mengukur tingkat ionisasi dan jumlah air di awan. Manfaatnya adalah sebagai indikator aktivitas kimia yang melibatkan air dan sebagai kunci untuk memahami keseimbangan asam–basa di gas antarbintang."
+        formula: "CuCl₂",
+        name: "Tembaga(II) Klorida",
+        composedOf: [29, 17, 17],
+        descriptions: "Tembaga klorida adalah padatan coklat-kuning yang digunakan sebagai katalis dalam produksi klorin, dalam etsa PCB, dan dalam sintesis senyawa organik. Juga digunakan dalam pengolahan kayu sebagai pengawet dan dalam produksi pigmen."
     },
     {
-        formula: "NH4+",
-        name: "Ion Amonium",
-        composedOf: [7, 1, 1, 1, 1],
-        descriptions:
-            "Ion amonium (NH₄⁺) adalah kation yang merupakan bentuk terprotonasi dari amonia, dengan satu nitrogen dan empat hidrogen. Di medium antarbintang, NH₄⁺ diperkirakan muncul terutama dalam fase es di butiran debu saat asam dan basa bereaksi di permukaan. Contohnya dipahami lewat tanda-tanda spektral pada es molekuler. Manfaat mempelajarinya adalah untuk memahami kimia nitrogen dalam fase padat dan bagaimana ion ini terlibat dalam pembentukan amina dan senyawa nitrogen lain saat es menguap."
+        formula: "ZnS",
+        name: "Seng Sulfida",
+        composedOf: [30, 16],
+        descriptions: "Seng sulfida adalah bubuk putih yang berpendar dalam gelap, digunakan dalam cat luminescent, layar CRT, dan LED. Sebagai pigmen putih dalam plastik dan karet, dan dalam aplikasi optoelektronik. Juga digunakan dalam kosmetik sebagai pewarna."
     },
     {
-        formula: "CH3CHO",
-        name: "Asetaldehida",
-        composedOf: [6, 6, 1, 1, 1, 1, 8],
-        descriptions:
-            "Asetaldehida (CH₃CHO) adalah aldehida sederhana dengan dua atom karbon, empat hidrogen, dan satu oksigen yang membentuk gugus –CHO. Di ruang antarbintang, asetaldehida ditemukan di awan molekuler kaya organik dan di sekitar protobintang hangat. Contohnya menunjukkan bahwa molekul karbonil yang lebih kompleks dapat terbentuk di medium antarbintang. Manfaatnya adalah sebagai salah satu molekul perantara menuju pembentukan alkohol, asam, dan molekul organik lain yang relevan dengan kimia kehidupan."
+        formula: "GaAs",
+        name: "Galium Arsenida",
+        composedOf: [31, 33],
+        descriptions: "Galium arsenida adalah semikonduktor penting yang digunakan dalam sirkuit frekuensi tinggi, sel surja efisiensi tinggi, dioda pemancar cahaya (LED), dan laser. Memiliki mobilitas elektron yang lebih tinggi daripada silikon, membuatnya cocok untuk aplikasi microwave dan optoelektronik."
     },
     {
-        formula: "CH3NH2",
-        name: "Metilamina",
-        composedOf: [6, 1, 1, 1, 7, 1, 1],
-        descriptions:
-            "Metilamina (CH₃NH₂) adalah molekul organik yang menggabungkan gugus metil dengan gugus amino, sehingga mengandung karbon, hidrogen, dan nitrogen dalam struktur yang mirip dengan blok penyusun asam amino. Di ruang antarbintang, metilamina telah terdeteksi di lingkungan pembentukan bintang dan pada es butiran debu yang tereksitasi. Contohnya sering dikaitkan dengan kimia prabiotik. Manfaat mempelajarinya adalah untuk memahami bagaimana gugus amino dapat terbentuk sebelum adanya planet dan bagaimana hal itu membuka kemungkinan asal-usul molekul biologis."
+        formula: "GeO₂",
+        name: "Germanium Dioksida",
+        composedOf: [32, 8, 8],
+        descriptions: "Germanium dioksida adalah padatan putih yang digunakan dalam produksi serat optik sebagai dopan inti, dalam kaca inframerah, dan sebagai katalis dalam produksi PET. Juga digunakan dalam suplemen kesehatan dan dalam industri semikonduktor."
     },
     {
-        formula: "CH3SH",
-        name: "Metanetiol",
-        composedOf: [6, 1, 1, 1, 16, 1],
-        descriptions:
-            "Metanetiol (CH₃SH) adalah analog sulfur dari metanol, di mana oksigen digantikan oleh sulfur sehingga menghasilkan molekul berbau kuat dan khas. Di ruang antarbintang, keberadaan metanetiol menunjukkan bahwa sulfur juga bisa masuk ke dalam molekul organik mirip alkohol. Contohnya terdeteksi di beberapa awan molekuler kaya organik. Manfaat ilmiahnya adalah sebagai penanda kimia organik yang melibatkan sulfur dan sebagai bagian dari pemetaan penuh unsur heteroatom dalam molekul organik kosmik."
+        formula: "As₂O₃",
+        name: "Arsen Trioksida",
+        composedOf: [33, 33, 8, 8, 8],
+        descriptions: "Arsen trioksida adalah bubuk putih yang sangat beracun, digunakan dalam pengobatan untuk kemoterapi leukemia promyelocytic akut, dalam produksi semikonduktor, dan sebagai pengawet kayu. Juga digunakan dalam produksi kaca dan enamel."
     },
     {
-        formula: "C2H3CN",
-        name: "Akrilonitril",
-        composedOf: [6, 6, 1, 1, 1, 6, 7],
-        descriptions:
-            "Akrilonitril (C₂H₃CN) adalah molekul organik tak jenuh yang menggabungkan rantai karbon pendek dengan gugus nitril dan dikenal di Bumi sebagai bahan industri polimer. Di ruang antarbintang dan atmosfer Titan, akrilonitril menarik perhatian karena berpotensi membentuk struktur mirip membran dalam kondisi ekstrem. Contohnya telah dilaporkan di atmosfer Titan. Manfaat mempelajarinya adalah untuk mengeksplorasi kemungkinan bentuk kimia “membran” alternatif bagi kehidupan di lingkungan yang tidak seperti Bumi."
+        formula: "SeO₂",
+        name: "Selenium Dioksida",
+        composedOf: [34, 8, 8],
+        descriptions: "Selenium dioksida adalah padatan kristalin putih yang digunakan sebagai agen oksidasi dalam sintesis organik, dalam produksi kaca merah, dan sebagai aditif dalam baja stainless. Juga digunakan dalam fotosel dan rectifier."
     },
     {
-        formula: "HCOCN",
-        name: "Asam Isosianat",
-        composedOf: [1, 6, 8, 6, 7],
-        descriptions:
-            "Asam isosianat (HCOCN) adalah molekul yang mengandung kombinasi karbon, oksigen, dan nitrogen dalam struktur yang kaya energi dan relatif reaktif. Di ruang antarbintang, bentuk ini terkait dengan berbagai isomer asam sianat dan isosianat yang muncul di awan molekuler. Contohnya memberikan informasi tentang bagaimana gugus –NCO dan –CNO terbentuk dan saling bertransformasi. Manfaat ilmiahnya adalah membantu memetakan jaringan reaksi molekul mengandung CN dan CO yang relevan dengan kimia prabiotik."
+        formula: "RbF",
+        name: "Rubidium Fluorida",
+        composedOf: [37, 9],
+        descriptions: "Rubidium fluorida adalah kristal higroskopis yang digunakan dalam penelitian kimia sebagai sumber ion fluorida, dalam produksi kaca khusus, dan dalam aplikasi optik. Juga digunakan dalam studi kristalografi dan sebagai katalis dalam reaksi organik."
     },
     {
-        formula: "HNCO",
-        name: "Asam Isosianat",
-        composedOf: [1, 7, 6, 8],
-        descriptions:
-            "Asam isosianat (HNCO) adalah molekul yang menggabungkan hidrogen, nitrogen, karbon, dan oksigen dalam satu rantai pendek dan merupakan salah satu isomer penting dalam keluarga asam sianat. Di medium antarbintang, HNCO sering ditemukan di awan molekuler padat dan wilayah pembentukan bintang. Contohnya dipakai untuk menilai kondisi suhu dan kepadatan gas. Manfaatnya adalah sebagai molekul kunci untuk memahami kimia CN–CO dan sebagai calon prekursor berbagai senyawa organik nitrogen-oksigen."
+        formula: "SrCO₃",
+        name: "Stronsium Karbonat",
+        composedOf: [38, 6, 8, 8, 8],
+        descriptions: "Stronsium karbonat adalah padatan putih yang digunakan dalam produksi kaca CRT untuk TV dan monitor, dalam kembang api untuk menghasilkan warna merah, dan dalam keramik sebagai flux. Juga digunakan dalam produksi ferit magnet dan dalam pasta gigi untuk gigi sensitif."
     },
     {
-        formula: "HOCN",
-        name: "Asam Sianat",
-        composedOf: [1, 8, 6, 7],
-        descriptions:
-            "Asam sianat (HOCN) adalah isomer lain dalam keluarga asam sianat yang menyusun ulang posisi atom hidrogen, oksigen, karbon, dan nitrogen dibanding HNCO. Di ruang antarbintang, rasio HOCN terhadap isomer lain membantu mengungkap jalur pembentukan dan kondisi kimia di awan molekuler. Contohnya memberikan gambaran mana jalur reaksi yang lebih dominan, apakah di fase gas atau di permukaan es. Manfaat ilmiahnya adalah untuk menyusun peta lengkap kimia isomerik yang terkait dengan gugus CN dan CO."
+        formula: "Y₂O₃",
+        name: "Itrium Oksida",
+        composedOf: [39, 39, 8, 8, 8],
+        descriptions: "Itrium oksida adalah padatan putih yang digunakan dalam produksi keramik yttria-stabilized zirconia, dalam fosfor untuk lampu fluorescent dan LED, dan dalam superkonduktor suhu tinggi. Juga digunakan dalam laser dan sebagai katalis."
     },
     {
-        formula: "NH2CN",
-        name: "Sianamida",
-        composedOf: [7, 1, 1, 6, 7],
-        descriptions:
-            "Sianamida (NH₂CN) adalah molekul yang mengandung gugus amino dan gugus sianida dalam satu struktur, sehingga kaya nitrogen dan berpotensi reaktif dalam kimia prabiotik. Di ruang antarbintang, NH₂CN ditemukan di awan molekuler yang kaya molekul organik kompleks. Contohnya dianggap relevan sebagai prekursor pembentukan basa nitrogen dan asam amino. Manfaat mempelajarinya adalah untuk mengeksplorasi bagaimana senyawa kaya nitrogen dapat berkembang menjadi blok penyusun biomolekul."
+        formula: "ZrO₂",
+        name: "Zirkonium Dioksida",
+        composedOf: [40, 8, 8],
+        descriptions: "Zirkonia adalah keramik yang sangat tahan panas dan aus, digunakan dalam gigi palsu, bantalan bola, sensor oksigen kendaraan, dan sebagai bahan tahan api. Juga digunakan dalam elektrolit sel bahan bakar oksida padat dan dalam pisau keramik."
     },
     {
-        formula: "CH2NH",
-        name: "Metilenimina",
-        composedOf: [6, 1, 1, 7, 1],
-        descriptions:
-            "Metilenimina (CH₂NH) adalah molekul kecil yang menggabungkan karbon, hidrogen, dan nitrogen dalam bentuk imina dan sering dianggap sebagai perantara dalam pembentukan asam amino sederhana. Di ruang antarbintang, CH₂NH telah terdeteksi di awan molekuler dan di sekitar protobintang yang hangat. Contohnya menghubungkan kimia sederhana berbasis NH₃ dan hidrokarbon dengan molekul yang lebih dekat ke struktur organik biologis. Manfaat ilmiahnya adalah sebagai jembatan penting dalam skenario kimia prabiotik di skala kosmik."
+        formula: "Nb₂O₅",
+        name: "Niobium Pentoksida",
+        composedOf: [41, 41, 8, 8, 8, 8, 8],
+        descriptions: "Niobium pentoksida adalah padatan putih yang digunakan dalam produksi alloy niobium, dalam keramik khusus, dan sebagai katalis. Juga digunakan dalam lensa kamera untuk mengurangi pantulan dan dalam kapasitor niobium oksida."
+    },
+    {
+        formula: "MoS₂",
+        name: "Molibdenum Disulfida",
+        composedOf: [42, 16, 16],
+        descriptions: "Molibdenum disulfida adalah padatan hitam dengan struktur berlapis yang digunakan sebagai pelumas kering pada suhu tinggi, sebagai katalis dalam hidrodesulfurisasi minyak, dan dalam baterai lithium. Juga digunakan dalam komposit polimer dan sebagai semikonduktor."
+    },
+    {
+        formula: "RuO₂",
+        name: "Rutenium Dioksida",
+        composedOf: [44, 8, 8],
+        descriptions: "Rutenium dioksida adalah padatan hitam yang digunakan dalam elektroda untuk produksi klorin, dalam resistor thick-film, dan sebagai katalis. Juga digunakan dalam superkapasitor dan dalam sel bahan bakar."
+    },
+    {
+        formula: "RhCl₃",
+        name: "Rodium(III) Klorida",
+        composedOf: [45, 17, 17, 17],
+        descriptions: "Rodium klorida adalah padatan merah-coklat yang digunakan sebagai katalis dalam industri otomotif (konverter katalitik), dalam produksi asam asetat, dan dalam pelapisan rodium. Juga digunakan dalam perhiasan sebagai bahan electroplating."
+    },
+    {
+        formula: "PdO",
+        name: "Paladium(II) Oksida",
+        composedOf: [46, 8],
+        descriptions: "Paladium oksida adalah bubuk hitam yang digunakan sebagai katalis dalam hidrogenasi senyawa organik, dalam sensor gas hidrogen, dan dalam elektronik. Juga digunakan dalam produksi perhiasan putih dan dalam konverter katalitik."
+    },
+    {
+        formula: "Ag₂O",
+        name: "Perak Oksida",
+        composedOf: [47, 47, 8],
+        descriptions: "Perak oksida adalah bubuk coklat-hitam yang digunakan dalam baterai silver-oxide untuk arloji dan kalkulator, sebagai pereaksi dalam sintesis organik, dan dalam pemurnian air. Juga digunakan dalam kimia analitik dan dalam produksi cermin."
+    },
+    {
+        formula: "CdS",
+        name: "Kadmium Sulfida",
+        composedOf: [48, 16],
+        descriptions: "Kadmium sulfida adalah pigmen kuning yang digunakan dalam plastik, keramik, dan cat. Juga digunakan dalam sel surya thin-film dan sebagai detektor radiasi. Karena toksisitas kadmium, penggunaannya semakin dibatasi dan diganti dengan alternatif yang lebih aman."
+    },
+    {
+        formula: "InP",
+        name: "Indium Fosfida",
+        composedOf: [49, 15],
+        descriptions: "Indium fosfida adalah semikonduktor yang digunakan dalam perangkat optoelektronik seperti laser semikonduktor, photodetector, dan sel surja efisiensi tinggi. Memiliki karakteristik yang ideal untuk aplikasi frekuensi tinggi dan perangkat fotonik."
+    },
+    {
+        formula: "SnO₂",
+        name: "Timah Dioksida",
+        composedOf: [50, 8, 8],
+        descriptions: "Timah dioksida adalah bubuk putih yang digunakan sebagai opacifier dalam glasir keramik, dalam produksi kaca float, dan sebagai sensor gas. Juga digunakan dalam elektroda transparan untuk perangkat optoelektronik dan sebagai katalis."
+    },
+    {
+        formula: "Sb₂O₃",
+        name: "Antimon Trioksida",
+        composedOf: [51, 51, 8, 8, 8],
+        descriptions: "Antimon trioksida adalah bubuk putih yang digunakan sebagai flame retardant dalam plastik, karet, dan tekstil. Juga digunakan sebagai opacifier dalam enamel dan keramik, serta dalam produksi kaca dan pigmen."
+    },
+    {
+        formula: "TeO₂",
+        name: "Telurium Dioksida",
+        composedOf: [52, 8, 8],
+        descriptions: "Telurium dioksida adalah padatan putih yang digunakan dalam produksi kaca optik untuk aplikasi inframerah, dalam produksi sel surya, dan sebagai katalis. Juga digunakan dalam media perekaman optik dan dalam alloy tembaga untuk meningkatkan kemampuan mesin."
+    },
+    {
+        formula: "CsI",
+        name: "Sesium Iodida",
+        composedOf: [55, 53],
+        descriptions: "Sesium iodida adalah kristal higroskopis yang digunakan dalam optik inframerah sebagai windows dan prism, dalam detektor radiasi untuk spektrometer sinar-X, dan dalam penelitian fisika nuklir. Juga digunakan dalam perangkat night vision."
+    },
+    {
+        formula: "BaSO₄",
+        name: "Barium Sulfat",
+        composedOf: [56, 16, 8, 8, 8, 8],
+        descriptions: "Barium sulfat adalah bubuk putih tidak larut yang digunakan sebagai agen kontras dalam radiologi untuk memvisualisasikan saluran pencernaan. Juga digunakan sebagai pigmen putih dalam cat, pengisi dalam plastik dan karet, dan sebagai bahan pemberat dalam pengeboran minyak."
+    },
+    {
+        formula: "La₂O₃",
+        name: "Lantanum Oksida",
+        composedOf: [57, 57, 8, 8, 8],
+        descriptions: "Lantanum oksida adalah padatan putih yang digunakan dalam kaca optik khusus, katalis cracking minyak bumi, dan dalam produksi electrode. Juga digunakan sebagai dopan dalam keramik dan dalam baterai nickel-metal hydride."
+    },
+    {
+        formula: "CeO₂",
+        name: "Serium Dioksida",
+        composedOf: [58, 8, 8],
+        descriptions: "Serium dioksida adalah bubuk kuning pucat yang digunakan sebagai katalis dalam konverter katalitik, sebagai polishing compound untuk kaca, dan dalam sel bahan bakar oksida padat. Juga digunakan dalam produksi enamel dan keramik."
+    },
+    {
+        formula: "Pr₂O₃",
+        name: "Praseodimium Oksida",
+        composedOf: [59, 59, 8, 8, 8],
+        descriptions: "Praseodimium oksida adalah padatan hijau-kuning yang digunakan dalam pigmen keramik, kaca penyerap inframerah, dan sebagai katalis. Juga digunakan dalam alloy magnet permanen dan dalam produksi carbon arc lights."
+    },
+    {
+        formula: "Nd₂O₃",
+        name: "Neodimium Oksida",
+        composedOf: [60, 60, 8, 8, 8],
+        descriptions: "Neodimium oksida adalah padatan biru pucat yang digunakan dalam magnet neodimium yang kuat, laser, dan pigmen kaca. Juga digunakan dalam keramik kapasitor dan sebagai katalis dalam produksi sintetik karet."
+    },
+    {
+        formula: "Sm₂O₃",
+        name: "Samarium Oksida",
+        composedOf: [62, 62, 8, 8, 8],
+        descriptions: "Samarium oksida adalah padatan kuning pucat yang digunakan dalam magnet samarium-kobalt, absorben neutron dalam reaktor nuklir, dan katalis. Juga digunakan dalam phosphor dan keramik khusus."
+    },
+    {
+        formula: "Eu₂O₃",
+        name: "Europium Oksida",
+        composedOf: [63, 63, 8, 8, 8],
+        descriptions: "Europium oksida adalah padatan merah muda yang digunakan dalam phosphor merah untuk lampu fluorescent dan TV CRT, dalam laser, dan sebagai dopan dalam plastik. Juga digunakan dalam penelitian kuantum dan memori komputer."
+    },
+    {
+        formula: "Gd₂O₃",
+        name: "Gadolinium Oksida",
+        composedOf: [64, 64, 8, 8, 8],
+        descriptions: "Gadolinium oksida adalah padatan putih yang digunakan dalam agen kontras MRI, dalam control rod reaktor nuklir, dan dalam phosphor. Juga digunakan dalam produksi kaca dan keramik khusus."
+    },
+    {
+        formula: "Tb₂O₃",
+        name: "Terbium Oksida",
+        composedOf: [65, 65, 8, 8, 8],
+        descriptions: "Terbium oksida adalah padatan coklat putih yang digunakan dalam phosphor hijau untuk lampu dan display, dalam magnetostrictive material, dan dalam laser. Juga digunakan dalam fuel cell dan sebagai dopan dalam material fosfor."
+    },
+    {
+        formula: "Dy₂O₃",
+        name: "Disprosium Oksida",
+        composedOf: [66, 66, 8, 8, 8],
+        descriptions: "Disprosium oksida adalah padatan putih-kuning yang digunakan dalam magnet neodimium untuk menstabilkan suhu tinggi, dalam lampu metal halide, dan sebagai dopan dalam material fosfor. Juga digunakan dalam reaktor nuklir sebagai poison."
+    },
+    {
+        formula: "Ho₂O₃",
+        name: "Holmium Oksida",
+        composedOf: [67, 67, 8, 8, 8],
+        descriptions: "Holmium oksida adalah padatan kuning terang yang digunakan dalam laser medis untuk prosedur urologi, dalam colorant kaca, dan sebagai dopan dalam fiber optic. Juga digunakan dalam kontrol reaktor nuklir."
+    },
+    {
+        formula: "Er₂O₃",
+        name: "Erbium Oksida",
+        composedOf: [68, 68, 8, 8, 8],
+        descriptions: "Erbium oksida adalah padatan merah muda yang digunakan dalam amplifier fiber optic untuk komunikasi, dalam laser dental dan medis, dan dalam colorant kaca dan keramik. Juga digunakan dalam produksi alloy khusus."
+    },
+    {
+        formula: "Tm₂O₃",
+        name: "Tulium Oksida",
+        composedOf: [69, 69, 8, 8, 8],
+        descriptions: "Tulium oksida adalah padatan hijau pucat yang digunakan dalam sumber radiasi portabel, dalam laser, dan dalam superkonduktor. Juga digunakan dalam penelitian medis dan perangkat keamanan."
+    },
+    {
+        formula: "Yb₂O₃",
+        name: "Iterbium Oksida",
+        composedOf: [70, 70, 8, 8, 8],
+        descriptions: "Iterbium oksida adalah padatan putih yang digunakan dalam laser inframerah, dalam stainless steel, dan sebagai katalis. Juga digunakan dalam tekanan sensor dan dalam quantum computing research."
+    },
+    {
+        formula: "Lu₂O₃",
+        name: "Lutesium Oksida",
+        composedOf: [71, 71, 8, 8, 8],
+        descriptions: "Lutesium oksida adalah padatan putih yang digunakan dalam katalis cracking minyak, dalam detektor radiasi, dan dalam produksi kaca khusus. Juga digunakan dalam penelitian fisika dan kimia fundamental."
+    },
+    {
+        formula: "HfO₂",
+        name: "Hafnium Oksida",
+        composedOf: [72, 8, 8],
+        descriptions: "Hafnium oksida adalah keramik dengan konstanta dielektrik tinggi yang digunakan dalam transistor mikroprosesor, dalam coating tahan panas untuk turbin, dan dalam optik. Juga digunakan dalam control rod reaktor nuklir."
+    },
+    {
+        formula: "Ta₂O₅",
+        name: "Tantalum Pentoksida",
+        composedOf: [73, 73, 8, 8, 8, 8, 8],
+        descriptions: "Tantalum pentoksida adalah padatan putih yang digunakan dalam kapasitor tantalum untuk elektronik, dalam lensa kamera anti-reflektif, dan sebagai katalis. Juga digunakan dalam implant medis dan alat pemotong."
+    },
+    {
+        formula: "WO₃",
+        name: "Tungsten Trioksida",
+        composedOf: [74, 8, 8, 8],
+        descriptions: "Tungsten trioksida adalah bubuk kuning yang digunakan dalam electrochromic window, dalam pigmen keramik, dan sebagai katalis. Juga digunakan dalam detektor gas dan dalam produksi tungsten logam."
+    },
+    {
+        formula: "Re₂O₇",
+        name: "Rhenium Heptoksida",
+        composedOf: [75, 75, 8, 8, 8, 8, 8, 8, 8],
+        descriptions: "Rhenium heptoksida adalah padatan kuning yang sangat reaktif digunakan sebagai katalis dalam alkilasi dan dehidrogenasi, dalam produksi alloy tahan panas, dan dalam katalis reforming minyak. Sangat mahal dan langka."
+    },
+    {
+        formula: "OsO₄",
+        name: "Osmium Tetroksida",
+        composedOf: [76, 8, 8, 8, 8],
+        descriptions: "Osmium tetroksida adalah kristal kuning pucat beracun yang digunakan dalam mikroskopi elektron untuk pewarnaan jaringan biologis, sebagai katalis dalam sintesis organik, dan dalam fingerprint detection. Sangat berbahaya dan memerlukan penanganan khusus."
+    },
+    {
+        formula: "IrO₂",
+        name: "Iridium Dioksida",
+        composedOf: [77, 8, 8],
+        descriptions: "Iridium dioksida adalah padatan hitam yang digunakan dalam electrode untuk produksi klorin, dalam memory resistor, dan sebagai katalis. Juga digunakan dalam pen tip ballpoint dan dalam peralatan tahan korosi."
+    },
+    {
+        formula: "PtO₂",
+        name: "Platinum Dioksida",
+        composedOf: [78, 8, 8],
+        descriptions: "Platinum dioksida adalah bubuk hitam yang digunakan sebagai katalis dalam hidrogenasi senyawa organik, dalam fuel cell, dan dalam produksi silikon rubber. Juga dikenal sebagai katalis Adams."
+    },
+    {
+        formula: "AuCl₃",
+        name: "Emas(III) Klorida",
+        composedOf: [79, 17, 17, 17],
+        descriptions: "Emas klorida adalah kristal merah digunakan dalam electroplating emas, dalam produksi kaca ruby, dan sebagai katalis dalam sintesis organik. Juga digunakan dalam fotografi dan pengobatan arthritis."
+    },
+    {
+        formula: "Hg₂Cl₂",
+        name: "Raksa(I) Klorida (Kalomel)",
+        composedOf: [80, 80, 17, 17],
+        descriptions: "Raksa(I) klorida adalah padatan putih tidak larut yang digunakan dalam electrode kalomel referensi, dalam obat tradisional (sekarang dilarang), dan dalam pyrotechnic. Sangat beracun dan penggunaannya sangat dibatasi."
+    },
+    {
+        formula: "TlCl",
+        name: "Talium(I) Klorida",
+        composedOf: [81, 17],
+        descriptions: "Talium klorida adalah kristal putih digunakan dalam detektor infrared, dalam kaca optik khusus, dan dalam penelitian. Sangat beracun dan pernah digunakan sebagai racun tikus (sekarang dilarang)."
+    },
+    {
+        formula: "PbCl₂",
+        name: "Timbal(II) Klorida",
+        composedOf: [82, 17, 17],
+        descriptions: "Timbal klorida adalah kristal putih digunakan dalam produksi timbal kromat pigmen, dalam solder, dan sebagai katalis. Juga digunakan dalam analisis kimia dan dalam produksi other lead compounds."
+    },
+    {
+        formula: "Bi₂O₃",
+        name: "Bismut Oksida",
+        composedOf: [83, 83, 8, 8, 8],
+        descriptions: "Bismut oksida adalah bubuk kuning digunakan dalam keramik, kosmetik, dan sebagai katalis. Juga digunakan dalam produksi glass dan dalam pengobatan untuk gangguan pencernaan (sebagai subsalicylate)."
+    },
+    {
+        formula: "PoO₂",
+        name: "Polonium Dioksida",
+        composedOf: [84, 8, 8],
+        descriptions: "Polonium dioksida adalah senyawa radioaktif digunakan dalam sumber neutron, dalam anti-static brush, dan dalam penelitian. Sangat berbahaya karena radioaktivitas tinggi dan toksisitas kimia."
+    },
+    {
+        formula: "AtI",
+        name: "Astatin Iodida",
+        composedOf: [85, 53],
+        descriptions: "Astatin iodida adalah senyawa radioaktif langka digunakan dalam penelitian medis untuk terapi kanker targeted alpha. Sangat tidak stabil dengan waktu paruh pendek, dipelajari untuk aplikasi radiopharmaceutical."
+    },
+    {
+        formula: "RnF₂",
+        name: "Radon Difluorida",
+        composedOf: [86, 9, 9],
+        descriptions: "Radon difluorida adalah senyawa gas radioaktif yang hanya dapat dipelajari dalam trace amount. Digunakan dalam penelitian fundamental kimia gas mulia dan dalam studi ikatan kimia. Sangat tidak stabil dan berbahaya."
+    },
+    {
+        formula: "FrF",
+        name: "Fransium Fluorida",
+        composedOf: [87, 9],
+        descriptions: "Fransium fluorida adalah senyawa hipotetis yang sangat radioaktif dan tidak stabil. Hanya dipelajari dalam jumlah trace untuk penelitian sifat kimia fransium. Waktu paruh sangat pendek membuat studi eksperimental sulit."
+    },
+    {
+        formula: "RaSO₄",
+        name: "Radium Sulfat",
+        composedOf: [88, 16, 8, 8, 8, 8],
+        descriptions: "Radium sulfat adalah senyawa radioaktif yang pernah digunakan dalam terapi kanker dan cat luminescent. Sangat berbahaya karena radioaktivitas tinggi, sekarang penggunaan medisnya digantikan oleh isotop lebih aman."
+    },
+    {
+        formula: "Ac₂O₃",
+        name: "Aktinium Oksida",
+        composedOf: [89, 89, 8, 8, 8],
+        descriptions: "Aktinium oksida adalah senyawa radioaktif digunakan dalam sumber neutron dan dalam penelitian. Sangat langka dan diproduksi dalam jumlah sangat kecil dari decay uranium dan thorium."
+    },
+    {
+        formula: "ThO₂",
+        name: "Thorium Dioksida",
+        composedOf: [90, 8, 8],
+        descriptions: "Thorium dioksida adalah keramik dengan titik leleh sangat tinggi digunakan dalam mantel lampu gas, dalam alloy magnesium, dan sebagai katalis. Radioaktif dan penggunaannya semakin dibatasi."
+    },
+    {
+        formula: "Pa₂O₅",
+        name: "Protaktinium Pentoksida",
+        composedOf: [91, 91, 8, 8, 8, 8, 8],
+        descriptions: "Protaktinium pentoksida adalah senyawa radioaktif langka digunakan dalam penelitian fundamental kimia aktinida. Sangat berbahaya dan sulit dipelajari karena radioaktivitas tinggi."
+    },
+    {
+        formula: "UO₂",
+        name: "Uranium Dioksida",
+        composedOf: [92, 8, 8],
+        descriptions: "Uranium dioksida adalah bahan bakar nuklir digunakan dalam reaktor nuklir, dalam pigmen keramik (sebelum diketahui radioaktif), dan dalam produksi depleted uranium untuk armor-piercing ammunition."
+    },
+    {
+        formula: "NpO₂",
+        name: "Neptunium Dioksida",
+        composedOf: [93, 8, 8],
+        descriptions: "Neptunium dioksida adalah senyawa radioaktif digunakan dalam penelitian nuklir dan dalam produksi plutonium-238 untuk generator termoelektrik radioisotop. Hanya diproduksi dalam jumlah kecil untuk penelitian."
+    },
+    {
+        formula: "PuO₂",
+        name: "Plutonium Dioksida",
+        composedOf: [94, 8, 8],
+        descriptions: "Plutonium dioksida adalah bahan bakar nuklir digunakan dalam reaktor nuklir dan dalam senjata nuklir. Sangat beracun dan radioaktif, memerlukan penanganan khusus dan keamanan tinggi."
+    },
+    {
+        formula: "AmO₂",
+        name: "Amerisium Dioksida",
+        composedOf: [95, 8, 8],
+        descriptions: "Amerisium dioksida adalah senyawa radioaktif digunakan dalam detektor asap sebagai sumber alpha particles, dalam penelitian nuklir, dan dalam spektrometer massa. Diproduksi dari decay plutonium dalam reaktor nuklir."
+    },
+    {
+        formula: "Cm₂O₃",
+        name: "Curium Oksida",
+        composedOf: [96, 96, 8, 8, 8],
+        descriptions: "Curium oksida adalah senyawa radioaktif digunakan dalam penelitian nuklir dan dalam produksi isotop untuk aplikasi medis dan industri. Sangat radioaktif dan hanya ditangani di fasilitas nuklir khusus."
+    },
+    {
+        formula: "Bk₂O₃",
+        name: "Berkelium Oksida",
+        composedOf: [97, 97, 8, 8, 8],
+        descriptions: "Berkelium oksida adalah senyawa radioaktif sintetik digunakan dalam penelitian sifat kimia aktinida dan dalam produksi elemen yang lebih berat. Hanya diproduksi dalam jumlah mikroskopis."
+    },
+    {
+        formula: "Cf₂O₃",
+        name: "Kalifornium Oksida",
+        composedOf: [98, 98, 8, 8, 8],
+        descriptions: "Kalifornium oksida adalah senyawa radioaktif digunakan dalam sumber neutron untuk analisis aktivasi neutron, dalam eksplorasi minyak, dan dalam penelitian. Salah satu elemen paling mahal yang diproduksi."
+    },
+    {
+        formula: "Es₂O₃",
+        name: "Einsteinium Oksida",
+        composedOf: [99, 99, 8, 8, 8],
+        descriptions: "Einsteinium oksida adalah senyawa radioaktif sintetik digunakan dalam penelitian fundamental kimia. Sangat langka dan hanya diproduksi dalam jumlah sangat kecil di reaktor nuklir penelitian."
+    },
+    {
+        formula: "Fm₂O₃",
+        name: "Fermium Oksida",
+        composedOf: [100, 100, 8, 8, 8],
+        descriptions: "Fermium oksida adalah senyawa radioaktif hipotetis yang belum dapat diisolasi dalam jumlah makroskopis. Dipelajari melalui teknik radiokimia canggih untuk memahami sifat kimia aktinida."
+    },
+    {
+        formula: "Na₂O",
+        name: "Natrium Oksida",
+        composedOf: [11, 11, 8],
+        descriptions: "Natrium oksida adalah padatan putih digunakan dalam produksi kaca dan keramik, sebagai flux dalam metalurgi, dan dalam sintesis kimia. Bereaksi hebat dengan air menghasilkan natrium hidroksida."
+    },
+    {
+        formula: "K₂O",
+        name: "Kalium Oksida",
+        composedOf: [19, 19, 8],
+        descriptions: "Kalium oksida adalah padatan kuning pucat digunakan dalam produksi pupuk, dalam industri kaca dan keramik, dan sebagai katalis. Sangat reaktif dengan air dan udara lembab."
+    },
+    {
+        formula: "Rb₂O",
+        name: "Rubidium Oksida",
+        composedOf: [37, 37, 8],
+        descriptions: "Rubidium oksida adalah padatan kuning digunakan dalam penelitian kimia, dalam fotosel, dan dalam produksi kaca khusus. Sangat reaktif dan harus disimpan dalam atmosfer inert."
+    },
+    {
+        formula: "Cs₂O",
+        name: "Sesium Oksida",
+        composedOf: [55, 55, 8],
+        descriptions: "Sesium oksida adalah padatan oranye digunakan dalam fotokatoda, dalam tabung photomultiplier, dan dalam penelitian. Salah satu oksida logam alkali paling reaktif."
+    },
+    {
+        formula: "MgO",
+        name: "Magnesium Oksida",
+        composedOf: [12, 8],
+        descriptions: "Magnesium oksida adalah bubuk putih digunakan sebagai refraktori dalam tungku, sebagai antasida, dalam konstruksi sebagai komponen cement, dan sebagai insulator listrik. Juga digunakan dalam suplemen gizi."
+    },
+    {
+        formula: "CaO",
+        name: "Kalsium Oksida (Kapur Tohor)",
+        composedOf: [20, 8],
+        descriptions: "Kalsium oksida adalah padatan putih digunakan dalam produksi semen, dalam pengolahan air, dalam industri baja, dan dalam pertanian untuk menetralkan tanah asam. Bereaksi dengan air menghasilkan panas (reaksi eksotermik)."
+    },
+    {
+        formula: "SrO",
+        name: "Stronsium Oksida",
+        composedOf: [38, 8],
+        descriptions: "Stronsium oksida adalah padatan putih digunakan dalam produksi kaca CRT, dalam kembang api untuk warna merah, dan dalam keramik. Juga digunakan dalam produksi stronsium ferit magnet."
+    },
+    {
+        formula: "BaO",
+        name: "Barium Oksida",
+        composedOf: [56, 8],
+        descriptions: "Barium oksida adalah padatan putih digunakan dalam produksi kaca, dalam coating electrode, dan sebagai katalis. Bereaksi dengan air menghasilkan barium hidroksida dan digunakan dalam produksi peroxide."
+    },
+    {
+        formula: "BeCl₂",
+        name: "Berilium Klorida",
+        composedOf: [4, 17, 17],
+        descriptions: "Berilium klorida adalah padatan putih digunakan dalam produksi berilium logam, sebagai katalis dalam reaksi Friedel-Crafts, dan dalam penelitian. Sangat beracun dan menyebabkan penyakit beriliosis jika terhirup."
+    },
+    {
+        formula: "BCl₃",
+        name: "Boron Triklorida",
+        composedOf: [5, 17, 17, 17],
+        descriptions: "Boron triklorida adalah gas tak berwarna digunakan sebagai katalis dalam produksi silikon, dalam refining aluminium, dan dalam sintesis organik. Juga digunakan dalam produksi boron fiber dan semiconductor doping."
+    },
+    {
+        formula: "CCl₄",
+        name: "Karbon Tetraklorida",
+        composedOf: [6, 17, 17, 17, 17],
+        descriptions: "Karbon tetraklorida adalah cairan tak berwarna pernah digunakan sebagai solvent dan pemadam api, sekarang dilarang karena toksisitas dan kerusakan ozon. Masih digunakan dalam laboratorium sebagai solvent non-polar."
+    },
+    {
+        formula: "NCl₃",
+        name: "Nitrogen Triklorida",
+        composedOf: [7, 17, 17, 17],
+        descriptions: "Nitrogen triklorida adalah cairan kuning sangat eksplosif digunakan dalam desinfeksi air minum dan dalam produksi flour. Sangat berbahaya dan harus ditangani dengan hati-hati."
+    },
+    {
+        formula: "OF₂",
+        name: "Oksigen Difluorida",
+        composedOf: [8, 9, 9],
+        descriptions: "Oksigen difluorida adalah gas kuning pucat sangat reaktif digunakan sebagai oksidator dalam propelan roket dan dalam sintesis senyawa fluorin. Sangat beracun dan korosif."
+    },
+    {
+        formula: "Na₂S",
+        name: "Natrium Sulfida",
+        composedOf: [11, 11, 16],
+        descriptions: "Natrium sulfida adalah padatan kuning digunakan dalam industri kulit untuk dehairing, dalam produksi kertas pulp, dan dalam pengolahan air. Juga digunakan dalam fotografi dan dyeing tekstil."
+    },
+    {
+        formula: "SO₃",
+        name: "Sulfur Trioksida",
+        composedOf: [16, 8, 8, 8],
+        descriptions: "Sulfur trioksida adalah cairan tak berwarna digunakan dalam produksi asam sulfat, dalam sulfonasi senyawa organik, dan sebagai oksidator. Sangat korosif dan bereaksi hebat dengan air."
+    },
+    {
+        formula: "Cl₂O",
+        name: "Diklorin Monoksida",
+        composedOf: [17, 17, 8],
+        descriptions: "Diklorin monoksida adalah gas coklat kemerahan digunakan sebagai pemutih dan disinfektan, dalam sintesis hipoklorit, dan dalam pengolahan air. Tidak stabil dan mudah terdekomposisi."
+    },
+    {
+        formula: "K₂CO₃",
+        name: "Kalium Karbonat",
+        composedOf: [19, 19, 6, 8, 8, 8],
+        descriptions: "Kalium karbonat adalah garam putih digunakan dalam produksi kaca, sabun, dan pupuk. Juga digunakan dalam makanan sebagai pengatur keasaman dan dalam fire extinguisher untuk memadamkan api minyak."
+    },
+    {
+        formula: "NaNO₃",
+        name: "Natrium Nitrat",
+        composedOf: [11, 7, 8, 8, 8],
+        descriptions: "Natrium nitrat adalah kristal putih digunakan dalam pupuk, dalam produksi asam nitrat, dalam pengawet makanan (E251), dan dalam pyrotechnic. Juga ditemukan secara alami sebagai mineral nitratine."
+    },
+    {
+        formula: "KNO₃",
+        name: "Kalium Nitrat",
+        composedOf: [19, 7, 8, 8, 8],
+        descriptions: "Kalium nitrat adalah kristal putih digunakan dalam pupuk, dalam bubuk mesiu, dalam pengawet makanan (E252), dan dalam pasta gigi untuk gigi sensitif. Juga digunakan dalam produksi kaca dan dalam treatment logam."
+    },
+    {
+        formula: "NH₄Cl",
+        name: "Amonium Klorida",
+        composedOf: [7, 1, 1, 1, 1, 17],
+        descriptions: "Amonium klorida adalah kristal putih digunakan dalam baterai dry cell, sebagai flux dalam soldering, dalam obat batuk, dan dalam pupuk. Juga digunakan dalam elektrolisis dan dalam produksi lem."
+    },
+    {
+        formula: "NaHCO₃",
+        name: "Natrium Bikarbonat",
+        composedOf: [11, 1, 6, 8, 8, 8],
+        descriptions: "Natrium bikarbonat adalah bubuk putih digunakan dalam baking sebagai pengembang, dalam antasida, dalam pemadam api, dan dalam pembersih. Juga digunakan dalam pengolahan air dan dalam farmasi."
+    },
+    {
+        formula: "Na₂SO₄",
+        name: "Natrium Sulfat",
+        composedOf: [11, 11, 16, 8, 8, 8, 8],
+        descriptions: "Natrium sulfat adalah garam putih digunakan dalam produksi deterjen, kertas pulp, dan kaca. Juga digunakan sebagai pengering dalam laboratorium dan dalam industri tekstil."
+    },
+    {
+        formula: "MgCO₃",
+        name: "Magnesium Karbonat",
+        composedOf: [12, 6, 8, 8, 8],
+        descriptions: "Magnesium karbonat adalah padatan putih digunakan dalam suplemen gizi, dalam antasida, dalam atletik sebagai grip powder, dan dalam produksi magnesium oksida. Juga digunakan dalam makanan sebagai anti-caking agent."
+    },
+    {
+        formula: "CaSO₄",
+        name: "Kalsium Sulfat",
+        composedOf: [20, 16, 8, 8, 8, 8],
+        descriptions: "Kalsium sulfat adalah mineral putih digunakan dalam produksi gypsum board, dalam semen, sebagai pengering, dan dalam makanan sebagai coagulant tahu. Dalam bentuk dihidrat dikenal sebagai gipsum."
+    },
+    {
+        formula: "FeSO₄",
+        name: "Besi(II) Sulfat",
+        composedOf: [26, 16, 8, 8, 8, 8],
+        descriptions: "Besi sulfat adalah kristal hijau-biru digunakan dalam suplemen zat besi, dalam tinta, dalam pengolahan air, dan sebagai mordan dalam dyeing. Juga digunakan dalam herbisida dan dalam preservative wood."
+    },
+    {
+        formula: "CuSO₄",
+        name: "Tembaga(II) Sulfat",
+        composedOf: [29, 16, 8, 8, 8, 8],
+        descriptions: "Tembaga sulfat adalah kristal biru digunakan sebagai fungisida, dalam electroplating, dalam pengolahan air, dan dalam pendidikan kimia. Juga digunakan dalam produksi cat dan sebagai katalis."
+    },
+    {
+        formula: "ZnSO₄",
+        name: "Seng Sulfat",
+        composedOf: [30, 16, 8, 8, 8, 8],
+        descriptions: "Seng sulfat adalah kristal putih digunakan dalam suplemen seng, dalam produksi rayon, dalam elektrolisis seng, dan dalam agricultur sebagai pupuk mikronutrien. Juga digunakan dalam pengobatan topical."
+    },
+    {
+        formula: "AgNO₃",
+        name: "Perak Nitrat",
+        composedOf: [47, 7, 8, 8, 8],
+        descriptions: "Perak nitrat adalah kristal putih digunakan dalam fotografi, dalam mirror production, dalam pengobatan sebagai cauterizing agent, dan dalam analisis kimia. Juga digunakan dalam produksi explosive."
+    },
+    {
+        formula: "Ba(NO₃)₂",
+        name: "Barium Nitrat",
+        composedOf: [56, 7, 7, 8, 8, 8, 8, 8, 8],
+        descriptions: "Barium nitrat adalah kristal putih digunakan dalam pyrotechnic untuk warna hijau, dalam produksi barium oxide, dan dalam manufacturing other barium compounds. Juga digunakan dalam ceramic glazes."
+    },
+    {
+        formula: "Pb(NO₃)₂",
+        name: "Timbal Nitrat",
+        composedOf: [82, 7, 7, 8, 8, 8, 8, 8, 8],
+        descriptions: "Timbal nitrat adalah kristal putih digunakan dalam production of matches, dalam dyeing, dalam photography, dan dalam production of other lead compounds. Beracun dan penggunaannya dibatasi."
+    },
+    {
+        formula: "Na₃PO₄",
+        name: "Natrium Fosfat",
+        composedOf: [11, 11, 11, 15, 8, 8, 8, 8],
+        descriptions: "Natrium fosfat adalah garam putih digunakan dalam deterjen, dalam pengolahan air, dalam makanan sebagai emulsifier, dan dalam metal cleaning. Juga digunakan dalam buffer solutions di laboratorium."
+    },
+    {
+        formula: "K₃PO₄",
+        name: "Kalium Fosfat",
+        composedOf: [19, 19, 19, 15, 8, 8, 8, 8],
+        descriptions: "Kalium fosfat adalah garam putih digunakan dalam pupuk, dalam buffer solutions, dalam makanan sebagai pengatur keasaman, dan dalam produksi liquid soap. Juga digunakan dalam farmasi."
+    },
+    {
+        formula: "CaCl₂",
+        name: "Kalsium Klorida",
+        composedOf: [20, 17, 17],
+        descriptions: "Kalsium klorida adalah garam higroskopis digunakan sebagai deicer, dalam pengawet makanan, dalam pengolahan air, dan dalam concrete accelerator. Juga digunakan dalam medicine sebagai sumber kalsium."
+    },
+    {
+        formula: "MgSO₄",
+        name: "Magnesium Sulfat",
+        composedOf: [12, 16, 8, 8, 8, 8],
+        descriptions: "Magnesium sulfat adalah kristal putih digunakan dalam medicine sebagai laxative, dalam agriculture sebagai pupuk, dalam bath salt, dan dalam production of tofu. Juga dikenal sebagai garam Epsom."
+    },
+    {
+        formula: "AlCl₃",
+        name: "Aluminium Klorida",
+        composedOf: [13, 17, 17, 17],
+        descriptions: "Aluminium klorida adalah padatan putih digunakan sebagai katalis dalam produksi ethylbenzene, dalam production of other aluminium compounds, dan dalam pengolahan minyak. Juga digunakan dalam deodoran dan dalam pengobatan."
+    },
+    {
+        formula: "FeCl₂",
+        name: "Besi(II) Klorida",
+        composedOf: [26, 17, 17],
+        descriptions: "Besi klorida adalah kristal hijau digunakan dalam production of ferric chloride, dalam dyeing, dalam medicine sebagai koagulan, dan dalam pengolahan air. Juga digunakan dalam production of circuit boards."
+    },
+    {
+        formula: "NiSO₄",
+        name: "Nikel Sulfat",
+        composedOf: [28, 16, 8, 8, 8, 8],
+        descriptions: "Nikel sulfat adalah kristal hijau digunakan dalam electroplating nikel, dalam production of catalyst, dalam battery, dan dalam production of other nickel compounds. Juga digunakan dalam ceramic pigment."
+    },
+    {
+        formula: "CoSO₄",
+        name: "Kobalt Sulfat",
+        composedOf: [27, 16, 8, 8, 8, 8],
+        descriptions: "Kobalt sulfat adalah kristal merah digunakan dalam production of pigment, dalam electroplating, dalam battery, dan dalam production of other cobalt compounds. Juga digunakan dalam agriculture sebagai suplemen."
+    },
+    {
+        formula: "MnSO₄",
+        name: "Mangan Sulfat",
+        composedOf: [25, 16, 8, 8, 8, 8],
+        descriptions: "Mangan sulfat adalah kristal merah muda digunakan dalam production of fertilizer, dalam production of other manganese compounds, dalam ceramic, dan dalam animal feed sebagai suplemen. Juga digunakan dalam pengolahan air."
+    },
+    {
+        formula: "ZnCl₂",
+        name: "Seng Klorida",
+        composedOf: [30, 17, 17],
+        descriptions: "Seng klorida adalah kristal putih digunakan dalam production of battery, dalam soldering flux, dalam wood preservation, dan dalam deodorant. Juga digunakan dalam production of other zinc compounds."
+    },
+    {
+        formula: "SnCl₂",
+        name: "Timah(II) Klorida",
+        composedOf: [50, 17, 17],
+        descriptions: "Timah klorida adalah kristal putih digunakan dalam production of other tin compounds, dalam electroplating, dalam reducing agent, dan dalam production of glass. Juga digunakan dalam food packaging."
+    },
+    {
+        formula: "PbCl₂",
+        name: "Timbal(II) Klorida",
+        composedOf: [82, 17, 17],
+        descriptions: "Timbal klorida adalah kristal putih digunakan dalam production of other lead compounds, dalam production of matches, dalam catalyst, dan dalam analysis kimia. Beracun dan penggunaannya dibatasi."
+    },
+    {
+        formula: "CuCl",
+        name: "Tembaga(I) Klorida",
+        composedOf: [29, 17],
+        descriptions: "Tembaga klorida adalah kristal putih digunakan dalam production of catalyst, dalam production of other copper compounds, dalam carbon monoxide detection, dan dalam organic synthesis. Tidak stabil di udara."
+    },
+    {
+        formula: "Ag₂SO₄",
+        name: "Perak Sulfat",
+        composedOf: [47, 47, 16, 8, 8, 8, 8],
+        descriptions: "Perak sulfat adalah kristal putih digunakan dalam production of other silver compounds, dalam battery, dalam mirror production, dan dalam analysis kimia. Juga digunakan dalam pengobatan."
+    },
+    {
+        formula: "HgSO₄",
+        name: "Raksa(II) Sulfat",
+        composedOf: [80, 16, 8, 8, 8, 8],
+        descriptions: "Raksa sulfat adalah kristal putih digunakan dalam production of other mercury compounds, dalam catalyst, dalam battery, dan dalam analysis kimia. Sangat beracun dan penggunaannya dibatasi."
+    },
+    {
+        formula: "BaCO₃",
+        name: "Barium Karbonat",
+        composedOf: [56, 6, 8, 8, 8],
+        descriptions: "Barium karbonat adalah bubuk putih digunakan dalam production of brick, dalam ceramic glaze, dalam production of other barium compounds, dan dalam rat poison. Beracun dan harus ditangani dengan hati-hati."
+    },
+    {
+        formula: "SrCO₃",
+        name: "Stronsium Karbonat",
+        composedOf: [38, 6, 8, 8, 8],
+        descriptions: "Stronsium karbonat adalah bubuk putih digunakan dalam production of CRT glass, dalam firework untuk warna merah, dalam ceramic, dan dalam production of other strontium compounds. Juga digunakan dalam medicine."
+    },
+    {
+        formula: "Li₂CO₃",
+        name: "Litium Karbonat",
+        composedOf: [3, 3, 6, 8, 8, 8],
+        descriptions: "Litium karbonat adalah bubuk putih digunakan dalam treatment bipolar disorder, dalam production of lithium ion battery, dalam ceramic, dan dalam production of other lithium compounds. Juga digunakan dalam aluminum production."
+    },
+    {
+        formula: "Na₂S₂O₃",
+        name: "Natrium Tiosulfat",
+        composedOf: [11, 11, 16, 16, 8, 8, 8],
+        descriptions: "Natrium tiosulfat adalah kristal putih digunakan dalam fotografi sebagai fixer, dalam pengobatan sebagai antidote untuk keracunan sianida, dalam analisis iodometri, dan dalam pengolahan air untuk dechlorination. Juga dikenal sebagai 'hypo' dalam fotografi."
+    },
+    {
+        formula: "K₂CrO₄",
+        name: "Kalium Kromat",
+        composedOf: [19, 19, 24, 8, 8, 8, 8],
+        descriptions: "Kalium kromat adalah kristal kuning digunakan sebagai indikator dalam analisis argentometri, dalam pigment untuk cat dan keramik, dalam leather tanning, dan dalam pyrotechnic. Bersifat karsinogenik dan memerlukan penanganan hati-hati."
+    },
+    {
+        formula: "NaBrO₃",
+        name: "Natrium Bromat",
+        composedOf: [11, 35, 8, 8, 8],
+        descriptions: "Natrium bromat adalah kristal putih digunakan sebagai agen pengoksidasi dalam sintesis kimia, dalam pengolahan air, dan pernah digunakan dalam pembuatan roti sebagai pengembang (sekarang dilarang di banyak negara karena toksisitas)."
+    },
+    {
+        formula: "Mg₃N₂",
+        name: "Magnesium Nitrida",
+        composedOf: [12, 12, 12, 7, 7],
+        descriptions: "Magnesium nitrida adalah padatan hijau-kuning yang bereaksi dengan air menghasilkan amonia. Digunakan sebagai katalis dalam sintesis boron nitrida kubik, dalam produksi keramik khusus, dan sebagai sumber nitrogen dalam sintesis kimia."
+    },
+    {
+        formula: "CaC₂",
+        name: "Kalsium Karbida",
+        composedOf: [20, 6, 6],
+        descriptions: "Kalsium karbida adalah padatan abu-abu-hitam yang bereaksi dengan air menghasilkan gas asetilena. Digunakan dalam lampu karbida, dalam produksi asetilena untuk pengelasan, dan dalam industri kimia sebagai prekursor untuk berbagai senyawa organik."
+    },
+    {
+        formula: "AlN",
+        name: "Aluminium Nitrida",
+        composedOf: [13, 7],
+        descriptions: "Aluminium nitrida adalah keramik dengan konduktivitas termal tinggi digunakan dalam elektronik sebagai substrate untuk chip, dalam produksi LED, dan dalam komponen tahan panas. Juga digunakan dalam produksi keramik khusus dan komposit."
+    },
+    {
+        formula: "SiCl₄",
+        name: "Silikon Tetraklorida",
+        composedOf: [14, 17, 17, 17, 17],
+        descriptions: "Silikon tetraklorida adalah cairan tak berwarna yang bereaksi dengan air menghasilkan asam klorida dan silika. Digunakan dalam produksi silikon murni untuk semikonduktor, dalam produksi silica fume, dan sebagai intermediate dalam sintesis silikon organik."
+    },
+    {
+        formula: "PBr₃",
+        name: "Fosfor Tribromida",
+        composedOf: [15, 35, 35, 35],
+        descriptions: "Fosfor tribromida adalah cairan tak berwarna yang digunakan sebagai reagent untuk mengkonversi alkohol menjadi alkil bromida dalam sintesis organik. Juga digunakan dalam produksi senyawa farmasi dan agrokimia. Sangat reaktif dengan air."
+    },
+    {
+        formula: "S₂Cl₂",
+        name: "Sulfur Monoklorida",
+        composedOf: [16, 16, 17, 17],
+        descriptions: "Sulfur monoklorida adalah cairan amber yang digunakan dalam vulkanisasi karet, dalam produksi insektisida, dan sebagai chlorinating agent dalam sintesis organik. Juga digunakan dalam military chemistry sebagai precursor untuk gas mustard."
+    },
+    {
+        formula: "ClO₂",
+        name: "Klorin Dioksida",
+        composedOf: [17, 8, 8],
+        descriptions: "Klorin dioksida adalah gas kuning-hijau digunakan sebagai disinfektan dalam pengolahan air minum, dalam pemutihan kertas pulp, dan dalam sterilisasi peralatan medis. Lebih efektif daripada klorin dan tidak menghasilkan trihalomethana yang berbahaya."
+    },
+    {
+        formula: "KIO₃",
+        name: "Kalium Iodat",
+        composedOf: [19, 53, 8, 8, 8],
+        descriptions: "Kalium iodat adalah kristal putih digunakan dalam fortifikasi garam dapur dengan iodin, dalam analisis kimia sebagai agen pengoksidasi, dan dalam dough conditioner untuk roti. Juga digunakan dalam pyrotechnic untuk warna ungu."
+    },
+    {
+        formula: "Na₂O₂",
+        name: "Natrium Peroksida",
+        composedOf: [11, 11, 8, 8],
+        descriptions: "Natrium peroksida adalah padatan kuning pucat yang merupakan oksidator kuat. Digunakan dalam pemutihan tekstil dan kertas, dalam regenerasi udara di kapal selam dan stasiun ruang angkasa, dan dalam sintesis kimia. Bereaksi keras dengan air."
+    },
+    {
+        formula: "BaO₂",
+        name: "Barium Peroksida",
+        composedOf: [56, 8, 8],
+        descriptions: "Barium peroksida adalah padatan abu-abu digunakan dalam produksi hidrogen peroksida, dalam pyrotechnic untuk warna hijau, dan sebagai sumber oksigen dalam welding. Juga digunakan dalam produksi kaca dan keramik khusus."
+    },
+    {
+        formula: "Zn₃P₂",
+        name: "Seng Fosfida",
+        composedOf: [30, 30, 30, 15, 15],
+        descriptions: "Seng fosfida adalah bubuk abu-abu gelap digunakan sebagai rodentisida (racun tikus), dalam produksi semikonduktor, dan dalam sintesis senyawa fosfor organik. Sangat beracun dan menghasilkan gas fosfin ketika bereaksi dengan asam."
+    },
+    {
+        formula: "CuCN",
+        name: "Tembaga(I) Sianida",
+        composedOf: [29, 6, 7],
+        descriptions: "Tembaga sianida adalah padatan putih-krem digunakan dalam electroplating tembaga, dalam sintesis senyawa organik, dan dalam produksi katalis. Sangat beracun karena kandungan sianida dan memerlukan penanganan khusus."
+    },
+    {
+        formula: "AgCN",
+        name: "Perak Sianida",
+        composedOf: [47, 6, 7],
+        descriptions: "Perak sianida adalah padatan putih digunakan dalam electroplating perak, dalam produksi perhiasan, dan dalam sintesis senyawa organik. Sangat beracun dan digunakan dalam plating bath dengan kontrol ketat."
+    },
+    {
+        formula: "TiCl₃",
+        name: "Titanium Triklorida",
+        composedOf: [22, 17, 17, 17],
+        descriptions: "Titanium triklorida adalah padatan ungu digunakan sebagai katalis dalam polimerisasi Ziegler-Natta untuk produksi polietilen dan polipropilen, dalam reduksi senyawa organik, dan dalam proses produksi logam titanium."
+    },
+    {
+        formula: "VOCl₃",
+        name: "Vanadium Oksitriklorida",
+        composedOf: [23, 8, 17, 17, 17],
+        descriptions: "Vanadium oksitriklorida adalah cairan kuning digunakan sebagai katalis dalam produksi karet sintetik EPDM, dalam proses oksidasi selektif, dan sebagai prekursor untuk senyawa vanadium lainnya. Bersifat korosif dan bereaksi dengan air."
+    },
+    {
+        formula: "CrO₂Cl₂",
+        name: "Kromil Klorida",
+        composedOf: [24, 8, 8, 17, 17],
+        descriptions: "Kromil klorida adalah cairan merah gelap digunakan sebagai agen pengoksidasi dalam kimia organik, dalam tes untuk alkohol sekunder, dan dalam produksi senyawa kromium lainnya. Sangat korosif dan beracun."
+    },
+    {
+        formula: "Mn₂O₇",
+        name: "Mangan Heptoksida",
+        composedOf: [25, 25, 8, 8, 8, 8, 8, 8, 8],
+        descriptions: "Mangan heptoksida adalah cairan hijau gelap sangat eksplosif digunakan sebagai oksidator kuat dalam penelitian kimia. Dapat menyala secara spontan ketika kontak dengan material organik. Sangat berbahaya dan memerlukan penanganan khusus."
+    },
+    {
+        formula: "Fe₃C",
+        name: "Sementit",
+        composedOf: [26, 26, 26, 6],
+        descriptions: "Sementit adalah senyawa interstisial dalam baja yang menentukan kekerasan dan kekuatan material. Merupakan komponen utama dalam struktur pearlite dan bainite. Memiliki sifat sangat keras namun rapuh."
+    },
+    {
+        formula: "Ni(CO)₄",
+        name: "Nikel Tetrakarbonil",
+        composedOf: [28, 6, 6, 6, 6, 8, 8, 8, 8],
+        descriptions: "Nikel tetrakarbonil adalah cairan sangat beracun digunakan dalam proses Mond untuk pemurnian nikel, sebagai prekursor untuk nikel murni, dan dalam deposisi uap kimia. Sangat berbahaya dan memerlukan penanganan khusus."
+    },
+    {
+        formula: "Cu₂O",
+        name: "Tembaga(I) Oksida",
+        composedOf: [29, 29, 8],
+        descriptions: "Tembaga(I) oksida adalah padatan merah digunakan sebagai pigmen dalam kaca dan keramik, sebagai fungisida dalam cat kapal, dalam sel surya thin-film, dan sebagai katalis dalam sintesis organik."
+    },
+    {
+        formula: "ZnO₂",
+        name: "Seng Peroksida",
+        composedOf: [30, 8, 8],
+        descriptions: "Seng peroksida adalah bubuk putih digunakan dalam krim antiseptik dan salep, dalam deodoran, dalam karet sebagai akselerator vulkanisasi, dan sebagai sumber oksigen dalam aplikasi khusus."
+    },
+    {
+        formula: "Ga₂O₃",
+        name: "Galium Oksida",
+        composedOf: [31, 31, 8, 8, 8],
+        descriptions: "Galium oksida adalah semikonduktor wide-bandgap digunakan dalam sensor gas, dalam perangkat elektronik daya tinggi, dalam katalisis, dan sebagai material tahan panas. Memiliki aplikasi dalam optoelektronik UV."
+    },
+    {
+        formula: "GeS₂",
+        name: "Germanium Disulfida",
+        composedOf: [32, 16, 16],
+        descriptions: "Germanium disulfida adalah padatan putih digunakan dalam kaca infrared, dalam sel surya, dalam fotokonduktor, dan dalam katalisis. Memiliki sifat semikonduktor dan aplikasi dalam optoelektronik."
+    },
+    {
+        formula: "As₂S₃",
+        name: "Arsen Trisulfida",
+        composedOf: [33, 33, 16, 16, 16],
+        descriptions: "Arsen trisulfida adalah mineral orpiment berwarna kuning cerah digunakan sebagai pigmen dalam cat, dalam pyrotechnic, dalam pengobatan tradisional (sekarang dilarang), dan dalam elektronik. Sangat beracun."
+    },
+    {
+        formula: "SeO₃",
+        name: "Selenium Trioksida",
+        composedOf: [34, 8, 8, 8],
+        descriptions: "Selenium trioksida adalah padatan putih higroskopis digunakan sebagai agen pengoksidasi kuat dalam sintesis organik, dalam produksi senyawa selenium lainnya, dan dalam penelitian kimia. Sangat reaktif dengan air."
+    },
+    {
+        formula: "BrF₃",
+        name: "Bromin Trifluorida",
+        composedOf: [35, 9, 9, 9],
+        descriptions: "Bromin trifluorida adalah cairan kuning sangat reaktif digunakan sebagai fluorinating agent dalam produksi senyawa fluorin, dalam pemrosesan bahan bakar nuklir, dan dalam sintesis senyawa anorganik. Sangat korosif dan beracun."
+    },
+    {
+        formula: "KrF₂",
+        name: "Kripton Difluorida",
+        composedOf: [36, 9, 9],
+        descriptions: "Kripton difluorida adalah padatan kristalin putih digunakan sebagai fluorinating agent kuat dalam sintesis senyawa gas mulia, dalam penelitian kimia fundamental, dan dalam produksi senyawa fluorin eksotis. Sangat reaktif dan tidak stabil."
+    },
+    {
+        formula: "Rb₂O₂",
+        name: "Rubidium Peroksida",
+        composedOf: [37, 37, 8, 8],
+        descriptions: "Rubidium peroksida adalah padatan kuning digunakan dalam sistem penghasil oksigen, dalam pyrotechnic, dan dalam penelitian kimia. Sangat reaktif dengan air dan harus disimpan dalam atmosfer inert."
+    },
+    {
+        formula: "SrO₂",
+        name: "Stronsium Peroksida",
+        composedOf: [38, 8, 8],
+        descriptions: "Stronsium peroksida adalah bubuk putih digunakan dalam pyrotechnic untuk warna merah, dalam produksi hidrogen peroksida, dan sebagai sumber oksigen dalam aplikasi khusus. Juga digunakan dalam pasta gigi sebagai pemutih."
+    },
+    {
+        formula: "YCl₃",
+        name: "Itrium Triklorida",
+        composedOf: [39, 17, 17, 17],
+        descriptions: "Itrium triklorida adalah padatan putih digunakan sebagai katalis dalam polimerisasi, dalam produksi logam itrium murni, dan dalam sintesis senyawa itrium organik. Juga digunakan dalam penelitian material."
+    },
+    {
+        formula: "ZrCl₄",
+        name: "Zirkonium Tetraklorida",
+        composedOf: [40, 17, 17, 17, 17],
+        descriptions: "Zirkonium tetraklorida adalah padatan putih digunakan dalam produksi zirkonium murni, dalam katalisis, dalam water repellent untuk tekstil, dan dalam produksi senyawa zirkonium organik. Higroskopis dan bereaksi dengan air."
+    },
+    {
+        formula: "NbCl₅",
+        name: "Niobium Pentaklorida",
+        composedOf: [41, 17, 17, 17, 17, 17],
+        descriptions: "Niobium pentaklorida adalah padatan kuning digunakan sebagai katalis Lewis dalam sintesis organik, dalam produksi niobium murni, dan dalam deposisi uap kimia untuk coating. Sangat reaktif dengan air."
+    },
+    {
+        formula: "MoO₂",
+        name: "Molibdenum Dioksida",
+        composedOf: [42, 8, 8],
+        descriptions: "Molibdenum dioksida adalah padatan ungu-coklat digunakan sebagai katalis dalam proses hidrogenasi, dalam electrode, dalam keramik, dan sebagai prekursor untuk senyawa molibdenum lainnya. Memiliki struktur kristal rutile."
+    },
+    {
+        formula: "Tc₂O₇",
+        name: "Teknesium Heptoksida",
+        composedOf: [43, 43, 8, 8, 8, 8, 8, 8, 8],
+        descriptions: "Teknesium heptoksida adalah padatan kuning radioaktif digunakan dalam penelitian kimia teknesium, dalam kedokteran nuklir sebagai prekursor, dan dalam studi fundamental sifat kimia unsur radioaktif. Sangat langka dan berbahaya."
+    },
+    {
+        formula: "RuCl₃",
+        name: "Rutenium Triklorida",
+        composedOf: [44, 17, 17, 17],
+        descriptions: "Rutenium triklorida adalah padatan coklat-hitam digunakan sebagai katalis dalam hidrogenasi, oksidasi, dan reaksi metatesis, dalam electroplating, dan dalam produksi electrode. Juga digunakan dalam sel surya dye-sensitized."
+    },
+    {
+        formula: "Rh₂O₃",
+        name: "Rodium Trioksida",
+        composedOf: [45, 45, 8, 8, 8],
+        descriptions: "Rodium trioksida adalah padatan abu-abu digunakan sebagai katalis dalam konverter katalitik, dalam proses industri kimia, dan dalam produksi rhodium murni. Juga digunakan dalam sensor gas dan perangkat elektronik."
+    },
+    {
+        formula: "PdCl₂",
+        name: "Paladium Klorida",
+        composedOf: [46, 17, 17],
+        descriptions: "Paladium klorida adalah padatan coklat-merah digunakan sebagai katalis dalam reaksi coupling organik (seperti Heck dan Suzuki), dalam electroplating, dalam detektor karbon monoksida, dan dalam produksi senyawa paladium lainnya."
     }
 ];
 

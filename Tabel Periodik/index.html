@@ -30,7 +30,8 @@
 
     <div
       class="absolute top-5 left-5 w-[40px] h-[40px] cursor-pointer z-[100]"
-      onclick="window.location.href='../Landing Page/index.html'">
+      onclick="window.location.href='../Landing Page/index.html'"
+    >
       <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +47,10 @@
     <div class="text-center mt-24 px-5">
       <p class="text-3xl font-normal">
         <span class="font-bold Irish-Grover">Atom</span> adalah unit dasar
-        materi yang membentuk semua benda di alam semesta.
+        materi yang membentuk semua benda di alam semesta. <br />
+        <span class="font-bold Irish-Grover">Atom</span> terdiri dari inti atom
+        yang bermuatan positif dan dikelilingi oleh awan-awan elektron. <br />
+        <i class="text-sm font-light">-Teori atom Schrödinger-</i>
       </p>
     </div>
 
@@ -62,9 +66,12 @@
         />
         <div class="max-w-md text-start">
           <h2 class="text-blue-400 text-4xl mb-2">Neutron</h2>
-          <p class="text-2xl">
-            Neutron tidak bermuatan (netral) dan juga berada di inti atom
-            bersama proton. Massa neutron hampir sama dengan proton.
+          <p class="text-2xl ">
+            <b>Neutron</b> adalah partikel yang tidak memiliki muatan listrik
+            (netral) dan berada di dalam inti atom bersama proton.
+            <b>Neutron</b> berperan penting dalam menjaga kestabilan inti atom.
+            Jumlah neutron dapat berbeda-beda pada atom dengan jumlah proton
+            yang sama, sehingga membentuk <i>isotop</i>.
           </p>
         </div>
       </div>
@@ -73,8 +80,11 @@
         <div class="max-w-md text-end justify-end ml-auto">
           <h2 class="text-red-400 text-4xl mb-2">Proton</h2>
           <p class="text-2xl">
-            Proton memiliki muatan positif dan terletak di inti atom. Satu
-            proton memiliki massa sekitar 1 unit massa atom (uma).
+            <b>Proton</b> adalah partikel bermuatan positif yang terdapat di
+            dalam inti atom. <b>Proton</b> membantu mengidentifikasi atom—unsur
+            yang berbeda akan memiliki jumlah <b>proton</b> yang berbeda pula di
+            dalam inti atom. Jumlah <b>proton</b> dalam atom ditandai dengan
+            nomor atom pada tabel periodik.
           </p>
         </div>
         <img
@@ -91,9 +101,11 @@
         <div class="max-w-md text-start">
           <h2 class="text-purple-400 text-4xl mb-2">Elektron</h2>
           <p class="text-2xl">
-            Elektron memiliki muatan negatif dan bergerak dalam orbit di sekitar
-            inti atom. Elektron memiliki massa yang jauh lebih kecil
-            dibandingkan proton dan neutron.
+            <b>Elektron</b> adalah partikel bermuatan negatif yang mengelilingi inti
+            atom. Kecepatannya begitu cepat sehingga menciptakan awan <b>elektron</b>
+            di sekitar inti atom. Massanya sangat kecil sehingga dianggap tidak
+            signifikan. Oleh karena itu, <b>elektron</b> tidak berkontribusi terhadap
+            massa atom
           </p>
         </div>
       </div>
@@ -136,7 +148,7 @@
         class="absolute top-[180px] left-[1000px] -translate-x-3/4 z-10 pointer-events-none text-start"
       >
         <h2 class="text-5xl mb-2 Irish-Grover">Molekul</h2>
-        <p class="text-3xl">gabungan dari dua atau lebih atom</p>
+        <p class="text-2xl">dua atau lebih atom yang saling terikat bersama dan diikat oleh ikatan kimia</p>
       </div>
 
       <canvas id="mainCanvas"></canvas>
@@ -144,7 +156,7 @@
 
     <div class="container">
       <div class="space-y-8 py-10 justify-center items-center flex">
-        <div class="text-8xl" style="font-family: Irish Grover, cursive">
+        <div class="text-6xl" style="font-family: Irish Grover, cursive">
           Tabel <span class="Irish-Grover">Periodik</span>
         </div>
       </div>
@@ -316,8 +328,10 @@
             <div class="text-base leading-relaxed">
               <h1 id="molecule-title">Hasil Reaksi</h1>
               <p id="molecule-description">
-                <i>*Kombinasikan unsur-unsur pada kotak di atas untuk membentuk
-                molekul*</i>
+                <i
+                  >*Kombinasikan unsur-unsur pada kotak di atas untuk membentuk
+                  molekul*</i
+                >
               </p>
             </div>
           </div>
