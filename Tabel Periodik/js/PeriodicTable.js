@@ -712,7 +712,6 @@ function updateMoleculeInfo(molecule) {
 
 function getMoleculeDescription(molecule) {
     const searchMol = interstellarMolecules.find(mol => mol.name === molecule.name);
-    const descriptions = searchMol.descriptions;
 
     return searchMol.descriptions || `${molecule.name} (${molecule.formula}) adalah molekul yang terdiri dari kombinasi unsur-unsur yang Anda pilih. Molekul ini dapat ditemukan di ruang antarbintang.`;
 }
