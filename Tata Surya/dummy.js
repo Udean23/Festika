@@ -1,21 +1,4 @@
 const planetData = {
-    sun: {
-        name: "Matahari",
-        type: "Bintang Deret Utama Tipe G",
-        description: "Matahari adalah bintang di pusat Tata Surya kita. Ia merupakan bola plasma panas hampir sempurna yang berpijar karena reaksi fusi nuklir di intinya. Matahari adalah sumber energi terpenting bagi kehidupan di Bumi.",
-        diameter: "1.392.000 km",
-        mass: "1,989 × 10³⁰ kg",
-        orbital: "Tidak ada (Pusat Tata Surya)",
-        rotation: "25–35 hari",
-        moons: "Tidak ada",
-        temp: "5.500°C (permukaan)",
-        facts: [
-            "Matahari mengandung 99,86% massa di Tata Surya",
-            "Sekitar 1 juta Bumi dapat muat di dalam Matahari",
-            "Matahari berusia sekitar 4,6 miliar tahun",
-            "Energi dari Matahari membutuhkan 8 menit untuk mencapai Bumi"
-        ]
-    },
     mercury: {
         name: "Merkurius",
         type: "Planet Terestrial",
@@ -153,3 +136,4 @@ const planetData = {
         ]
     }
 };
+
