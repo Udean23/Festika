@@ -129,64 +129,407 @@ const periodicTable = [
     { atomicNumber: 118, symbol: "Og", name: "Oganesson", relativeAtomicMass: 294, category: "gas-mulia", description: "Oganeson adalah unsur transaktinida sintetis yang menghormati Yuri Oganessian. Diperkirakan berwujud padat pada suhu kamar, tidak seperti gas mulia lainnya, dan sangat radioaktif.", kepadatan: "≈4.9 g/cm3", melebur: "Tidak diketahui", mendidih: "≈80 °C", ditemukan: "Joint Institute for Nuclear Research", tahun: "2002" }];
 
 const interstellarMolecules = [
-    { formula: "H2", name: "Molecular Hydrogen", composedOf: [1, 1] },
-    { formula: "OH", name: "Hydroxyl Radical", composedOf: [8, 1] },
-    { formula: "H2O", name: "Water", composedOf: [1, 1, 8] },
-    { formula: "CO", name: "Carbon Monoxide", composedOf: [6, 8] },
-    { formula: "CO2", name: "Carbon Dioxide", composedOf: [6, 8, 8] },
-    { formula: "CH", name: "Methylidyne Radical", composedOf: [6, 1] },
-    { formula: "CH2", name: "Methylene", composedOf: [6, 1, 1] },
-    { formula: "CH3", name: "Methyl Radical", composedOf: [6, 1, 1, 1] },
-    { formula: "CH4", name: "Methane", composedOf: [6, 1, 1, 1, 1] },
-    { formula: "NH3", name: "Ammonia", composedOf: [7, 1, 1, 1] },
-    { formula: "HCN", name: "Hydrogen Cyanide", composedOf: [1, 6, 7] },
-    { formula: "HNC", name: "Hydrogen Isocyanide", composedOf: [1, 7, 6] },
-    { formula: "CN", name: "Cyanogen Radical", composedOf: [6, 7] },
-    { formula: "NO", name: "Nitric Oxide", composedOf: [7, 8] },
-    { formula: "N2", name: "Molecular Nitrogen", composedOf: [7, 7] },
-    { formula: "O2", name: "Molecular Oxygen", composedOf: [8, 8] },
-    { formula: "H2CO", name: "Formaldehyde", composedOf: [1, 1, 6, 8] },
-    { formula: "HCOOH", name: "Formic Acid", composedOf: [1, 1, 6, 8, 8, 1] },
-    { formula: "CH3OH", name: "Methanol", composedOf: [6, 1, 1, 1, 1, 8] },
-    { formula: "C2H2", name: "Acetylene", composedOf: [6, 6, 1, 1] },
-    { formula: "C2H4", name: "Ethylene", composedOf: [6, 6, 1, 1, 1, 1] },
-    { formula: "C2H6", name: "Ethane", composedOf: [6, 6, 1, 1, 1, 1, 1, 1] },
-    { formula: "HC3N", name: "Cyanoacetylene", composedOf: [1, 6, 6, 6, 7] },
-    { formula: "HCO+", name: "Formyl Ion", composedOf: [1, 6, 8] },
-    { formula: "NH2CHO", name: "Formamide", composedOf: [7, 1, 1, 6, 8] },
-    { formula: "CH3CN", name: "Acetonitrile", composedOf: [6, 1, 1, 1, 6, 7] },
-    { formula: "C6H6", name: "Benzene", composedOf: [6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1] },
-    { formula: "SiO", name: "Silicon Monoxide", composedOf: [14, 8] },
-    { formula: "SiS", name: "Silicon Sulfide", composedOf: [14, 16] },
-    { formula: "HC5N", name: "Cyanobutadiyne", composedOf: [1, 6, 6, 6, 6, 6, 7] },
-    { formula: "HC7N", name: "Cyanohexatriyne", composedOf: [1, 6, 6, 6, 6, 6, 6, 6, 7] },
-    { formula: "C3H2", name: "Cyclopropenylidene", composedOf: [6, 6, 6, 1, 1] },
-    { formula: "C3H", name: "Propargyl Radical", composedOf: [6, 6, 6, 1] },
-    { formula: "C3O", name: "Tricarbon Monoxide", composedOf: [6, 6, 6, 8] },
-    { formula: "H2S", name: "Hydrogen Sulfide", composedOf: [1, 1, 16] },
-    { formula: "SO", name: "Sulfur Monoxide", composedOf: [16, 8] },
-    { formula: "SO2", name: "Sulfur Dioxide", composedOf: [16, 8, 8] },
-    { formula: "OCS", name: "Carbonyl Sulfide", composedOf: [8, 6, 16] },
-    { formula: "H2CS", name: "Thioformaldehyde", composedOf: [1, 1, 6, 16] },
-    { formula: "NH2", name: "Amino Radical", composedOf: [7, 1, 1] },
-    { formula: "HNO", name: "Nitrosyl Hydride", composedOf: [1, 7, 8] },
-    { formula: "NO+", name: "Nitrogen Oxide Ion", composedOf: [7, 8] },
-    { formula: "HCO", name: "Formyl Radical", composedOf: [1, 6, 8] },
-    { formula: "C2O", name: "Dicarbon Monoxide", composedOf: [6, 6, 8] },
-    { formula: "C2S", name: "Dicarbon Monosulfide", composedOf: [6, 6, 16] },
-    { formula: "H2O+", name: "Hydroxyl Hydron Ion", composedOf: [1, 1, 8] },
-    { formula: "H3O+", name: "Hydronium Ion", composedOf: [1, 1, 1, 8] },
-    { formula: "NH4+", name: "Ammonium Ion", composedOf: [7, 1, 1, 1, 1] },
-    { formula: "CH3CHO", name: "Acetaldehyde", composedOf: [6, 6, 1, 1, 1, 1, 8] },
-    { formula: "CH3NH2", name: "Methylamine", composedOf: [6, 1, 1, 1, 7, 1, 1] },
-    { formula: "CH3SH", name: "Methanethiol", composedOf: [6, 1, 1, 1, 16, 1] },
-    { formula: "C2H3CN", name: "Acrylonitrile", composedOf: [6, 6, 1, 1, 1, 6, 7] },
-    { formula: "HCOCN", name: "Isocyanic Acid", composedOf: [1, 6, 8, 6, 7] },
-    { formula: "HNCO", name: "Isocyanic Acid", composedOf: [1, 7, 6, 8] },
-    { formula: "HOCN", name: "Cyanic Acid", composedOf: [1, 8, 6, 7] },
-    { formula: "NH2CN", name: "Cyanamide", composedOf: [7, 1, 1, 6, 7] },
-    { formula: "CH2NH", name: "Methylenimine", composedOf: [6, 1, 1, 7, 1] }
+    {
+        formula: "H2",
+        name: "Hidrogen Molekuler",
+        composedOf: [1, 1],
+        descriptions:
+            "Hidrogen molekuler (H₂) adalah gas hidrogen dalam bentuk dua atom hidrogen yang saling terikat. Ini adalah bentuk hidrogen yang paling umum di alam, misalnya di ruang antarbintang, di atmosfer beberapa planet, dan juga dapat diproduksi di Bumi lewat proses industri atau elektrolisis air. Contoh penggunaannya: H₂ dipakai sebagai bahan bakar ramah lingkungan (fuel cell) untuk mobil hidrogen, sebagai gas pelindung (shielding gas) dalam pengelasan, dan sebagai bahan baku utama di industri pupuk untuk membuat amonia (NH₃). Manfaatnya antara lain sebagai sumber energi bersih karena saat bereaksi dengan oksigen hanya menghasilkan air, membantu mengurangi emisi karbon, mendukung proses industri kimia skala besar, dan dalam riset medis sedang diteliti potensinya sebagai antioksidan yang dapat melindungi sel dari kerusakan oksidatif."
+    },
+    {
+        formula: "OH",
+        name: "Radikal Hidroksil",
+        composedOf: [8, 1],
+        descriptions:
+            "Radikal hidroksil (OH) adalah spesies reaktif yang terdiri dari satu atom oksigen dan satu atom hidrogen dengan satu elektron bebas, sehingga sangat mudah bereaksi dengan molekul lain. Di ruang antarbintang, OH berperan sebagai penanda adanya proses kimia aktif dan pembentukan molekul yang lebih kompleks, sedangkan di atmosfer bumi, radikal ini membantu menguraikan polutan. Contoh keberadaannya dapat ditemukan di awan molekuler dan di lapisan atmosfer atas. Manfaat ilmiahnya adalah sebagai tracer dalam astronomi untuk mempelajari kondisi fisik gas antarbintang serta dalam kimia atmosfer untuk memahami mekanisme pembersihan alami udara dari gas-gas berbahaya."
+    },
+    {
+        formula: "H2O",
+        name: "Air",
+        composedOf: [1, 1, 8],
+        descriptions:
+            "Air (H₂O) adalah molekul yang tersusun dari dua atom hidrogen dan satu atom oksigen, dan merupakan senyawa esensial bagi kehidupan seperti yang kita kenal. Di ruang antarbintang, air bisa berupa uap atau es yang menempel pada butiran debu kosmik dan komet. Contoh keberadaannya adalah es air di komet, bulan-bulan es, dan awan antarbintang yang dingin. Manfaat air di konteks astrofisika adalah sebagai indikator potensi lingkungan layak huni, bahan pembentuk komet dan planet, serta sebagai salah satu molekul kunci dalam studi evolusi kimia di tata surya dan galaksi."
+    },
+    {
+        formula: "CO",
+        name: "Karbon Monoksida",
+        composedOf: [6, 8],
+        descriptions:
+            "Karbon monoksida (CO) adalah molekul yang terdiri dari satu atom karbon dan satu atom oksigen dengan ikatan kuat di antara keduanya. Di astronomi, CO adalah salah satu molekul paling penting karena pancaran gelombang mikronya dipakai untuk memetakan awan molekuler di galaksi. Contoh keberadaannya dapat ditemukan dalam jumlah besar di awan molekuler dingin tempat bintang-bintang baru lahir. Manfaat utamanya bagi ilmuwan adalah sebagai penanda densitas dan distribusi gas hidrogen yang sulit diamati secara langsung, sehingga membantu memahami proses pembentukan bintang dan struktur galaksi."
+    },
+    {
+        formula: "CO2",
+        name: "Karbon Dioksida",
+        composedOf: [6, 8, 8],
+        descriptions:
+            "Karbon dioksida (CO₂) adalah molekul yang tersusun dari satu atom karbon dan dua atom oksigen dan dikenal sebagai gas rumah kaca penting di atmosfer planet. Di ruang antarbintang, CO₂ sering ditemukan dalam bentuk es yang membeku di permukaan butiran debu dan komet. Contoh keberadaannya terlihat pada es komet dan di atmosfer beberapa planet dan bulan. Manfaat mempelajari CO₂ dalam konteks antariksa adalah untuk memahami komposisi atmosfer planet, sejarah termal permukaan, serta peran gas rumah kaca dalam menjaga atau mengubah iklim planet dan bulan."
+    },
+    {
+        formula: "CH",
+        name: "Radikal Metilidina",
+        composedOf: [6, 1],
+        descriptions:
+            "Radikal metilidina (CH) adalah molekul sederhana yang terdiri dari satu atom karbon dan satu atom hidrogen dengan sifat sangat reaktif. Di ruang antarbintang, CH sering muncul di wilayah transisi antara gas atomik dan molekuler dan menjadi salah satu molekul pertama yang terbentuk saat karbon mulai berikatan dengan hidrogen. Contohnya terdeteksi dalam awan difus dan awan molekuler yang tidak terlalu padat. Manfaatnya dalam penelitian adalah sebagai penanda tahap awal kimia karbon di medium antarbintang dan sebagai indikator kondisi radiasi dan kerapatan gas."
+    },
+    {
+        formula: "CH2",
+        name: "Metilena",
+        composedOf: [6, 1, 1],
+        descriptions:
+            "Metilena (CH₂) adalah molekul yang terdiri dari satu atom karbon dan dua atom hidrogen dengan struktur yang sangat reaktif sehingga berperan sebagai perantara dalam banyak reaksi kimia organik. Di ruang antarbintang, CH₂ dianggap sebagai salah satu langkah awal dalam pembentukan molekul hidrokarbon yang lebih kompleks. Contohnya teridentifikasi di awan molekuler tempat bintang baru terbentuk. Manfaat ilmiahnya adalah membantu menjelaskan jalur reaksi dari atom karbon bebas menuju rantai karbon panjang dan molekul organik yang lebih besar."
+    },
+    {
+        formula: "CH3",
+        name: "Radikal Metil",
+        composedOf: [6, 1, 1, 1],
+        descriptions:
+            "Radikal metil (CH₃) adalah gugus yang terdiri dari satu atom karbon dan tiga atom hidrogen, dan menjadi salah satu blok pembangun utama bagi banyak molekul organik. Di ruang antarbintang, CH₃ berperan sebagai perantara penting dalam pembentukan metana dan hidrokarbon lainnya. Contohnya dapat muncul di awan molekuler padat dan di dekat bintang muda yang memanaskan gas di sekitarnya. Manfaat mempelajari CH₃ adalah untuk memahami bagaimana molekul organik sederhana berkembang menjadi senyawa yang lebih kompleks di medium antarbintang."
+    },
+    {
+        formula: "CH4",
+        name: "Metana",
+        composedOf: [6, 1, 1, 1, 1],
+        descriptions:
+            "Metana (CH₄) adalah molekul yang terdiri dari satu atom karbon yang terikat dengan empat atom hidrogen dan merupakan hidrokarbon paling sederhana. Di tata surya, metana ditemukan di atmosfer planet raksasa dan pada permukaan objek dingin seperti Titan. Di ruang antarbintang, metana dapat membeku sebagai es di butiran debu. Contoh manfaatnya adalah sebagai gas bahan bakar, penanda proses geologis atau biologis potensial di planet lain, dan sebagai bagian dari kimia awal yang mengarah ke molekul organik lebih besar."
+    },
+    {
+        formula: "NH3",
+        name: "Amonia",
+        composedOf: [7, 1, 1, 1],
+        descriptions:
+            "Amonia (NH₃) adalah molekul yang terdiri dari satu atom nitrogen dan tiga atom hidrogen dan berbentuk gas dengan bau tajam di Bumi. Di ruang antarbintang, amonia ditemukan di awan molekuler padat dan sering dipakai untuk mengukur suhu gas karena garis spektrumnya sensitif terhadap kondisi fisik. Contohnya juga ada di atmosfer beberapa planet raksasa seperti Jupiter dan Saturnus. Manfaatnya dalam penelitian adalah sebagai termometer kosmik dan sebagai molekul kunci dalam kimia nitrogen yang bisa mengarah ke pembentukan asam amino dan senyawa biologis lainnya."
+    },
+    {
+        formula: "HCN",
+        name: "Hidrogen Sianida",
+        composedOf: [1, 6, 7],
+        descriptions:
+            "Hidrogen sianida (HCN) adalah molekul yang terdiri dari hidrogen, karbon, dan nitrogen dengan ikatan rangkap antara karbon dan nitrogen yang sangat kuat. Di Bumi, HCN dikenal sebagai zat beracun, tetapi di ruang antarbintang ia justru penting sebagai bahan awal pembentukan molekul organik kompleks. Contohnya banyak ditemukan di awan molekuler padat dan di atmosfer beberapa planet serta komet. Manfaat ilmiahnya adalah sebagai indikator kimia organik kaya nitrogen dan sebagai salah satu kandidat molekul prekursor bagi pembentukan asam amino dalam skala kosmik."
+    },
+    {
+        formula: "HNC",
+        name: "Hidrogen Isosianida",
+        composedOf: [1, 7, 6],
+        descriptions:
+            "Hidrogen isosianida (HNC) adalah isomer dari HCN, artinya memiliki komposisi atom sama tetapi susunan berbeda sehingga sifat kimianya juga sedikit berbeda. Di ruang antarbintang, rasio HNC terhadap HCN dipakai untuk menilai temperatur dan kondisi evolusi awan molekuler. Contohnya terdeteksi di wilayah pembentukan bintang dan awan gelap yang sangat dingin. Manfaat penelitian HNC adalah untuk memahami keseimbangan kimia, suhu, dan dinamika gas dalam berbagai fase pembentukan bintang."
+    },
+    {
+        formula: "CN",
+        name: "Radikal Sianogen",
+        composedOf: [6, 7],
+        descriptions:
+            "Radikal sianogen (CN) adalah molekul kecil yang terdiri dari satu atom karbon dan satu atom nitrogen dengan satu elektron tak berpasangan, sehingga sangat reaktif. Di astronomi, CN sering digunakan untuk mengukur komposisi kimia komet dan awan antarbintang karena garis spektrumnya cukup kuat. Contoh keberadaannya tampak jelas pada spektrum komet saat mendekati Matahari. Manfaatnya sebagai penanda kandungan karbon-nitrogen dan sebagai indikator proses fotodisosiasi di sekitar bintang."
+    },
+    {
+        formula: "NO",
+        name: "Nitrogen Monoksida",
+        composedOf: [7, 8],
+        descriptions:
+            "Nitrogen monoksida (NO) adalah molekul yang terdiri dari satu atom nitrogen dan satu atom oksigen yang di Bumi dikenal terkait dengan proses biologis dan polusi udara. Di ruang antarbintang, NO terdeteksi di awan molekuler dan di sekitar bintang muda sebagai hasil reaksi antara nitrogen dan oksigen di kondisi dingin. Contoh manfaat ilmiahnya adalah sebagai penanda kimia nitrogen-oksigen serta membantu memetakan bagaimana unsur biogenik seperti N dan O terikat dalam molekul di luar bumi."
+    },
+    {
+        formula: "N2",
+        name: "Nitrogen Molekuler",
+        composedOf: [7, 7],
+        descriptions:
+            "Nitrogen molekuler (N₂) adalah molekul dua atom nitrogen yang terikat kuat satu sama lain dan merupakan komponen utama atmosfer Bumi. Di ruang antarbintang, N₂ sulit dideteksi secara langsung karena transisinya lemah, tapi keberadaannya diperkirakan penting sebagai reservoir nitrogen. Contohnya dipelajari secara tidak langsung melalui molekul turunan seperti N₂H⁺. Manfaat memahami N₂ adalah untuk mengetahui seberapa banyak nitrogen yang tersedia dalam bentuk inert dan bagaimana ia kemudian dikonversi menjadi molekul reaktif yang mendukung kimia organik."
+    },
+    {
+        formula: "O2",
+        name: "Oksigen Molekuler",
+        composedOf: [8, 8],
+        descriptions:
+            "Oksigen molekuler (O₂) adalah gas yang terdiri dari dua atom oksigen dan menjadi komponen vital atmosfer Bumi bagi respirasi makhluk hidup. Di ruang antarbintang, O₂ ternyata jauh lebih sulit ditemukan daripada yang diprediksi teori, sehingga setiap deteksinya sangat berharga. Contohnya beberapa kali dilaporkan di awan molekuler padat tertentu. Manfaat penelitian O₂ adalah untuk memahami keseimbangan kimia oksigen, bagaimana oksigen lebih sering tersimpan dalam bentuk air atau karbon monoksida, dan implikasinya bagi potensi lingkungan layak huni."
+    },
+    {
+        formula: "H2CO",
+        name: "Formaldehida",
+        composedOf: [1, 1, 6, 8],
+        descriptions:
+            "Formaldehida (H₂CO) adalah molekul organik sederhana yang terdiri dari dua atom hidrogen, satu atom karbon, dan satu atom oksigen dengan gugus aldehida. Di ruang antarbintang, formaldehida sering ditemukan di awan molekuler padat dan pada lapisan es butiran debu. Contohnya juga telah terdeteksi pada komet dan di sekitar bintang muda. Manfaatnya dalam astrokimia adalah sebagai perantara pembentukan gula sederhana dan senyawa organik yang lebih kompleks, serta sebagai indikator adanya proses fotokimia dan pemanasan lokal."
+    },
+    {
+        formula: "HCOOH",
+        name: "Asam Format",
+        composedOf: [1, 1, 6, 8, 8, 1],
+        descriptions:
+            "Asam format (HCOOH) adalah asam karboksilat paling sederhana yang terdiri dari atom hidrogen, karbon, dan dua oksigen, salah satunya membentuk gugus –COOH. Di ruang antarbintang, asam ini ditemukan pada awan molekuler kaya organik dan di sekitar protobintang. Contohnya juga muncul pada komet sebagai bagian dari komposisi es organik. Manfaat mempelajari HCOOH adalah untuk memahami bagaimana asam organik dapat terbentuk jauh sebelum planet dan kehidupan muncul, sehingga memberi petunjuk tentang asal-usul kimia prebiotik."
+    },
+    {
+        formula: "CH3OH",
+        name: "Metanol",
+        composedOf: [6, 1, 1, 1, 1, 8],
+        descriptions:
+            "Metanol (CH₃OH) adalah alkohol paling sederhana yang terdiri dari satu atom karbon, empat atom hidrogen, dan satu atom oksigen. Di ruang antarbintang, metanol biasanya terbentuk pada permukaan butiran es lewat reaksi bertahap dari CO dan H. Contohnya sangat melimpah di daerah pembentukan bintang dan sering memancarkan garis maser yang kuat. Manfaatnya adalah sebagai penanda awan molekuler aktif, sebagai bahan dasar pembentukan molekul organik yang lebih kompleks, dan sebagai indikator proses kimia permukaan butiran debu."
+    },
+    {
+        formula: "C2H2",
+        name: "Asetilena",
+        composedOf: [6, 6, 1, 1],
+        descriptions:
+            "Asetilena (C₂H₂) adalah hidrokarbon tak jenuh dengan dua atom karbon yang terikat rangkap tiga dan dua atom hidrogen. Di astrofisika, asetilena ditemukan di atmosfer bintang kaya karbon dan di beberapa atmosfer planet serta bulan. Contohnya juga muncul dalam kimia fotolitik di atmosfer atas Titan. Manfaatnya adalah sebagai molekul kunci dalam pembentukan rantai karbon panjang dan jelaga kosmik, serta sebagai indikator lingkungan yang kaya karbon dan radiasi ultraviolet."
+    },
+    {
+        formula: "C2H4",
+        name: "Etilena",
+        composedOf: [6, 6, 1, 1, 1, 1],
+        descriptions:
+            "Etilena (C₂H₄) adalah hidrokarbon tak jenuh dengan dua atom karbon yang dihubungkan ikatan rangkap dua dan empat atom hidrogen. Di ruang antarbintang dan atmosfer planet, etilena dapat terbentuk dari pemecahan dan rekombinasi hidrokarbon yang lebih sederhana seperti metana. Contohnya ditemukan di atmosfer beberapa planet raksasa dan bulan. Manfaat ilmiahnya adalah sebagai penanda reaksi fotokimia hidrokarbon dan sebagai salah satu langkah menuju pembentukan molekul organik yang lebih berat."
+    },
+    {
+        formula: "C2H6",
+        name: "Etana",
+        composedOf: [6, 6, 1, 1, 1, 1, 1, 1],
+        descriptions:
+            "Etana (C₂H₆) adalah hidrokarbon jenuh dengan dua atom karbon dan enam atom hidrogen yang merupakan lanjutan paling sederhana setelah metana. Di tata surya, etana ditemukan di atmosfer planet raksasa dan menjadi bagian dari danau hidrokarbon di permukaan Titan. Di ruang antarbintang, etana bisa terbentuk di es butiran debu. Manfaat mempelajari etana adalah untuk memahami evolusi kimia hidrokarbon di atmosfer dan di permukaan benda-benda dingin, serta kaitannya dengan potensi lingkungan kimia unik seperti di Titan."
+    },
+    {
+        formula: "HC3N",
+        name: "Sianoasetilena",
+        composedOf: [1, 6, 6, 6, 7],
+        descriptions:
+            "Sianoasetilena (HC₃N) adalah molekul linear yang menggabungkan rantai tiga karbon dengan gugus sianida, sehingga kaya akan karbon dan nitrogen. Di ruang antarbintang, HC₃N sering ditemukan di awan molekuler padat dan di cakram protoplanet. Contohnya juga terdeteksi di atmosfer Titan. Manfaatnya adalah sebagai molekul kunci dalam kimia organik kaya nitrogen dan sebagai salah satu kandidat prekursor senyawa prabiotik yang lebih kompleks."
+    },
+    {
+        formula: "HCO+",
+        name: "Ion Formil",
+        composedOf: [1, 6, 8],
+        descriptions:
+            "Ion formil (HCO⁺) adalah kation yang terdiri dari hidrogen, karbon, dan oksigen, dan menjadi salah satu ion paling penting di awan molekuler. Di astrofisika, HCO⁺ sering digunakan untuk melacak gas padat dan terionisasi lemah karena garis spektrumnya kuat dan mudah diamati. Contohnya banyak ditemukan di wilayah pembentukan bintang dan di sekitar inti galaksi aktif. Manfaatnya bagi penelitian adalah sebagai tracer kerapatan gas tinggi dan sebagai indikator proses ionisasi kosmik."
+    },
+    {
+        formula: "NH2CHO",
+        name: "Formamida",
+        composedOf: [7, 1, 1, 6, 8],
+        descriptions:
+            "Formamida (NH₂CHO) adalah molekul organik yang mengandung gugus amida, menggabungkan nitrogen, hidrogen, karbon, dan oksigen dalam satu struktur. Di ruang antarbintang, formamida telah terdeteksi di awan molekuler kaya organik dan di sekitar protobintang. Contohnya sering disebut sebagai salah satu molekul yang relevan dengan kimia prabiotik. Manfaat mempelajarinya adalah karena formamida dianggap dapat menjadi bahan awal pembentukan basa nitrogen DNA/RNA dan senyawa biologis lainnya."
+    },
+    {
+        formula: "CH3CN",
+        name: "Asetonitril",
+        composedOf: [6, 1, 1, 1, 6, 7],
+        descriptions:
+            "Asetonitril (CH₃CN) adalah molekul organik yang menggabungkan gugus metil dengan gugus nitril, sehingga kaya karbon dan nitrogen. Di ruang antarbintang, acetonitrile ditemukan di daerah pembentukan bintang masif dan di awan molekuler yang sangat padat. Contohnya juga muncul dalam komposisi beberapa komet. Manfaatnya sebagai penanda lingkungan kaya organik dan sebagai langkah menuju pembentukan molekul organik kompleks yang berpotensi relevan untuk kimia kehidupan."
+    },
+    {
+        formula: "C6H6",
+        name: "Benzena",
+        composedOf: [6, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1],
+        descriptions:
+            "Benzena (C₆H₆) adalah molekul aromatik cincin dengan enam atom karbon dan enam atom hidrogen, yang menjadi struktur dasar bagi banyak senyawa aromatik lain. Dalam astrofisika, benzena dianggap sebagai salah satu blok pembangun awal dari hidrokarbon aromatik polisiklik (PAH). Contohnya telah diusulkan hadir di atmosfer Titan dan di beberapa lingkungan kaya karbon. Manfaat mempelajari benzena adalah untuk memahami bagaimana cincin aromatik terbentuk di ruang dan bagaimana PAH berkembang yang kemudian memengaruhi emisi inframerah di galaksi."
+    },
+    {
+        formula: "SiO",
+        name: "Silikon Monoksida",
+        composedOf: [14, 8],
+        descriptions:
+            "Silikon monoksida (SiO) adalah molekul yang terdiri dari satu atom silikon dan satu atom oksigen dan sering terkait dengan debu silikat di ruang antarbintang. Di daerah pembentukan bintang dan di jet protostellar, garis emisi SiO kuat karena molekul ini dapat terbentuk ketika debu silikat hancur oleh gelombang kejut. Contohnya digunakan untuk memetakan aliran keluar gas dari bintang muda. Manfaat ilmiahnya adalah sebagai penanda proses kejut, penghancuran dan pembentukan ulang debu, serta dinamika gas di sekitar protobintang."
+    },
+    {
+        formula: "SiS",
+        name: "Silikon Sulfida",
+        composedOf: [14, 16],
+        descriptions:
+            "Silikon sulfida (SiS) adalah molekul yang terbentuk dari atom silikon dan sulfur dan biasanya muncul di lingkungan yang kaya unsur berat di sekitar bintang tua atau bintang kaya karbon. Di cangkang gas yang mengelilingi bintang raksasa merah tertentu, SiS dapat menjadi penanda kombinasi antara kimia silikon dan sulfur. Contohnya juga telah terdeteksi dalam beberapa awan molekuler. Manfaat mempelajari SiS adalah untuk memahami bagaimana unsur berat seperti silikon dan sulfur didistribusikan ke medium antarbintang melalui angin bintang."
+    },
+    {
+        formula: "HC5N",
+        name: "Sianobutadiina",
+        composedOf: [1, 6, 6, 6, 6, 6, 7],
+        descriptions:
+            "Sianobutadiina (HC₅N) adalah molekul rantai panjang yang menggabungkan lima atom karbon dengan gugus sianida di ujung rantai. Di ruang antarbintang, molekul ini muncul di awan molekuler yang sangat dingin dan padat di mana rantai karbon panjang dapat terbentuk. Contohnya terdeteksi di awan kaya karbon seperti TMC-1. Manfaat ilmiahnya adalah untuk melacak perkembangan rantai karbon yang semakin panjang dan untuk menguji model kimia yang menjelaskan pembentukan molekul organik kompleks."
+    },
+    {
+        formula: "HC7N",
+        name: "Sianoheksatriina",
+        composedOf: [1, 6, 6, 6, 6, 6, 6, 6, 7],
+        descriptions:
+            "Sianoheksatriina (HC₇N) adalah rantai karbon yang lebih panjang lagi dengan tujuh atom karbon dan satu gugus sianida, menjadikannya molekul sangat panjang untuk ukuran medium antarbintang. Molekul ini biasanya ditemukan di awan molekuler sangat dingin dan tenang yang memungkinkan rantai karbon tumbuh tanpa segera hancur. Contohnya juga dikenal dari awan TMC-1. Manfaatnya adalah sebagai bukti bahwa kimia di ruang bisa menghasilkan struktur organik panjang bahkan sebelum adanya planet, memperkaya potensi bahan awal kimia kehidupan."
+    },
+    {
+        formula: "C3H2",
+        name: "Siklopropenilidena",
+        composedOf: [6, 6, 6, 1, 1],
+        descriptions:
+            "Siklopropenilidena (C₃H₂) adalah molekul dengan tiga atom karbon dalam struktur cincin kecil dan dua atom hidrogen, sehingga mewakili salah satu cincin karbon terkecil yang diketahui di ruang. Di awan molekuler, C₃H₂ cukup umum dan dapat digunakan sebagai penanda kepadatan dan kondisi kimia tertentu. Contohnya ditemukan di berbagai lingkungan, dari awan gelap hingga wilayah HII. Manfaat mempelajarinya adalah untuk memahami pembentukan struktur cincin karbon dan hubungannya dengan molekul aromatik yang lebih besar."
+    },
+    {
+        formula: "C3H",
+        name: "Radikal Propargil",
+        composedOf: [6, 6, 6, 1],
+        descriptions:
+            "Radikal propargil (C₃H) adalah molekul rantai pendek dengan tiga atom karbon dan satu hidrogen yang memiliki elektron tak berpasangan sehingga sangat reaktif. Di ruang antarbintang, C₃H muncul sebagai bagian dari keluarga molekul rantai karbon yang berkembang menjadi struktur lebih besar. Contohnya terdeteksi di awan kaya karbon dan di sekitar bintang karbon. Manfaat ilmiahnya adalah sebagai indikator kimia rantai karbon terbuka dan sebagai perantara menuju pembentukan hidrokarbon lebih kompleks."
+    },
+    {
+        formula: "C3O",
+        name: "Trikarbon Monoksida",
+        composedOf: [6, 6, 6, 8],
+        descriptions:
+            "Trikarbon monoksida (C₃O) adalah molekul linear yang menggabungkan tiga atom karbon berderet dengan satu atom oksigen di ujung rantai. Di medium antarbintang, C₃O termasuk dalam kelompok molekul rantai karbon yang kaya oksigen. Contohnya ditemukan di awan molekuler tertentu dengan kondisi kimia khusus. Manfaat mempelajarinya adalah untuk mengevaluasi bagaimana oksigen terikat dalam rantai karbon dan bagaimana keseimbangan antara molekul kaya oksigen dan kaya nitrogen terbentuk di ruang."
+    },
+    {
+        formula: "H2S",
+        name: "Hidrogen Sulfida",
+        composedOf: [1, 1, 16],
+        descriptions:
+            "Hidrogen sulfida (H₂S) adalah gas dengan dua atom hidrogen dan satu atom sulfur yang di Bumi dikenal berbau telur busuk. Di ruang antarbintang, H₂S dapat berada dalam bentuk gas maupun es yang menempel pada butiran debu. Contohnya juga ditemukan di atmosfer beberapa benda tata surya dan komet. Manfaat ilmiahnya adalah sebagai salah satu reservoir sulfur dan sebagai petunjuk bagaimana sulfur berpindah dari bentuk sederhana ke molekul sulfur yang lebih kompleks di medium antarbintang."
+    },
+    {
+        formula: "SO",
+        name: "Sulfur Monoksida",
+        composedOf: [16, 8],
+        descriptions:
+            "Sulfur monoksida (SO) adalah molekul yang terdiri dari satu atom sulfur dan satu atom oksigen dan sering terkait dengan gas yang mengalami pemanasan atau gelombang kejut. Di daerah pembentukan bintang, SO muncul kuat ketika es sulfur menguap dan bereaksi dengan oksigen. Contohnya diamati di sekitar protobintang dan wilayah dengan aktivitas kejut. Manfaatnya adalah sebagai penanda aktivitas dinamis seperti aliran keluar gas dan sebagai bagian dari rantai reaksi kimia sulfur di ruang."
+    },
+    {
+        formula: "SO2",
+        name: "Sulfur Dioksida",
+        composedOf: [16, 8, 8],
+        descriptions:
+            "Sulfur dioksida (SO₂) adalah molekul dengan satu atom sulfur dan dua atom oksigen yang di Bumi dikenal sebagai gas vulkanik dan polutan udara. Di antariksa, SO₂ dapat terbentuk di lingkungan yang kaya sulfur dan oksigen, misalnya di dekat objek dengan aktivitas vulkanik seperti Io, atau di awan molekuler yang dipanaskan. Contohnya dipakai untuk mengkaji proses geologis dan fotokimia. Manfaatnya adalah sebagai indikator aktivitas kimia sulfur dan kondisi energi tinggi di lingkungan tersebut."
+    },
+    {
+        formula: "OCS",
+        name: "Karbonil Sulfida",
+        composedOf: [8, 6, 16],
+        descriptions:
+            "Karbonil sulfida (OCS) adalah molekul linear dengan atom oksigen, karbon, dan sulfur dan merupakan salah satu molekul sulfur paling umum di medium antarbintang. OCS sering ditemukan sebagai es di butiran debu maupun dalam fase gas. Contohnya terdeteksi di awan molekuler padat, komet, dan lingkungan pembentukan bintang. Manfaat mempelajari OCS adalah untuk memahami siklus sulfur antara fase padat dan gas serta kaitannya dengan pembentukan senyawa organik mengandung sulfur."
+    },
+    {
+        formula: "H2CS",
+        name: "Tioformaldehida",
+        composedOf: [1, 1, 6, 16],
+        descriptions:
+            "Tioformaldehida (H₂CS) adalah analog sulfur dari formaldehida, di mana oksigen diganti oleh sulfur, sehingga mengandung dua hidrogen, satu karbon, dan satu sulfur. Di ruang antarbintang, H₂CS ditemukan di awan molekuler padat dan di sekitar bintang muda. Contohnya membantu membandingkan jalur reaksi kimia antara versi oksigen dan sulfur. Manfaat ilmiahnya adalah sebagai jembatan untuk memahami bagaimana kimia organik dapat bervariasi jika unsur heteroatomnya berbeda."
+    },
+    {
+        formula: "NH2",
+        name: "Radikal Amino",
+        composedOf: [7, 1, 1],
+        descriptions:
+            "Radikal amino (NH₂) adalah spesies reaktif yang terdiri dari satu atom nitrogen dan dua atom hidrogen dengan satu elektron tak berpasangan. Di medium antarbintang, NH₂ muncul sebagai perantara dalam pembentukan senyawa nitrogen-hidrogen seperti amonia dan amina lainnya. Contohnya ditemukan di awan molekuler dan di dekat sumber radiasi kuat. Manfaat mempelajarinya adalah untuk memahami langkah awal pembentukan gugus amino yang sangat penting dalam biokimia di Bumi."
+    },
+    {
+        formula: "HNO",
+        name: "Nitrosil Hidride",
+        composedOf: [1, 7, 8],
+        descriptions:
+            "Nitrosil hidride (HNO) adalah molekul yang menggabungkan hidrogen, nitrogen, dan oksigen dalam satu struktur kecil dan relatif reaktif. Di ruang antarbintang, HNO terdeteksi di awan molekuler dan dianggap sebagai bagian dari jaringan reaksi kimia nitrogen-oksigen. Contohnya memberikan petunjuk bagaimana NO, H₂O, dan senyawa terkait saling berhubungan. Manfaat ilmiahnya adalah sebagai penghubung dalam memahami siklus nitrogen dan oksigen dalam lingkungan astrofisika."
+    },
+    {
+        formula: "NO+",
+        name: "Ion Nitrogen Oksida",
+        composedOf: [7, 8],
+        descriptions:
+            "Ion nitrogen oksida (NO⁺) adalah bentuk bermuatan positif dari molekul NO dan biasanya muncul di lingkungan yang terionisasi oleh radiasi kuat atau partikel energik. Di ruang antarbintang, NO⁺ dapat ditemukan di dekat sumber radiasi ultraviolet dan di wilayah HII. Contohnya menjadi indikator proses ionisasi yang intens. Manfaat mempelajarinya adalah untuk mengerti bagaimana radiasi bintang memengaruhi komposisi kimia gas di sekitarnya."
+    },
+    {
+        formula: "HCO",
+        name: "Radikal Formil",
+        composedOf: [1, 6, 8],
+        descriptions:
+            "Radikal formil (HCO) adalah molekul kecil yang mengandung hidrogen, karbon, dan oksigen dengan satu elektron tak berpasangan sehingga sangat reaktif. Di ruang antarbintang, HCO muncul sebagai perantara dalam pembentukan formaldehida dan molekul organik lain yang berbasis karbonil. Contohnya terdeteksi di awan molekuler dan di sekitar protobintang. Manfaatnya adalah sebagai indikator jalur pembentukan molekul karbonil dan kondisi energi dalam awan."
+    },
+    {
+        formula: "C2O",
+        name: "Dikarbon Monoksida",
+        composedOf: [6, 6, 8],
+        descriptions:
+            "Dikarbon monoksida (C₂O) adalah molekul yang terdiri dari dua atom karbon dan satu atom oksigen yang membentuk rantai pendek kaya karbon. Di medium antarbintang, C₂O termasuk dalam keluarga molekul rantai karbon yang mengandung oksigen. Contohnya teramati di awan molekuler tertentu dengan kimia khusus. Manfaat ilmiahnya adalah untuk menguji model pembentukan rantai karbon teroksigenasi dan peran oksigen dalam jaringan reaksi tersebut."
+    },
+    {
+        formula: "C2S",
+        name: "Dikarbon Monosulfida",
+        composedOf: [6, 6, 16],
+        descriptions:
+            "Dikarbon monosulfida (C₂S) adalah molekul rantai pendek yang terdiri dari dua atom karbon dan satu atom sulfur dan sering muncul di awan molekuler dingin. Di ruang antarbintang, C₂S menjadi salah satu penanda kimia sulfur dalam fase gas. Contohnya terdeteksi di awan kaya karbon seperti TMC-1. Manfaat mempelajarinya adalah untuk memahami bagaimana sulfur bergabung dengan rantai karbon dan bagaimana distribusi sulfur berubah seiring evolusi awan."
+    },
+    {
+        formula: "H2O+",
+        name: "Ion Hidroksil Hidron",
+        composedOf: [1, 1, 8],
+        descriptions:
+            "Ion hidroksil hidron (H₂O⁺) adalah bentuk terionisasi dari air, di mana molekul H₂O kehilangan satu elektron sehingga bermuatan positif. Di medium antarbintang dan atmosfer planet, H₂O⁺ terbentuk ketika air terpapar radiasi energik atau partikel bermuatan. Contohnya diamati di awan yang terionisasi dan di dekat komet yang disinari Matahari. Manfaat ilmiahnya adalah untuk memetakan proses ionisasi air dan peran radiasi dalam mengubah kimia molekul volatil."
+    },
+    {
+        formula: "H3O+",
+        name: "Ion Hidronium",
+        composedOf: [1, 1, 1, 8],
+        descriptions:
+            "Ion hidronium (H₃O⁺) adalah ion yang terbentuk ketika proton (H⁺) bergabung dengan molekul air, dan dalam larutan berperan sebagai bentuk efektif ion hidrogen. Di ruang antarbintang, H₃O⁺ muncul di awan molekuler sebagai produk ionisasi air dan memainkan peran penting dalam jaringan reaksi yang menghasilkan molekul oksigen lain. Contohnya digunakan untuk mengukur tingkat ionisasi dan jumlah air di awan. Manfaatnya adalah sebagai indikator aktivitas kimia yang melibatkan air dan sebagai kunci untuk memahami keseimbangan asam–basa di gas antarbintang."
+    },
+    {
+        formula: "NH4+",
+        name: "Ion Amonium",
+        composedOf: [7, 1, 1, 1, 1],
+        descriptions:
+            "Ion amonium (NH₄⁺) adalah kation yang merupakan bentuk terprotonasi dari amonia, dengan satu nitrogen dan empat hidrogen. Di medium antarbintang, NH₄⁺ diperkirakan muncul terutama dalam fase es di butiran debu saat asam dan basa bereaksi di permukaan. Contohnya dipahami lewat tanda-tanda spektral pada es molekuler. Manfaat mempelajarinya adalah untuk memahami kimia nitrogen dalam fase padat dan bagaimana ion ini terlibat dalam pembentukan amina dan senyawa nitrogen lain saat es menguap."
+    },
+    {
+        formula: "CH3CHO",
+        name: "Asetaldehida",
+        composedOf: [6, 6, 1, 1, 1, 1, 8],
+        descriptions:
+            "Asetaldehida (CH₃CHO) adalah aldehida sederhana dengan dua atom karbon, empat hidrogen, dan satu oksigen yang membentuk gugus –CHO. Di ruang antarbintang, asetaldehida ditemukan di awan molekuler kaya organik dan di sekitar protobintang hangat. Contohnya menunjukkan bahwa molekul karbonil yang lebih kompleks dapat terbentuk di medium antarbintang. Manfaatnya adalah sebagai salah satu molekul perantara menuju pembentukan alkohol, asam, dan molekul organik lain yang relevan dengan kimia kehidupan."
+    },
+    {
+        formula: "CH3NH2",
+        name: "Metilamina",
+        composedOf: [6, 1, 1, 1, 7, 1, 1],
+        descriptions:
+            "Metilamina (CH₃NH₂) adalah molekul organik yang menggabungkan gugus metil dengan gugus amino, sehingga mengandung karbon, hidrogen, dan nitrogen dalam struktur yang mirip dengan blok penyusun asam amino. Di ruang antarbintang, metilamina telah terdeteksi di lingkungan pembentukan bintang dan pada es butiran debu yang tereksitasi. Contohnya sering dikaitkan dengan kimia prabiotik. Manfaat mempelajarinya adalah untuk memahami bagaimana gugus amino dapat terbentuk sebelum adanya planet dan bagaimana hal itu membuka kemungkinan asal-usul molekul biologis."
+    },
+    {
+        formula: "CH3SH",
+        name: "Metanetiol",
+        composedOf: [6, 1, 1, 1, 16, 1],
+        descriptions:
+            "Metanetiol (CH₃SH) adalah analog sulfur dari metanol, di mana oksigen digantikan oleh sulfur sehingga menghasilkan molekul berbau kuat dan khas. Di ruang antarbintang, keberadaan metanetiol menunjukkan bahwa sulfur juga bisa masuk ke dalam molekul organik mirip alkohol. Contohnya terdeteksi di beberapa awan molekuler kaya organik. Manfaat ilmiahnya adalah sebagai penanda kimia organik yang melibatkan sulfur dan sebagai bagian dari pemetaan penuh unsur heteroatom dalam molekul organik kosmik."
+    },
+    {
+        formula: "C2H3CN",
+        name: "Akrilonitril",
+        composedOf: [6, 6, 1, 1, 1, 6, 7],
+        descriptions:
+            "Akrilonitril (C₂H₃CN) adalah molekul organik tak jenuh yang menggabungkan rantai karbon pendek dengan gugus nitril dan dikenal di Bumi sebagai bahan industri polimer. Di ruang antarbintang dan atmosfer Titan, akrilonitril menarik perhatian karena berpotensi membentuk struktur mirip membran dalam kondisi ekstrem. Contohnya telah dilaporkan di atmosfer Titan. Manfaat mempelajarinya adalah untuk mengeksplorasi kemungkinan bentuk kimia “membran” alternatif bagi kehidupan di lingkungan yang tidak seperti Bumi."
+    },
+    {
+        formula: "HCOCN",
+        name: "Asam Isosianat",
+        composedOf: [1, 6, 8, 6, 7],
+        descriptions:
+            "Asam isosianat (HCOCN) adalah molekul yang mengandung kombinasi karbon, oksigen, dan nitrogen dalam struktur yang kaya energi dan relatif reaktif. Di ruang antarbintang, bentuk ini terkait dengan berbagai isomer asam sianat dan isosianat yang muncul di awan molekuler. Contohnya memberikan informasi tentang bagaimana gugus –NCO dan –CNO terbentuk dan saling bertransformasi. Manfaat ilmiahnya adalah membantu memetakan jaringan reaksi molekul mengandung CN dan CO yang relevan dengan kimia prabiotik."
+    },
+    {
+        formula: "HNCO",
+        name: "Asam Isosianat",
+        composedOf: [1, 7, 6, 8],
+        descriptions:
+            "Asam isosianat (HNCO) adalah molekul yang menggabungkan hidrogen, nitrogen, karbon, dan oksigen dalam satu rantai pendek dan merupakan salah satu isomer penting dalam keluarga asam sianat. Di medium antarbintang, HNCO sering ditemukan di awan molekuler padat dan wilayah pembentukan bintang. Contohnya dipakai untuk menilai kondisi suhu dan kepadatan gas. Manfaatnya adalah sebagai molekul kunci untuk memahami kimia CN–CO dan sebagai calon prekursor berbagai senyawa organik nitrogen-oksigen."
+    },
+    {
+        formula: "HOCN",
+        name: "Asam Sianat",
+        composedOf: [1, 8, 6, 7],
+        descriptions:
+            "Asam sianat (HOCN) adalah isomer lain dalam keluarga asam sianat yang menyusun ulang posisi atom hidrogen, oksigen, karbon, dan nitrogen dibanding HNCO. Di ruang antarbintang, rasio HOCN terhadap isomer lain membantu mengungkap jalur pembentukan dan kondisi kimia di awan molekuler. Contohnya memberikan gambaran mana jalur reaksi yang lebih dominan, apakah di fase gas atau di permukaan es. Manfaat ilmiahnya adalah untuk menyusun peta lengkap kimia isomerik yang terkait dengan gugus CN dan CO."
+    },
+    {
+        formula: "NH2CN",
+        name: "Sianamida",
+        composedOf: [7, 1, 1, 6, 7],
+        descriptions:
+            "Sianamida (NH₂CN) adalah molekul yang mengandung gugus amino dan gugus sianida dalam satu struktur, sehingga kaya nitrogen dan berpotensi reaktif dalam kimia prabiotik. Di ruang antarbintang, NH₂CN ditemukan di awan molekuler yang kaya molekul organik kompleks. Contohnya dianggap relevan sebagai prekursor pembentukan basa nitrogen dan asam amino. Manfaat mempelajarinya adalah untuk mengeksplorasi bagaimana senyawa kaya nitrogen dapat berkembang menjadi blok penyusun biomolekul."
+    },
+    {
+        formula: "CH2NH",
+        name: "Metilenimina",
+        composedOf: [6, 1, 1, 7, 1],
+        descriptions:
+            "Metilenimina (CH₂NH) adalah molekul kecil yang menggabungkan karbon, hidrogen, dan nitrogen dalam bentuk imina dan sering dianggap sebagai perantara dalam pembentukan asam amino sederhana. Di ruang antarbintang, CH₂NH telah terdeteksi di awan molekuler dan di sekitar protobintang yang hangat. Contohnya menghubungkan kimia sederhana berbasis NH₃ dan hidrokarbon dengan molekul yang lebih dekat ke struktur organik biologis. Manfaat ilmiahnya adalah sebagai jembatan penting dalam skenario kimia prabiotik di skala kosmik."
+    }
 ];
+
 
 
 const elementPositions = {
