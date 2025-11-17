@@ -711,24 +711,9 @@ function updateMoleculeInfo(molecule) {
 }
 
 function getMoleculeDescription(molecule) {
-    const descriptions = {
-        "Water": "Air adalah senyawa kimia yang terdiri dari dua atom hidrogen dan satu atom oksigen (H₂O). Air adalah zat yang paling penting bagi kehidupan di bumi, menutupi sekitar 71% permukaan planet ini.",
-        "Molecular Hydrogen": "Hidrogen molekuler (H₂) adalah bentuk paling umum dari hidrogen di alam semesta. Merupakan molekul diatomik yang sangat ringan dan mudah terbakar.",
-        "Carbon Dioxide": "Karbon dioksida (CO₂) adalah gas tidak berwarna yang dihasilkan dari respirasi dan pembakaran bahan organik. Penting untuk fotosintesis tanaman.",
-        "Methane": "Metana (CH₄) adalah hidrokarbon paling sederhana dan merupakan komponen utama gas alam. Gas tidak berwarna yang mudah terbakar.",
-        "Ammonia": "Amonia (NH₃) adalah senyawa nitrogen dan hidrogen yang berbentuk gas dengan bau menyengat. Digunakan dalam pupuk dan berbagai proses industri.",
-        "Hydrogen Cyanide": "Hidrogen sianida (HCN) adalah senyawa kimia yang sangat beracun dengan bau khas seperti almond pahit. Digunakan dalam sintesis kimia industri.",
-        "Carbon Monoxide": "Karbon monoksida (CO) adalah gas beracun tidak berwarna dan tidak berbau. Dihasilkan dari pembakaran tidak sempurna bahan bakar karbon.",
-        "Molecular Oxygen": "Oksigen molekuler (O₂) adalah komponen penting atmosfer bumi (~21%). Esensial untuk respirasi aerobik dan pembakaran.",
-        "Molecular Nitrogen": "Nitrogen molekuler (N₂) membentuk sekitar 78% atmosfer bumi. Relatif inert pada suhu normal tetapi penting untuk sintesis protein.",
-        "Formaldehyde": "Formaldehida (H₂CO) adalah senyawa organik paling sederhana dari golongan aldehida. Digunakan sebagai disinfektan dan pengawet.",
-        "Methanol": "Metanol (CH₃OH) atau alkohol kayu adalah alkohol paling sederhana. Cairan beracun yang digunakan sebagai pelarut dan bahan bakar.",
-        "Acetylene": "Asetilena (C₂H₂) adalah hidrokarbon tidak jenuh yang digunakan dalam pengelasan dan pemotongan logam karena menghasilkan api sangat panas.",
-        "Ethylene": "Etilena (C₂H₄) adalah hidrokarbon tidak jenuh yang merupakan hormon tumbuhan alami. Digunakan untuk mempercepat pematangan buah.",
-        "Ethane": "Etana (C₂H₆) adalah hidrokarbon jenuh kedua paling sederhana setelah metana. Komponen gas alam dan bahan baku petrokimia."
-    };
+    const searchMol = interstellarMolecules.find(mol => mol.name === molecule.name);
 
-    return descriptions[molecule.name] || `${molecule.name} (${molecule.formula}) adalah molekul yang terdiri dari kombinasi unsur-unsur yang Anda pilih. Molekul ini dapat ditemukan di ruang antarbintang.`;
+    return searchMol.descriptions || `${molecule.name} (${molecule.formula}) adalah molekul yang terdiri dari kombinasi unsur-unsur yang Anda pilih. Molekul ini dapat ditemukan di ruang antarbintang.`;
 }
 
 function setupDropZones() {
