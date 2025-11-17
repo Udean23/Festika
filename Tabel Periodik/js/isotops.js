@@ -123,7 +123,7 @@ function drawLabel(a) {
   a.label.forEach((t, i) => isoCtx.fillText(t, bx, by + i * 28));
 
   isoCtx.fillStyle = '#799bdc';
-  isoCtx.font = 'bold 30px Amaranth, sans-serif';
+  isoCtx.font = 'bold 30px Irish Grover, sans-serif';
   isoCtx.textAlign = 'center';
   isoCtx.fillText(a.name, a.x, a.y + 100);
 }

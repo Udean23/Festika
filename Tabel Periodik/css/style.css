@@ -2,6 +2,15 @@ body {
   font-family: "Amaranth", sans-serif;
 }
 
+h2 {
+  font-family: "Irish Grover", cursive;
+}
+
+.Irish-Grover {
+  font-family: "Irish Grover", cursive;
+  color: #80A1DD;
+}
+
 .star {
   position: absolute;
   background: white;
