@@ -180,9 +180,14 @@ const anionPositions = [
   { x: 100, y: 100 }, { x: 200, y: 130 }, { x: 60, y: 160 }, { x: 280, y: 150 }
 ];
 
-anionPositions.forEach(pos => {
-  anionParticles.push(new Particle(pos.x, pos.y, 20, 'O', '²⁻', anionCanvas.width, anionCanvas.height));
-});
+  anionParticles.push(new Particle(50, 50, 20, 'cl', '⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(150, 35, 20, 'Br', '⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(240, 25, 20, 'O', '²⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(320, 70, 20, 'S', '²⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(100, 100, 20, 'N', '³⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(200, 130, 20, 'OH', '⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(60, 160, 20, 'I', '⁻', anionCanvas.width, anionCanvas.height));
+  anionParticles.push(new Particle(280, 150, 20, 'NO', '³⁻', anionCanvas.width, anionCanvas.height));
 
 const kationParticles = [];
 const kationCanvas = document.getElementById('kation');
@@ -191,9 +196,14 @@ const kationPositions = [
   { x: 120, y: 110 }, { x: 250, y: 140 }, { x: 90, y: 165 }, { x: 350, y: 155 }
 ];
 
-kationPositions.forEach(pos => {
-  kationParticles.push(new Particle(pos.x, pos.y, 20, 'Na', '⁺', kationCanvas.width, kationCanvas.height));
-});
+  kationParticles.push(new Particle(70, 45, 20, 'H', '⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(180, 30, 20, 'Na', '⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(280, 50, 20, 'K', '⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(380, 70, 20, 'Ca', '²⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(120, 110, 20, 'Mg', '²⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(250, 140, 20, 'Fe', '²⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(90, 165, 20, 'Al', '³⁺', kationCanvas.width, kationCanvas.height));
+  kationParticles.push(new Particle(350, 155, 20, 'Fe', '³⁺', kationCanvas.width, kationCanvas.height));
 
 new IonCanvas('anion', anionParticles, '(Anion)', '−', 'top-right');
 new IonCanvas('kation', kationParticles, '(Kation)', '+', 'bottom-left');
