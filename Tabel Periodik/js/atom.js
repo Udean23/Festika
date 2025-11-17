@@ -158,7 +158,7 @@ function drawCurveArrow(x1, y1, x2, y2, t, align = "left", cd = 1) {
   atomCtx.fillStyle = "white";
   atomCtx.fill();
 
-  atomCtx.font = "20px Arial";
+  atomCtx.font = "25px Irish Grover";
   atomCtx.fillStyle = "white";
   atomCtx.textAlign = align;
   const xo = align === "right" ? -10 : 10;
