@@ -10,6 +10,8 @@ const planetData = {
         moons: "0",
         temp: "333°F (167°C)",
         size: "2.440 kilometer (1.516 mil)",
+        image: "../assets/merkurius2.jpg",
+        url: "https://science.nasa.gov/mercury/",
         facts: [
             "Merkurius adalah planet tercepat, mengorbit Matahari dengan kecepatan 47 km/detik",
             "Satu hari di Merkurius setara dengan 176 hari Bumi",
@@ -28,6 +30,8 @@ const planetData = {
         moons: "0",
         temp: "867°F (464°C)",
         size: "12.104 km",
+        image: "../assets/venus2.jpg",
+        url: "https://science.nasa.gov/venus/",
         facts: [
             "Venus berotasi berlawanan arah dengan planet lain",
             "Satu hari di Venus lebih panjang dari satu tahunnya",
@@ -46,6 +50,8 @@ const planetData = {
         moons: "1 (Bulan)",
         temp: "59°F (15°C)",
         size: "12.756 kilometer (7.926 mil)",
+        image: "../assets/earth2.jpg",
+        url: "https://science.nasa.gov/earth/",
         facts: [
             "Bumi adalah satu-satunya planet yang tidak dinamai dari dewa",
             "Satu tahun di Bumi tidak tepat 365 hari",
@@ -64,6 +70,8 @@ const planetData = {
         moons: "2 (Phobos dan Deimos)",
         temp: "-85°F (-65°C)",
         size: "6.779 km",
+        image: "../assets/mars2.jpg",
+        url: "https://science.nasa.gov/mars/",
         facts: [
             "Mars memiliki gunung berapi tertinggi di Tata Surya: Olympus Mons (21 km)",
             "Satu hari di Mars hampir sama dengan di Bumi",
@@ -82,6 +90,8 @@ const planetData = {
         moons: "95+ (Empat satelit terbesarnya – Io, Europa, Ganymede, dan Callisto)",
         size: "139.820 km",
         temp: "-166°F (-110°C)",
+        image: "../assets/jupiter2.jpg",
+        url: "https://science.nasa.gov/jupiter/",
         facts: [
             "Jupiter memiliki waktu rotasi tercepat di antara semua planet",
             "Bintik Merah Besar telah berlangsung setidaknya selama 400 tahun",
@@ -100,6 +110,8 @@ const planetData = {
         moons: "146+",
         temp: "-220°F (-140°C)",
         size: "116.460 km",
+        image: "../assets/saturn2.jpg",
+        url: "https://science.nasa.gov/saturn/",
         facts: [
             "Saturnus adalah planet dengan kerapatan paling rendah dan dapat mengapung di air",
             "Cincinnya hanya sekitar 10 meter tebalnya",
@@ -118,6 +130,8 @@ const planetData = {
         moons: "27. Lima bulan yang paling besar adalah Titania, Oberon, Umbriel, Ariel, dan Miranda",
         temp: "-320°F (-195°C)",
         size: "50.724 km",
+        image: "../assets/uranus2.png",
+        url: "https://science.nasa.gov/uranus/",
         facts: [
             "Uranus berputar miring dengan sudut 98 derajat",
             "Merupakan planet pertama yang ditemukan dengan teleskop",
@@ -136,6 +150,8 @@ const planetData = {
         moons: "14. Bulan terbesar adalah Triton",
         temp: "-330°F (-200°C)",
         size: "49.244 km",
+        image: "../assets/neptune2.jpg",
+        url: "https://science.nasa.gov/neptune/",
         facts: [
             "Neptunus memiliki angin terkuat di Tata Surya",
             "Ditemukan melalui perhitungan matematika sebelum terlihat",
@@ -154,6 +170,8 @@ const planetData = {
         moons: "5 (Charon, Styx, Nix, Kerberos, Hydra)",
         temp: "-375°F (-225°C)",
         size: "2.377 km",
+        image: "../assets/pluto2.jpg",
+        url: "https://science.nasa.gov/pluto/",
         facts: [
             "Pluto lebih kecil dari Bulan Bumi",
             "Memiliki atmosfer tipis yang membeku ketika menjauh dari Matahari",
