@@ -3,23 +3,24 @@ body {
     url("../assets/backgroundfix.jpg");
   background-size: cover;
   background-position: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
-
 .planet {
   font-family: "Irish Grover", cursive;
   position: relative;
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  box-shadow: 0 0 30px black inset, 0 0px 130px 40px rgba(67, 67, 67, 0.6) inset,
-    0 0px 23px 4px rgba(44, 42, 41, 0.6) inset,
-    0 -10px 130px rgba(23, 21, 20, 0.6);
   justify-content: center;
   display: flex;
   align-items: center;
   font-size: 80px;
   color: white;
   overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .planet::before {
@@ -27,13 +28,16 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: url("../assets/jupiter2.jpg") center/cover no-repeat;
-  animation: slide-bg 30s linear infinite;
+  background-image: var(--planet-bg);
+  background-position: 0 center;
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
   z-index: 0;
-  will-change: transform;
   box-shadow: 0 0 30px black inset, 0 0px 130px 40px rgba(67, 67, 67, 0.6) inset,
     0 0px 23px 4px rgba(44, 42, 41, 0.6) inset,
     0 -10px 130px rgba(23, 21, 20, 0.6);
+  animation: slide-bg 20s linear infinite;
+  will-change: background-position;
 }
 
 .planet > * {
@@ -48,4 +52,37 @@ body {
   to {
     background-position: 100% center;
   }
+}
+
+.planet-name {
+  position: relative;
+  z-index: 2;
+  font-size: 36px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+
+.back-btn {
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn {
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
