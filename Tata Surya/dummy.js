@@ -1,7 +1,8 @@
 const planetData = {
-    mercury: {
+    merkurius: {
         name: "Merkurius",
         type: "Planet Terestrial (kebumian)",
+        image: "../assets/merkurius2.jpg",
         description: "Merkurius adalah planet terkecil di tata surya kita dan paling dekat dengan Matahari. Ukurannya hanya sedikit lebih besar daripada Bulan Bumi. Dari permukaan Merkurius, Matahari akan tampak tiga kali lebih besar daripada jika dilihat dari Bumi, dan cahaya Matahari akan tujuh kali lebih terang.",
         distance: "58 juta kilometer (36 juta mil)",
         mass: "3,285 × 10²³ kg (0,055 kali massa Bumi)",
@@ -20,7 +21,8 @@ const planetData = {
     venus: {
         name: "Venus",
         type: "Planet Terestrial (kebumian)",
-        description: "Venus adalah planet kedua dari Matahari, dan tetangga terdekat Bumi. Venus adalah objek paling terang ketiga di langit setelah Matahari dan Bulan. Venus berputar perlahan ke arah yang berlawanan dengan kebanyakan planet. Venus memiliki struktur dan ukuran yang mirip dengan Bumi, dan terkadang disebut kembaran jahat Bumi. Atmosfernya yang tebal memerangkap panas dalam efek rumah kaca yang tak terkendali, menjadikannya planet terpanas di tata surya kita dengan suhu permukaan yang cukup panas untuk melelehkan timah. Di bawah awan yang padat dan persisten, permukaannya memiliki gunung berapi dan pegunungan yang terdeformasi.",
+        image: "../assets/venus2.jpg",
+        description: "Venus adalah planet kedua dari Matahari, dan tetangga terdekat Bumi. Atmosfernya yang tebal memerangkap panas dalam efek rumah kaca yang tak terkendali, menjadikannya planet terpanas di tata surya kita.",
         distance: "108 juta kilometer (67 juta mil)",
         mass: "4,867 × 10²⁴ kg (0,815 kali massa Bumi)",
         orbital: "225 hari",
@@ -35,10 +37,11 @@ const planetData = {
             "Tekanan atmosfer Venus 92 kali lipat tekanan di Bumi"
         ]
     },
-    earth: {
+    bumi: {
         name: "Bumi",
         type: "Planet Terestrial (kebumian)",
-        description: "Meskipun Bumi hanya planet terbesar kelima di tata surya, ia adalah satu-satunya planet di tata surya kita yang memiliki air cair di permukaannya. Hanya sedikit lebih besar dari Venus di dekatnya, Bumi adalah planet terbesar dari empat planet terdekat dengan Matahari, yang semuanya terbuat dari batuan dan logam.",
+        image: "../assets/earth2.jpg",
+        description: "Meskipun Bumi hanya planet terbesar kelima di tata surya, ia adalah satu-satunya planet di tata surya kita yang memiliki air cair di permukaannya.",
         distance: "150 juta kilometer (93 juta mil)",
         mass: "5,972 × 10²⁴ kg",
         orbital: "365,25 hari",
@@ -56,7 +59,8 @@ const planetData = {
     mars: {
         name: "Mars",
         type: "Planet Terestrial (kebumian)",
-        description: "Mars adalah planet keempat dari Matahari, dikenal sebagai Planet Merah karena oksida besi di permukaannya. Mars memiliki gunung berapi dan ngarai terbesar di Tata Surya, dan bukti menunjukkan bahwa pernah ada air cair di permukaannya.",
+        image: "../assets/mars2.jpg",
+        description: "Mars adalah planet keempat dari Matahari, dikenal sebagai Planet Merah karena oksida besi di permukaannya.",
         distance: "228 juta kilometer (142 juta mil)",
         mass: "6,39 × 10²³ kg (0,107 kali massa Bumi)",
         orbital: "687 hari",
@@ -74,14 +78,15 @@ const planetData = {
     jupiter: {
         name: "Jupiter",
         type: "Raksasa Gas (gas giant)",
-        description: "Jupiter adalah planet terbesar dan tertua di tata surya kita. Jika Jupiter adalah cangkang berongga, 1.000 Bumi bisa muat di dalamnya. Namun, Raja Planet ini bukanlah raksasa yang lamban Jupiter memiliki hari terpendek di tata surya, membutuhkan waktu sekitar 9,9 jam untuk berputar sekali pada porosnya. Jupiter adalah planet kelima dari Matahari dan yang terbesar di Tata Surya.",
+        image: "../assets/jupiter2.jpg",
+        description: "Jupiter adalah planet terbesar dan tertua di tata surya kita. Jika Jupiter adalah cangkang berongga, 1.000 Bumi bisa muat di dalamnya.",
         distance: "778 juta kilometer (484 juta mil)",
         mass: "1,898 × 10²⁷ kg (317,8 kali massa Bumi)",
         orbital: "11,86 tahun",
         rotation: "9,9 jam",
         moons: "95+",
-        size: "139.820 km",
         temp: "-166°F (-110°C)",
+        size: "139.820 km",
         facts: [
             "Jupiter memiliki waktu rotasi tercepat di antara semua planet",
             "Bintik Merah Besar telah berlangsung setidaknya selama 400 tahun",
@@ -89,10 +94,11 @@ const planetData = {
             "Jupiter bertindak seperti penyedot kosmik, melindungi Bumi dari asteroid"
         ]
     },
-    saturn: {
+    saturnus: {
         name: "Saturnus",
         type: "Raksasa Gas (gas giant)",
-        description: "Saturnus adalah planet keenam dari Matahari dan yang kedua terbesar di Tata Surya. Ia terkenal karena sistem cincinnya yang spektakuler. Saturnus bukan satu-satunya planet yang memiliki cincin, tetapi tidak ada yang sehebat atau serumit cincin Saturnus. Cincin ini terdiri dari partikel es dengan sedikit puing batuan dan debu.",
+        image: "../assets/saturn2.jpg",
+        description: "Saturnus adalah planet keenam dari Matahari dan yang kedua terbesar di Tata Surya. Ia terkenal karena sistem cincinnya yang spektakuler.",
         distance: "1,4 miliar kilometer (886 juta mil)",
         mass: "5,683 × 10²⁶ kg (95,2 kali massa Bumi)",
         orbital: "29,46 tahun",
@@ -110,7 +116,8 @@ const planetData = {
     uranus: {
         name: "Uranus",
         type: "Raksasa Es (ice giant)",
-        description: "Uranus adalah planet ketujuh dari Matahari dan merupakan planet pertama yang ditemukan menggunakan teleskop. Ia berputar miring pada sisinya, menjadikannya unik di antara planet lain. Atmosfernya terdiri dari hidrogen, helium, dan metana yang memberikan warna biru-hijau.",
+        image: "../assets/uranus2.jpg",
+        description: "Uranus adalah planet ketujuh dari Matahari dan merupakan planet pertama yang ditemukan menggunakan teleskop.",
         distance: "2,9 miliar kilometer (1,8 miliar mil)",
         mass: "8,681 × 10²⁵ kg (14,5 kali massa Bumi)",
         orbital: "84 tahun",
@@ -125,10 +132,11 @@ const planetData = {
             "Satu musim di Uranus berlangsung selama 21 tahun Bumi"
         ]
     },
-    neptune: {
+    neptunus: {
         name: "Neptunus",
         type: "Raksasa Es (ice giant)",
-        description: "Neptunus adalah planet kedelapan dan terjauh dari Matahari di Tata Surya. Ia merupakan raksasa es (ice giant) dengan angin terkuat di Tata Surya yang mencapai kecepatan 2.100 km/jam. Neptunus adalah planet pertama yang ditemukan melalui perhitungan matematika.",
+        image: "../assets/neptune2.jpg",
+        description: "Neptunus adalah planet kedelapan dan terjauh dari Matahari di Tata Surya. Ia merupakan raksasa es (ice giant) dengan angin terkuat di Tata Surya.",
         distance: "4,5 miliar kilometer (2,8 miliar mil)",
         mass: "1,024 × 10²⁶ kg (17,1 kali massa Bumi)",
         orbital: "164,8 tahun",
@@ -146,7 +154,8 @@ const planetData = {
     pluto: {
         name: "Pluto",
         type: "Planet Katai",
-        description: "Pluto adalah planet katai di sabuk Kuiper, sebuah wilayah objek es di luar Neptunus. Pluto ditemukan pada tahun 1930 dan sempat diklasifikasikan sebagai planet kesembilan hingga 2006. Pluto memiliki permukaan es dengan gunung-gunung yang terbuat dari air beku dan atmosfer tipis yang mengembang ketika mendekati Matahari.",
+        image: "../assets/pluto2.jpg",
+        description: "Pluto adalah planet katai di sabuk Kuiper, sebuah wilayah objek es di luar Neptunus.",
         distance: "5,9 miliar kilometer (3,7 miliar mil) rata-rata",
         mass: "1,309 × 10²² kg (0,00218 kali massa Bumi)",
         orbital: "248 tahun",

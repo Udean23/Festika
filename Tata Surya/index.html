@@ -7,10 +7,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/solarsystemv2.css" />
     <title>Sistem Tata Surya</title>
   </head>
   <body>
+    <div class="back-container">
+      <button id="back-btn" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span class="label">Kembali</span>
+      </button>
+    </div>
+
     <input class="planet9" id="pluto" type="radio" name="planet" />
     <label class="menu pluto" for="pluto">
       <div class="preview"></div>
@@ -155,7 +166,9 @@
               pembawa pesan yang cepat dalam mitologi Romawi.
             </p>
             <label
-              ><a href="detail.html?planet=merkurius" style="text-decoration: none;"
+              ><a
+                href="detail.html?planet=merkurius"
+                style="text-decoration: none"
                 >Baca Selengkapnya<span></span></a
             ></label>
           </div>
@@ -259,7 +272,9 @@
               Romawi.
             </p>
             <label
-              ><a href="detail.html?planet=jupiter" style="text-decoration: none"
+              ><a
+                href="detail.html?planet=jupiter"
+                style="text-decoration: none"
                 >Baca Selengkapnya<span></span></a
             ></label>
           </div>
@@ -294,7 +309,9 @@
               yang mengelilinginya.
             </p>
             <label
-              ><a href="detail.html?planet=saturnus" style="text-decoration: none"
+              ><a
+                href="detail.html?planet=saturnus"
+                style="text-decoration: none"
                 >Baca Selengkapnya<span></span></a
             ></label>
           </div>
@@ -365,7 +382,9 @@
               Tata Surya.
             </p>
             <label
-              ><a href="detail.html?planet=neptunus" style="text-decoration: none"
+              ><a
+                href="detail.html?planet=neptunus"
+                style="text-decoration: none"
                 >Baca Selengkapnya<span></span></a
             ></label>
           </div>
@@ -384,7 +403,7 @@
               diklasifikasikan sebagai planet katai.
             </p>
             <label
-              ><a href="detail.html?planet=pluto" style="text-decoration: none;"
+              ><a href="detail.html?planet=pluto" style="text-decoration: none"
                 >Baca Selengkapnya<span></span></a
             ></label>
           </div>
@@ -392,5 +411,11 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.getElementById("back-btn").onclick = () => {
+        window.history.back();
+      };
+    </script>
   </body>
 </html>
