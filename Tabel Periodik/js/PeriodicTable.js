@@ -322,7 +322,6 @@ function handleDragStart(e) {
     e.dataTransfer.setData('text/html', this.innerHTML);
 
     enableWheelScroll();
-    highlightCompatibleElements();
 }
 
 function handleDragEnd(e) {
@@ -330,82 +329,6 @@ function handleDragEnd(e) {
     isDragging = false;
     stopAutoScroll();
     disableWheelScroll();
-
-    if (compatibleElements.size > 0) {
-        maintainHighlightAfterDrop();
-    } else {
-        resetElementHighlight();
-    }
-}
-
-function highlightCompatibleElements() {
-    const currentElements = [];
-
-    for (let zone in droppedElements) {
-        if (droppedElements[zone].atomicNumber) {
-            for (let i = 0; i < droppedElements[zone].count; i++) {
-                currentElements.push(droppedElements[zone].atomicNumber);
-            }
-        }
-    }
-
-    if (currentElements.length === 0) {
-        return;
-    }
-
-    compatibleElements.clear();
-
-    interstellarMolecules.forEach(molecule => {
-        const sortedMolecule = [...molecule.composedOf].sort((a, b) => a - b);
-        const sortedCurrent = [...currentElements].sort((a, b) => a - b);
-
-        if (sortedMolecule.length === sortedCurrent.length + 1) {
-            let found = true;
-            let currentIndex = 0;
-            let missingElement = null;
-
-            for (let i = 0; i < sortedMolecule.length; i++) {
-                if (currentIndex < sortedCurrent.length && sortedMolecule[i] === sortedCurrent[currentIndex]) {
-                    currentIndex++;
-                } else if (missingElement === null) {
-                    missingElement = sortedMolecule[i];
-                } else {
-                    found = false;
-                    break;
-                }
-            }
-
-            if (found && missingElement !== null) {
-                compatibleElements.add(missingElement);
-            }
-        }
-    });
-
-    const allElements = document.querySelectorAll('.element');
-    allElements.forEach(element => {
-        const atomicNum = parseInt(element.getAttribute('data-atomic'));
-        if (compatibleElements.has(atomicNum)) {
-            element.classList.add('compatible');
-            element.classList.remove('dimmed');
-        } else {
-            element.classList.add('dimmed');
-            element.classList.remove('compatible');
-        }
-    });
-}
-
-function maintainHighlightAfterDrop() {
-    const allElements = document.querySelectorAll('.element');
-    allElements.forEach(element => {
-        const atomicNum = parseInt(element.getAttribute('data-atomic'));
-        if (compatibleElements.has(atomicNum)) {
-            element.classList.remove('compatible');
-            element.classList.remove('dimmed');
-        } else {
-            element.classList.add('dimmed');
-            element.classList.remove('compatible');
-        }
-    });
 }
 
 function resetElementHighlight() {
@@ -435,27 +358,33 @@ function updateCompatibilityHighlight() {
     compatibleElements.clear();
 
     interstellarMolecules.forEach(molecule => {
-        const sortedMolecule = [...molecule.composedOf].sort((a, b) => a - b);
-        const sortedCurrent = [...currentElements].sort((a, b) => a - b);
+        const moleculeElements = [...molecule.composedOf];
+        const currentSorted = [...currentElements];
 
-        if (sortedMolecule.length === sortedCurrent.length + 1) {
-            let found = true;
-            let currentIndex = 0;
-            let missingElement = null;
-
-            for (let i = 0; i < sortedMolecule.length; i++) {
-                if (currentIndex < sortedCurrent.length && sortedMolecule[i] === sortedCurrent[currentIndex]) {
-                    currentIndex++;
-                } else if (missingElement === null) {
-                    missingElement = sortedMolecule[i];
-                } else {
-                    found = false;
+        if (moleculeElements.length > currentSorted.length) {
+            let tempMolecule = [...moleculeElements];
+            let allMatched = true;
+            
+            for (let current of currentSorted) {
+                let found = false;
+                for (let i = 0; i < tempMolecule.length; i++) {
+                    if (tempMolecule[i] === current) {
+                        tempMolecule.splice(i, 1);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    allMatched = false;
                     break;
                 }
             }
 
-            if (found && missingElement !== null) {
-                compatibleElements.add(missingElement);
+            if (allMatched && tempMolecule.length > 0) {
+                const remainingUnique = [...new Set(tempMolecule)];
+                remainingUnique.forEach(element => {
+                    compatibleElements.add(element);
+                });
             }
         }
     });
@@ -471,8 +400,8 @@ function updateCompatibilityHighlight() {
         allElements.forEach(element => {
             const atomicNum = parseInt(element.getAttribute('data-atomic'));
             if (compatibleElements.has(atomicNum)) {
-                element.classList.remove('compatible');
                 element.classList.remove('dimmed');
+                element.classList.remove('compatible');
             } else {
                 element.classList.add('dimmed');
                 element.classList.remove('compatible');
@@ -572,13 +501,6 @@ function handleDrop(e) {
         } else {
             if (droppedElements[targetZone].symbol === draggedElement.symbol) {
                 droppedElements[targetZone].count++;
-            } else if (droppedElements[targetZone].symbol === '') {
-                droppedElements[targetZone] = {
-                    symbol: draggedElement.symbol,
-                    name: draggedElement.name,
-                    atomicNumber: draggedElement.atomicNumber,
-                    count: 1
-                };
             } else {
                 droppedElements[targetZone] = {
                     symbol: draggedElement.symbol,
@@ -644,13 +566,13 @@ function updateResult() {
             }
             formula += element.symbol;
             if (element.count > 1) {
-                formula += element.count;
+                formula += `<sub style="font-size: 0.6em;">${element.count}</sub>`;
             }
         }
     }
 
     if (formula) {
-        resultFormula.textContent = formula;
+        resultFormula.innerHTML = formula;
 
         const matchedMolecule = interstellarMolecules.find(molecule => {
             if (molecule.composedOf.length !== atomicNumbers.length) return false;
