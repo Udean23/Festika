@@ -1,5 +1,5 @@
 const planetData = {
-    merkurius: {
+    mercury: {
         name: "Merkurius",
         type: "Planet Terestrial (kebumian)",
         image: "../assets/merkurius2.jpg",
@@ -37,7 +37,7 @@ const planetData = {
             "Tekanan atmosfer Venus 92 kali lipat tekanan di Bumi"
         ]
     },
-    bumi: {
+    earth: {
         name: "Bumi",
         type: "Planet Terestrial (kebumian)",
         image: "../assets/earth2.jpg",
@@ -94,7 +94,7 @@ const planetData = {
             "Jupiter bertindak seperti penyedot kosmik, melindungi Bumi dari asteroid"
         ]
     },
-    saturnus: {
+    saturn: {
         name: "Saturnus",
         type: "Raksasa Gas (gas giant)",
         image: "../assets/saturn2.jpg",
@@ -116,7 +116,7 @@ const planetData = {
     uranus: {
         name: "Uranus",
         type: "Raksasa Es (ice giant)",
-        image: "../assets/uranus2.jpg",
+        image: "../assets/uranus2.png",
         description: "Uranus adalah planet ketujuh dari Matahari dan merupakan planet pertama yang ditemukan menggunakan teleskop.",
         distance: "2,9 miliar kilometer (1,8 miliar mil)",
         mass: "8,681 × 10²⁵ kg (14,5 kali massa Bumi)",
@@ -132,7 +132,7 @@ const planetData = {
             "Satu musim di Uranus berlangsung selama 21 tahun Bumi"
         ]
     },
-    neptunus: {
+    neptune: {
         name: "Neptunus",
         type: "Raksasa Es (ice giant)",
         image: "../assets/neptune2.jpg",

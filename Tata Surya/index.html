@@ -22,6 +22,12 @@
       </button>
     </div>
 
+    <div class="detail-container">
+      <button id="detail-btn" class="detail-btn">
+        <span class="label">Detail Planet</span>
+      </button>
+    </div>
+
     <input class="planet9" id="pluto" type="radio" name="planet" />
     <label class="menu pluto" for="pluto">
       <div class="preview"></div>
@@ -165,12 +171,6 @@
               lebih cepat dari planet lainnya, sehingga dinamai seperti dewa
               pembawa pesan yang cepat dalam mitologi Romawi.
             </p>
-            <label
-              ><a
-                href="detail.html?planet=merkurius"
-                style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -186,10 +186,6 @@
               kuno, Venus dianggap sebagai dua bintang berbeda: bintang pagi dan
               bintang senja.
             </p>
-            <label
-              ><a href="detail.html?planet=venus" style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -209,10 +205,6 @@
               Satu-satunya planet yang diketahui memiliki oksigen bebas, air
               cair, dan kehidupan.
             </p>
-            <label
-              ><a href="detail.html?planet=bumi" style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -236,10 +228,7 @@
             <h2>Planet</h2>
             <h1>Mars</h1>
             <p>Planet keempat dari Matahari, dikenal sebagai “Planet Merah”.</p>
-            <label
-              ><a href="detail.html?planet=mars" style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
+            <label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -271,12 +260,6 @@
               Planet terbesar di Tata Surya, dinamai berdasarkan raja para dewa
               Romawi.
             </p>
-            <label
-              ><a
-                href="detail.html?planet=jupiter"
-                style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -308,12 +291,6 @@
               Planet keenam dari Matahari, dikenal dengan cincin spektakuler
               yang mengelilinginya.
             </p>
-            <label
-              ><a
-                href="detail.html?planet=saturnus"
-                style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -346,10 +323,6 @@
               memiliki kemiringan ekstrem yang membuatnya hampir menghadap
               Matahari secara langsung.
             </p>
-            <label
-              ><a href="detail.html?planet=uranus" style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -381,12 +354,6 @@
               Planet kedelapan dari Matahari, terkenal dengan angin tercepat di
               Tata Surya.
             </p>
-            <label
-              ><a
-                href="detail.html?planet=neptunus"
-                style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
 
           <div class="overlay"></div>
@@ -402,10 +369,6 @@
               Pluto pernah dianggap planet kesembilan, namun kini
               diklasifikasikan sebagai planet katai.
             </p>
-            <label
-              ><a href="detail.html?planet=pluto" style="text-decoration: none"
-                >Baca Selengkapnya<span></span></a
-            ></label>
           </div>
           <div class="overlay"></div>
         </div>
@@ -415,6 +378,14 @@
     <script>
       document.getElementById("back-btn").onclick = () => {
         window.history.back();
+      };
+
+      document.getElementById("detail-btn").onclick = () => {
+        const selected = document.querySelector('input[name="planet"]:checked');
+        if (!selected) return;
+
+        const planetId = selected.id;
+        window.location.href = `detail.html?${planetId}`;
       };
     </script>
   </body>
