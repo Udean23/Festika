@@ -6,6 +6,7 @@ const data = planetData[planetKey];
 document.getElementById("planet-name").textContent = data.name;
 document.getElementById("planet-type").textContent = data.type;
 document.getElementById("planet-desc").textContent = data.description;
+document.getElementById("planet-url").href = data.url;
 
 const planetElement = document.querySelector(".planet");
 planetElement.style.setProperty("--planet-bg", `url(${data.image})`);
