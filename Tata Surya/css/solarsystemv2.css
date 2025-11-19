@@ -2287,6 +2287,30 @@ body .panel p {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.label {
-  font-family: 'Amaranth', sans-serif;
+.detail-container {
+  position: fixed;
+  top: 90vh;
+  left: 24px;
+  z-index: 50;
+}
+
+.detail-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 2px solid #ffa034;
+  color: #ffa034;
+  
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.detail-btn:hover {
+  transform: translateX(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
 }
