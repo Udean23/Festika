@@ -43,7 +43,7 @@ const planetData = {
         mass: "5,972 × 10²⁴ kg",
         orbital: "365,25 hari",
         rotation: "23,9 jam",
-        moons: "1",
+        moons: "1 (Bulan)",
         temp: "59°F (15°C)",
         size: "12.756 kilometer (7.926 mil)",
         facts: [
@@ -79,7 +79,7 @@ const planetData = {
         mass: "1,898 × 10²⁷ kg (317,8 kali massa Bumi)",
         orbital: "11,86 tahun",
         rotation: "9,9 jam",
-        moons: "95+",
+        moons: "95+ (Empat satelit terbesarnya – Io, Europa, Ganymede, dan Callisto)",
         size: "139.820 km",
         temp: "-166°F (-110°C)",
         facts: [
@@ -115,7 +115,7 @@ const planetData = {
         mass: "8,681 × 10²⁵ kg (14,5 kali massa Bumi)",
         orbital: "84 tahun",
         rotation: "17,2 jam (berputar terbalik)",
-        moons: "27",
+        moons: "27. Lima bulan yang paling besar adalah Titania, Oberon, Umbriel, Ariel, dan Miranda",
         temp: "-320°F (-195°C)",
         size: "50.724 km",
         facts: [
@@ -133,7 +133,7 @@ const planetData = {
         mass: "1,024 × 10²⁶ kg (17,1 kali massa Bumi)",
         orbital: "164,8 tahun",
         rotation: "16,1 jam",
-        moons: "14",
+        moons: "14. Bulan terbesar adalah Triton",
         temp: "-330°F (-200°C)",
         size: "49.244 km",
         facts: [
