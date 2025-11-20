@@ -170,7 +170,7 @@ const planetData = {
         moons: "5 (Charon, Styx, Nix, Kerberos, Hydra)",
         temp: "-375°F (-225°C)",
         size: "2.377 km",
-        image: "../assets/pluto2.jpg",
+        image: "../assets/pluto2.png",
         url: "https://science.nasa.gov/pluto/",
         facts: [
             "Pluto lebih kecil dari Bulan Bumi",
