@@ -23,7 +23,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     />
   </head>
-  <body>
+  <body class="m-0 p-0 bg-black text-white font-amaranth overflow-x-hidden">
+    <div
+      id="starfield"
+      class="fixed inset-0 -z-10"
+      style="
+        background: radial-gradient(ellipse at center, #130624 0%, #000 100%);
+      "
+    ></div>
     <div class="fixed top-6 left-6 z-50">
       <button
         id="back-btn"
@@ -77,5 +84,6 @@
 
     <script src="dummy.js"></script>
     <script src="script.js"></script>
+    <script src="/Tabel Periodik/js/starfield.js"></script>
   </body>
 </html>

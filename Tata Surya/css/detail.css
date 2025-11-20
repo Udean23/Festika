@@ -1,12 +1,29 @@
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.285), rgba(0, 0, 0, 0.384)),
-    url("../assets/backgroundfix.jpg");
+  background: black;
   background-size: cover;
   background-position: center;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .planet {
   font-family: "Irish Grover", cursive;
   position: relative;
