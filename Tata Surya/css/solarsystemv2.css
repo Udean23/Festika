@@ -2289,8 +2289,8 @@ body .panel p {
 
 .detail-container {
   position: fixed;
-  top: 90vh;
-  left: 24px;
+  top: 85vh;
+  left: 80px;
   z-index: 50;
 }
 

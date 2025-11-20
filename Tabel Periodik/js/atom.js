@@ -186,3 +186,7 @@ function animateAtom() {
 }
 
 animateAtom();
+
+document.getElementById("back-btn").onclick = () => {
+    window.location.href = "../Landing Page/index.html";
+};
