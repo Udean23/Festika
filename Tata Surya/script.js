@@ -89,7 +89,7 @@ document.getElementById("next-btn").onclick = () => {
 };
 
 document.getElementById("back-btn").onclick = () => {
-    window.history.back();
+    window.location.href = "../Tata Surya/index.html";
 };
 
 renderInfo();
