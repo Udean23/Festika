@@ -5,85 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Planet</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Amaranth:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/detail.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
   </head>
-  <body class="m-0 p-0 bg-black text-white font-amaranth overflow-x-hidden">
-    <div
-      id="starfield"
-      class="fixed inset-0 -z-10"
-      style="
-        background: radial-gradient(ellipse at center, #130624 0%, #000 100%);
-      "
-    ></div>
-    <div class="fixed top-6 left-6 z-50">
-      <button
-        id="back-btn"
-        class="back-btn flex items-center gap-2 px-4 py-2 rounded-full border-2 border-white text-white bg-black bg-opacity-30 backdrop-blur-sm"
-      >
-        <i class="fa-solid fa-arrow-left"></i>
-        <span style="font-family: 'Amaranth', sans-serif">Kembali</span>
+  <body class="m-0 p-0 bg-black text-white font-amaranth overflow-hidden">
+    <div id="starfield" class="fixed inset-0 -z-10 bg-[#050505]"></div>
+
+    <div class="fixed top-8 left-8 z-50 animate-fade-in">
+      <button id="back-btn" class="flex items-center gap-2 text-white/70 hover:text-white transition-opacity text-sm">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>Kembali ke tata surya</span>
       </button>
     </div>
 
-    <div
-      class="min-h-screen max-h-screen justify-center items-center flex gap-10 text-white p-6"
-    >
-      <div
-        class="flex flex-col max-w-[420px] items-start px-2"
-        style="font-family: 'Amaranth', sans-serif"
-      >
-        <div id="planet-type" class="text-[20px]"></div>
-        <div id="planet-desc" class="mt-4 text-justify leading-relaxed"></div>
-        <a id="planet-url" class="mt-4 font-bold">Baca Selengkapnya</a>
-      </div>
+    <main class="relative z-10 grid grid-cols-1 lg:grid-cols-2 min-h-screen overflow-visible">
+      <div class="flex flex-col justify-center px-12 lg:px-28 h-screen py-20 animate-slide-right overflow-y-auto">
+        <div id="planet-name" class="text-5xl lg:text-7xl font-['Irish_Grover'] uppercase tracking-wider mb-3 leading-tight"></div>
+        <div id="planet-type" class="text-base lg:text-lg text-white/70 lowercase mb-12 font-light"></div>
 
-      <div class="planet mx-16">
-        <div id="planet-name" class="planet-name"></div>
-      </div>
-
-      <div
-        class="flex flex-col max-w-[420px] items-end text-right px-2 text-[15px]"
-        style="font-family: 'Amaranth', sans-serif"
-      >
-        <div id="info-wrap" class="min-w-[420px] overflow-hidden">
-          <div id="info-container" class="info-container"></div>
-        </div>
-
-        <div class="flex gap-10 mt-4">
-          <div
-            id="prev-btn"
-            class="nav-btn border p-3 rounded-full cursor-pointer bg-white text-black"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <div
-            id="next-btn"
-            class="nav-btn border p-3 rounded-full cursor-pointer bg-white text-black"
-          >
-            <i class="fa-solid fa-arrow-right"></i>
+        <div class="relative justify-center items-center max-w-2xl h-auto overflow-hidden mb-8 pl-8 min-h-[200px]">
+          <div id="info-slider" class="relative w-full">
           </div>
         </div>
+
+        <div class="mt-auto pt-16 flex gap-8 items-center pb-8 px-8">
+            <div id="prev-planet" class="flex items-center gap-6 cursor-pointer group transition-all duration-300 hover:opacity-80">
+                <div class="planet-nav-image w-12 h-12 rounded-full bg-cover bg-center border-2 border-white/40 group-hover:border-white shadow-lg transition-all"></div>
+                <span class="text-base font-semibold group-hover:underline whitespace-nowrap text-white/90"></span>
+            </div>
+            <div id="next-planet" class="flex items-center gap-6 cursor-pointer group transition-all duration-300 hover:opacity-80 ml-auto">
+                <span class="text-base font-semibold group-hover:underline whitespace-nowrap text-white/90"></span>
+                <div class="planet-nav-image w-12 h-12 rounded-full bg-cover bg-center border-2 border-white/40 group-hover:border-white shadow-lg transition-all"></div>
+            </div>
+        </div>
       </div>
-    </div>
+
+      <div id="planet-viewer" class="relative cursor-move min-h-[50vh] lg:min-h-screen animate-scale-in">
+      </div>
+    </main>
 
     <script src="dummy.js"></script>
     <script src="script.js"></script>
-    <script src="/Tabel Periodik/js/starfield.js"></script>
   </body>
 </html>
