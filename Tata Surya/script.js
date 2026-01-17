@@ -81,11 +81,11 @@ const slider = document.getElementById("info-slider");
 
 const getJupiterInfo = () => [
     { title: "Gambaran Umum Jupiter", text: "Jupiter adalah planet terbesar di Tata Surya dan merupakan planet kelima dari Matahari. Planet ini termasuk raksasa gas yang tersusun terutama dari hidrogen dan helium, serta memiliki massa paling besar dibandingkan planet lain." },
-    { title: "Tampilan Jupiter", text: "Jupiter tampak memiliki garis-garis awan berwarna cokelat, putih, and oranye yang membentang di seluruh permukaannya. Ciri paling khasnya adalah Bintik Merah Besar, yaitu badai raksasa yang telah berlangsung selama ratusan tahun." },
-    { title: "Struktur dan Tekstur Jupiter", text: "Jupiter tidak memiliki permukaan padat. Bagian luarnya berupa lapisan gas tebal, sedangkan bagian dalammya terdiri atas gas cair bertekanan tinggi dengan inti yang sangat panas and padat." },
-    { title: "Atmosfer and Kondisi Alam", text: "Atmosfer Jupiter sangat aktif dengan badai besar and angin berkecepatan tinggi. Planet ini juga memiliki medan magnet terkuat di Tata Surya." },
-    { title: "Satelit Alami Jupiter", text: "Jupiter memiliki puluhan satelit alami, termasuk empat satelit terbesar yang dikenal sebagai satelit Galilea, yaitu Io, Europa, Ganymede, and Callisto. Ganymede bahkan merupakan satelit terbesar di Tata Surya." },
-    { title: "Medan Magnet Jupiter", text: "Jupiter memiliki medan magnet terkuat di antara seluruh planet. Medan magnet ini sangat luas and berperan penting dalam melindungi satelit-satelit alaminya dari radiasi luar angkasa." },
+    { title: "Tampilan Jupiter", text: "Jupiter tampak memiliki garis-garis awan berwarna cokelat, putih, dan oranye yang membentang di seluruh permukaannya. Ciri paling khasnya adalah Bintik Merah Besar, yaitu badai raksasa yang telah berlangsung selama ratusan tahun." },
+    { title: "Struktur dan Tekstur Jupiter", text: "Jupiter tidak memiliki permukaan padat. Bagian luarnya berupa lapisan gas tebal, sedangkan bagian dalamnya terdiri atas gas cair bertekanan tinggi dengan inti yang sangat panas dan padat." },
+    { title: "Atmosfer dan Kondisi Alam", text: "Atmosfer Jupiter sangat aktif dengan badai besar dan angin berkecepatan tinggi. Planet ini juga memiliki medan magnet terkuat di Tata Surya." },
+    { title: "Satelit Alami Jupiter", text: "Jupiter memiliki puluhan satelit alami, termasuk empat satelit terbesar yang dikenal sebagai satelit Galilea, yaitu Io, Europa, Ganymede, dan Callisto. Ganymede bahkan merupakan satelit terbesar di Tata Surya." },
+    { title: "Medan Magnet Jupiter", text: "Jupiter memiliki medan magnet terkuat di antara seluruh planet. Medan magnet ini sangat luas dan berperan penting dalam melindungi satelit-satelit alaminya dari radiasi luar angkasa." },
     { title: "Julukan Jupiter", text: "Jupiter dijuluki sebagai \"Raja Planet\" karena ukurannya yang sangat besar serta pengaruh gravitasinya yang kuat dalam menjaga kestabilan Tata Surya." }
 ];
 
@@ -93,7 +93,7 @@ const getOtherInfo = (d) => [
     { title: `Gambaran Umum ${d.name}`, text: d.description },
     { title: `Tampilan ${d.name}`, text: `Permukaan planet ini memiliki karakteristik unik dengan ${d.facts[0].toLowerCase() || "detail visual yang menakjubkan"}.` },
     { title: `Struktur dan Tekstur ${d.name}`, text: `Memiliki diameter sebesar ${d.size}. Massa planet ini diperkirakan mencapai ${d.mass}.` },
-    { title: `Atmosfer and Kondisi Alam`, text: `Suhu rata-rata permukaan adalah ${d.temp}. Membutuhkan waktu ${d.orbital} untuk satu kali revolusi.` },
+    { title: `Atmosfer dan Kondisi Alam`, text: `Suhu rata-rata permukaan adalah ${d.temp}. Membutuhkan waktu ${d.orbital} untuk satu kali revolusi.` },
     { title: `Satelit Alami ${d.name}`, text: `Memiliki ${d.moons} satelit alami yang teridentifikasi hingga saat ini.` },
     { title: `Medan Magnet ${d.name}`, text: `Memiliki medan magnet yang unik yang melindungi planet dari radiasi luar angkasa.` },
     { title: `Julukan ${d.name}`, text: `Satu hari di planet ini berlangsung selama ${d.rotation}. Kunjungi NASA untuk info lebih lanjut.` }

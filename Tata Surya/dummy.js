@@ -2,7 +2,7 @@ const planetData = {
     mercury: {
         name: "Merkurius",
         type: "Planet Terestrial (kebumian)",
-        description: "Merkurius adalah planet terkecil di tata surya kita dan paling dekat dengan Matahari. Ukurannya hanya sedikit lebih besar daripada Bulan Bumi. Dari permukaan Merkurius, Matahari akan tampak tiga kali lebih besar daripada jika dilihat dari Bumi, dan cahaya Matahari akan tujuh kali lebih terang.",
+        description: "Merkurius adalah planet terdekat dari Matahari dan merupakan planet terkecil di Tata Surya. Planet ini termasuk planet kebumian dengan ukuran yang relatif kecil.",
         distance: "58 juta kilometer (36 juta mil)",
         mass: "3,285 × 10²³ kg (0,055 kali massa Bumi)",
         orbital: "88 hari",
@@ -22,7 +22,7 @@ const planetData = {
     venus: {
         name: "Venus",
         type: "Planet Terestrial (kebumian)",
-        description: "Venus adalah planet kedua dari Matahari, dan tetangga terdekat Bumi. Venus adalah objek paling terang ketiga di langit setelah Matahari dan Bulan. Venus berputar perlahan ke arah yang berlawanan dengan kebanyakan planet. Venus memiliki struktur dan ukuran yang mirip dengan Bumi, dan terkadang disebut kembaran jahat Bumi. Atmosfernya yang tebal memerangkap panas dalam efek rumah kaca yang tak terkendali, menjadikannya planet terpanas di tata surya kita dengan suhu permukaan yang cukup panas untuk melelehkan timah. Di bawah awan yang padat dan persisten, permukaannya memiliki gunung berapi dan pegunungan yang terdeformasi.",
+        description: "Venus merupakan planet kedua dari Matahari dan termasuk dalam kelompok planet kebumian. Ukurannya hampir menyerupai Bumi, sehingga sering disebut sebagai planet kembaran Bumi.",
         distance: "108 juta kilometer (67 juta mil)",
         mass: "4,867 × 10²⁴ kg (0,815 kali massa Bumi)",
         orbital: "225 hari",
@@ -42,7 +42,7 @@ const planetData = {
     earth: {
         name: "Bumi",
         type: "Planet Terestrial (kebumian)",
-        description: "Meskipun Bumi hanya planet terbesar kelima di tata surya, ia adalah satu-satunya planet di tata surya kita yang memiliki air cair di permukaannya. Hanya sedikit lebih besar dari Venus di dekatnya, Bumi adalah planet terbesar dari empat planet terdekat dengan Matahari, yang semuanya terbuat dari batuan dan logam.",
+        description: " Bumi merupakan planet ketiga dari Matahari dan satu-satunya planet yang diketahui mendukung kehidupan. Planet ini termasuk dalam kategori planet kebumian dengan permukaan padat.",
         distance: "150 juta kilometer (93 juta mil)",
         mass: "5,972 × 10²⁴ kg",
         orbital: "365,25 hari",
