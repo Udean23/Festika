@@ -81,9 +81,9 @@ const slider = document.getElementById("info-slider");
 
 const getJupiterInfo = () => [
     { title: "Gambaran Umum Jupiter", text: "Jupiter adalah planet terbesar di Tata Surya dan merupakan planet kelima dari Matahari. Planet ini termasuk raksasa gas yang tersusun terutama dari hidrogen dan helium, serta memiliki massa paling besar dibandingkan planet lain." },
-    { title: "Tampilan Jupiter", text: "Jupiter tampak memiliki garis-garis awan berwarna cokelat, putih, dan oranye yang membentang di seluruh permukaannya. Ciri paling khasnya adalah Bintik Merah Besar, yaitu badai raksasa yang telah berlangsung selama ratusan tahun." },
+    { title: "Tampilan Jupiter", text: "Jupiter tampak memiliki garis-garis awan berwarna cokelat, putih, and oranye yang membentang di seluruh permukaannya. Ciri paling khasnya adalah Bintik Merah Besar, yaitu badai raksasa yang telah berlangsung selama ratusan tahun." },
     { title: "Struktur dan Tekstur Jupiter", text: "Jupiter tidak memiliki permukaan padat. Bagian luarnya berupa lapisan gas tebal, sedangkan bagian dalammya terdiri atas gas cair bertekanan tinggi dengan inti yang sangat panas and padat." },
-    { title: "Atmosfer dan Kondisi Alam", text: "Atmosfer Jupiter sangat aktif dengan badai besar dan angin berkecepatan tinggi. Planet ini juga memiliki medan magnet terkuat di Tata Surya." },
+    { title: "Atmosfer and Kondisi Alam", text: "Atmosfer Jupiter sangat aktif dengan badai besar and angin berkecepatan tinggi. Planet ini juga memiliki medan magnet terkuat di Tata Surya." },
     { title: "Satelit Alami Jupiter", text: "Jupiter memiliki puluhan satelit alami, termasuk empat satelit terbesar yang dikenal sebagai satelit Galilea, yaitu Io, Europa, Ganymede, and Callisto. Ganymede bahkan merupakan satelit terbesar di Tata Surya." },
     { title: "Medan Magnet Jupiter", text: "Jupiter memiliki medan magnet terkuat di antara seluruh planet. Medan magnet ini sangat luas and berperan penting dalam melindungi satelit-satelit alaminya dari radiasi luar angkasa." },
     { title: "Julukan Jupiter", text: "Jupiter dijuluki sebagai \"Raja Planet\" karena ukurannya yang sangat besar serta pengaruh gravitasinya yang kuat dalam menjaga kestabilan Tata Surya." }
@@ -93,7 +93,7 @@ const getOtherInfo = (d) => [
     { title: `Gambaran Umum ${d.name}`, text: d.description },
     { title: `Tampilan ${d.name}`, text: `Permukaan planet ini memiliki karakteristik unik dengan ${d.facts[0].toLowerCase() || "detail visual yang menakjubkan"}.` },
     { title: `Struktur dan Tekstur ${d.name}`, text: `Memiliki diameter sebesar ${d.size}. Massa planet ini diperkirakan mencapai ${d.mass}.` },
-    { title: `Atmosfer dan Kondisi Alam`, text: `Suhu rata-rata permukaan adalah ${d.temp}. Membutuhkan waktu ${d.orbital} untuk satu kali revolusi.` },
+    { title: `Atmosfer and Kondisi Alam`, text: `Suhu rata-rata permukaan adalah ${d.temp}. Membutuhkan waktu ${d.orbital} untuk satu kali revolusi.` },
     { title: `Satelit Alami ${d.name}`, text: `Memiliki ${d.moons} satelit alami yang teridentifikasi hingga saat ini.` },
     { title: `Medan Magnet ${d.name}`, text: `Memiliki medan magnet yang unik yang melindungi planet dari radiasi luar angkasa.` },
     { title: `Julukan ${d.name}`, text: `Satu hari di planet ini berlangsung selama ${d.rotation}. Kunjungi NASA untuk info lebih lanjut.` }
@@ -103,19 +103,13 @@ const infoSections = (planetKey === 'jupiter') ? getJupiterInfo() : getOtherInfo
 
 let currentSlide = 0;
 const totalSlides = infoSections.length;
-let lastDirection = 'down';
 
 function updateSlider() {
     const allSections = slider.querySelectorAll('.info-section');
     allSections.forEach((section, index) => {
-        section.classList.remove('active', 'next', 'prev', 'slide-up', 'slide-down');
+        section.classList.remove('active', 'next', 'prev');
         if (index === currentSlide) {
             section.classList.add('active');
-            if (lastDirection === 'down') {
-                section.classList.add('slide-up');
-            } else {
-                section.classList.add('slide-down');
-            }
         } else if (index === (currentSlide + 1) % totalSlides) {
             section.classList.add('next');
         } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
@@ -125,13 +119,11 @@ function updateSlider() {
 }
 
 function slideNext() {
-    lastDirection = 'down';
     currentSlide = (currentSlide + 1) % totalSlides;
     updateSlider();
 }
 
 function slidePrev() {
-    lastDirection = 'up';
     currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     updateSlider();
 }
@@ -145,30 +137,23 @@ infoSections.forEach((info, index) => {
 
     div.className = classes;
 
-    const nextIndex = (index + 1) % totalSlides;
-    const prevIndex = (index - 1 + totalSlides) % totalSlides;
-    const nextInfo = infoSections[nextIndex];
-    const prevInfo = infoSections[prevIndex];
-
     div.innerHTML = `
-        <div class="silhouette-preview-top">
-            <h4 class="silhouette-title">${prevInfo.title}</h4>
-            <p class="silhouette-text">${prevInfo.text}</p>
-        </div>
         <div class="info-content-wrapper">
-            <div class="info-nav-btn btn-up" data-dir="up"><i class="fa-solid fa-arrow-up text-xl"></i></div>
+            <div class="info-nav-btn btn-up"><i class="fa-solid fa-chevron-up"></i></div>
             <h3 class="info-title">${info.title}</h3>
             <p class="info-text">${info.text}</p>
-            <div class="info-nav-btn btn-down" data-dir="down"><i class="fa-solid fa-arrow-down text-xl"></i></div>
-        </div>
-        <div class="silhouette-preview">
-            <h4 class="silhouette-title">${nextInfo.title}</h4>
-            <p class="silhouette-text">${nextInfo.text}</p>
+            <div class="info-nav-btn btn-down"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
     `;
 
-    div.querySelector('.btn-up').onclick = slidePrev;
-    div.querySelector('.btn-down').onclick = slideNext;
+    div.querySelector('.btn-up').onclick = (e) => {
+        e.stopPropagation();
+        slidePrev();
+    };
+    div.querySelector('.btn-down').onclick = (e) => {
+        e.stopPropagation();
+        slideNext();
+    };
 
     slider.appendChild(div);
 });
