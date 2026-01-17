@@ -3,15 +3,15 @@ const planetKey = params.keys().next().value || 'jupiter';
 const data = planetData[planetKey];
 
 const textureConfig = {
-    mercury: { texture: '../Tata Surya/assets/merkurius2.jpg', moons: [] },
-    venus: { texture: '../Tata Surya/assets/venus2.jpg', moons: [] },
-    earth: { texture: '../Tata Surya/assets/earth2.jpg', moons: [{ texture: '../Tata Surya/assets/earthmoon.jpg', size: 0.75, dist: 4 }] },
-    mars: { texture: '../Tata Surya/assets/mars2.jpg', moons: [{ texture: '../Tata Surya/assets/phobos.jpg', size: 0.3, dist: 3.5 }, { texture: '../Tata Surya/assets/deimos.jpeg', size: 0.225, dist: 4.5 }] },
-    jupiter: { texture: '../Tata Surya/assets/jupiter2.jpg', moons: [{ texture: '../Tata Surya/assets/lo.jpg', size: 0.45, dist: 4 }, { texture: '../Tata Surya/assets/europa.jpeg', size: 0.42, dist: 5.5 }, { texture: '../Tata Surya/assets/ganymede.jpeg', size: 0.525, dist: 7 }] },
-    saturn: { texture: '../Tata Surya/assets/saturn2.jpg', moons: [{ texture: '../Tata Surya/assets/titan.png', size: 0.6, dist: 6 }, { texture: '../Tata Surya/assets/dione.jpeg', size: 0.3, dist: 4.5 }, { texture: '../Tata Surya/assets/enceladus.jpeg', size: 0.27, dist: 3.5 }] },
-    uranus: { texture: '../Tata Surya/assets/uranus2.png', moons: [{ texture: '../Tata Surya/assets/miranda.jpeg', size: 0.3, dist: 4 }, { texture: '../Tata Surya/assets/ariel.jpeg', size : 0.33, dist : 5 }, { texture : '../Tata Surya/assets/umbriel.jpeg' , size : 0.315 , dist :6 } ]},
-    neptune :{texture:'../Tata Surya/assets/neptune2.jpg' , moons:[{texture:'../Tata Surya/assets/triton.png' ,size :0.45 ,dist :5},{texture:'../Tata Surya/assets/proteus.jpg' ,size :0.27 ,dist :4},{texture:'../Tata Surya/assets/nereid.png' ,size :0.225 ,dist :6}]},
-    pluto:{texture:'../Tata Surya/assets/pluto2.png' ,moons:[ ]}
+    mercury: { texture: 'assets/merkurius2.jpg', thumb: 'assets/mercury.png', moons: [] },
+    venus: { texture: 'assets/venus2.jpg', thumb: 'assets/venus.png', moons: [] },
+    earth: { texture: 'assets/earth2.jpg', thumb: 'assets/earth.png', moons: [{ texture: 'assets/earthmoon.jpg', size: 0.75, dist: 4 }] },
+    mars: { texture: 'assets/mars2.jpg', thumb: 'assets/mars.png', moons: [{ texture: 'assets/phobos.jpg', size: 0.3, dist: 3.5 }, { texture: 'assets/deimos.jpeg', size: 0.225, dist: 4.5 }] },
+    jupiter: { texture: 'assets/jupiter2.jpg', thumb: 'assets/jupiter.png', moons: [{ texture: 'assets/lo.jpg', size: 0.45, dist: 4 }, { texture: 'assets/europa.jpeg', size: 0.42, dist: 5.5 }, { texture: 'assets/ganymede.jpeg', size: 0.525, dist: 7 }] },
+    saturn: { texture: 'assets/saturn2.jpg', thumb: 'assets/saturn.png', moons: [{ texture: 'assets/titan.png', size: 0.6, dist: 6 }, { texture: 'assets/dione.jpeg', size: 0.3, dist: 4.5 }, { texture: 'assets/enceladus.jpeg', size: 0.27, dist: 3.5 }] },
+    uranus: { texture: 'assets/uranus2.png', thumb: 'assets/uranus.png', moons: [{ texture: 'assets/miranda.jpeg', size: 0.3, dist: 4 }, { texture: 'assets/ariel.jpeg', size: 0.33, dist: 5 }, { texture: 'assets/umbriel.jpeg', size: 0.315, dist: 6 }] },
+    neptune: { texture: 'assets/neptune2.jpg', thumb: 'assets/neptune.png', moons: [{ texture: 'assets/triton.png', size: 0.45, dist: 5 }, { texture: 'assets/proteus.jpg', size: 0.27, dist: 4 }, { texture: 'assets/nereid.png', size: 0.225, dist: 6 }] },
+    pluto: { texture: 'assets/pluto2.png', thumb: 'assets/pluto2.png', moons: [] }
 };
 
 const container = document.getElementById('planet-viewer');
@@ -37,8 +37,8 @@ scene.add(pointLight);
 const textureLoader = new THREE.TextureLoader();
 const planetTexture = textureLoader.load(textureConfig[planetKey].texture);
 const geometry = new THREE.SphereGeometry(2.5, 64, 64);
-const material = new THREE.MeshPhongMaterial({ 
-    map: planetTexture, 
+const material = new THREE.MeshPhongMaterial({
+    map: planetTexture,
     shininess: 20,
     emissive: 0x111111
 });
@@ -52,7 +52,7 @@ const moonData = textureConfig[planetKey].moons;
 moonData.forEach(m => {
     const moonTex = textureLoader.load(m.texture);
     const moonGeo = new THREE.SphereGeometry(m.size, 32, 32);
-    const moonMat = new THREE.MeshPhongMaterial({ 
+    const moonMat = new THREE.MeshPhongMaterial({
         map: moonTex,
         shininess: 10,
         emissive: 0x0a0a0a
@@ -82,10 +82,10 @@ const slider = document.getElementById("info-slider");
 const getJupiterInfo = () => [
     { title: "Gambaran Umum Jupiter", text: "Jupiter adalah planet terbesar di Tata Surya dan merupakan planet kelima dari Matahari. Planet ini termasuk raksasa gas yang tersusun terutama dari hidrogen dan helium, serta memiliki massa paling besar dibandingkan planet lain." },
     { title: "Tampilan Jupiter", text: "Jupiter tampak memiliki garis-garis awan berwarna cokelat, putih, dan oranye yang membentang di seluruh permukaannya. Ciri paling khasnya adalah Bintik Merah Besar, yaitu badai raksasa yang telah berlangsung selama ratusan tahun." },
-    { title: "Struktur dan Tekstur Jupiter", text: "Jupiter tidak memiliki permukaan padat. Bagian luarnya berupa lapisan gas tebal, sedangkan bagian dalammya terdiri atas gas cair bertekanan tinggi dengan inti yang sangat panas dan padat." },
+    { title: "Struktur dan Tekstur Jupiter", text: "Jupiter tidak memiliki permukaan padat. Bagian luarnya berupa lapisan gas tebal, sedangkan bagian dalammya terdiri atas gas cair bertekanan tinggi dengan inti yang sangat panas and padat." },
     { title: "Atmosfer dan Kondisi Alam", text: "Atmosfer Jupiter sangat aktif dengan badai besar dan angin berkecepatan tinggi. Planet ini juga memiliki medan magnet terkuat di Tata Surya." },
-    { title: "Satelit Alami Jupiter", text: "Jupiter memiliki puluhan satelit alami, termasuk empat satelit terbesar yang dikenal sebagai satelit Galilea, yaitu Io, Europa, Ganymede, dan Callisto. Ganymede bahkan merupakan satelit terbesar di Tata Surya." },
-    { title: "Medan Magnet Jupiter", text: "Jupiter memiliki medan magnet terkuat di antara seluruh planet. Medan magnet ini sangat luas dan berperan penting dalam melindungi satelit-satelit alaminya dari radiasi luar angkasa." },
+    { title: "Satelit Alami Jupiter", text: "Jupiter memiliki puluhan satelit alami, termasuk empat satelit terbesar yang dikenal sebagai satelit Galilea, yaitu Io, Europa, Ganymede, and Callisto. Ganymede bahkan merupakan satelit terbesar di Tata Surya." },
+    { title: "Medan Magnet Jupiter", text: "Jupiter memiliki medan magnet terkuat di antara seluruh planet. Medan magnet ini sangat luas and berperan penting dalam melindungi satelit-satelit alaminya dari radiasi luar angkasa." },
     { title: "Julukan Jupiter", text: "Jupiter dijuluki sebagai \"Raja Planet\" karena ukurannya yang sangat besar serta pengaruh gravitasinya yang kuat dalam menjaga kestabilan Tata Surya." }
 ];
 
@@ -142,14 +142,14 @@ infoSections.forEach((info, index) => {
     if (index === 0) classes += " active";
     if (index === 1) classes += " next";
     if (index === totalSlides - 1) classes += " prev";
-    
+
     div.className = classes;
-    
+
     const nextIndex = (index + 1) % totalSlides;
     const prevIndex = (index - 1 + totalSlides) % totalSlides;
     const nextInfo = infoSections[nextIndex];
     const prevInfo = infoSections[prevIndex];
-    
+
     div.innerHTML = `
         <div class="silhouette-preview-top">
             <h4 class="silhouette-title">${prevInfo.title}</h4>
@@ -182,11 +182,11 @@ const prevEl = document.getElementById('prev-planet');
 const nextEl = document.getElementById('next-planet');
 
 prevEl.querySelector('span').textContent = `Jelajahi ${planetData[prevKey].name}`;
-prevEl.querySelector('div').style.backgroundImage = `url(${textureConfig[prevKey].texture})`;
+prevEl.querySelector('div').style.backgroundImage = `url(${textureConfig[prevKey].thumb})`;
 prevEl.onclick = () => window.location.search = `?${prevKey}`;
 
 nextEl.querySelector('span').textContent = `Jelajahi ${planetData[nextKey].name}`;
-nextEl.querySelector('div').style.backgroundImage = `url(${textureConfig[nextKey].texture})`;
+nextEl.querySelector('div').style.backgroundImage = `url(${textureConfig[nextKey].thumb})`;
 nextEl.onclick = () => window.location.search = `?${nextKey}`;
 
 document.getElementById("back-btn").onclick = () => {
